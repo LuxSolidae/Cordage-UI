@@ -90,6 +90,9 @@ module.exports = function(webpackEnv) {
           // Necessary for external CSS imports to work
           // https://github.com/facebook/create-react-app/issues/2677
           ident: 'postcss',
+          config: {
+            path: './'
+          },
           plugins: () => [
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
