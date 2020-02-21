@@ -1,0 +1,25 @@
+:root {
+  /* Font */
+  --main-font: 'Metropolis', sans-serif;
+  --custom-icons: 'Cordage-Icons', sans-serif;
+
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  --navbar-height: 70px;
+  --sidebar-width: 22rem;
+}
+
+/* Media Queries */
+@custom-media --hd-screens (width >= 1440px);
+@custom-media --desktop-screens (width >= 1024px) and (width < 1440px);
+@custom-media --tablet-screens (width >= 768px) and (width < 1024px);
+@custom-media --mobile-screens (width < 768px);
+
+/* Custom selectors */
+@custom-selector :--active :active, .active;
+@custom-selector :--disabled :disabled, .disabled;
+@custom-selector :--focus :focus, .focus;
+@custom-selector :--hover :hover, .hover;
+@custom-selector :--readOnly :readOnly, .readOnly;
+@custom-selector :--required :required, .required;
+@custom-selector :--visited :visited, .visited;

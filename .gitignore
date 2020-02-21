@@ -21,3 +21,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/App.css
+src/Docz.css
+
+.docz/
+
+dist/
+
+src/lib/css/App.css
+
+src/lib/css/Docz.css

@@ -1,0 +1,56 @@
+---
+name: Pure Components vs Stateless Functional Components
+menu: Getting Started
+---
+
+# Pure Components vs Stateless Functional Components
+
+For performance reasons, none of the atoms, molecules, or organisms will handle state. These will be render-only components and will render the same thing given the same props (pure). Both Pure Components and Stateless Components are pure but both can serve different purposes.
+
+## Stateless Functional Component
+
+A Stateless Component uses less resources as a Pure Component because it doesn't have access to the React lifecycle methods. A Stateless Component can only render content and should only do that. A good example of this is the Button component.
+
+```jsx
+import React from 'react';
+
+const Button = props => (
+  <button onClick={props.onClick}>
+    {props.children}
+  </button>
+);
+```
+
+Or even nicer with destructuring...
+
+```jsx
+import React from 'react';
+
+const Button = ({onClick, children}) => (
+  <button onClick={onClick}>
+    {children}
+  </button>
+);
+```
+
+## Pure Component
+
+A Pure Component should be also used for render only. The main difference is that a Pure Component has access to all React lifecycle methods, and because of this uses more resources. Any pure component that needs to use React lifecycle methods should use Pure Component. If not, it should be a Stateless Component. _I will use our nice Button component as an example for now_
+
+```jsx
+import React, { PureComponent } from 'react';
+
+class Button extends PureComponent {
+  componentDidMount() {
+    console.log('Just an example');
+  }
+	
+  render() {
+    return (
+      <button onClick={this.props.onClick}>
+        {this.props.children}
+      </button>
+    )
+  }
+}
+```
