@@ -29,7 +29,7 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     fallbackLng,
-    // debug: !PRODUCTION,
+    debug: !PRODUCTION,
     whitelist: availableLanguages,
     ns: ['common', 'translation'],
     defaultNS: 'translation',
@@ -45,7 +45,7 @@ i18n
         if (format === 'uppercase') return value.toUpperCase();
         if (value instanceof Date) return moment(value).locale(lng).format(format);
         if (value instanceof moment && format === 'ago') return value.locale(lng).fromNow(true);
-        else if (value instanceof moment) return value.locale(lng).format(format);
+        if (value instanceof moment) return value.locale(lng).format(format);
         return value;
       },
     },
