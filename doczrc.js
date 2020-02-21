@@ -7,7 +7,7 @@ export default {
   public: './public',
   title: 'Cordage',
   description: 'Cordage UI Kit',
-  wrapper: 'src/js/Docz',
+  wrapper: 'src/lib/js/Docz',
   port: 7000,
   menu: [
     {

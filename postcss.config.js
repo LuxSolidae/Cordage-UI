@@ -1,4 +1,3 @@
-console.log('READ');
 module.exports = {
   plugins: [
     require('postcss-partial-import')({ extension: '.pcss' }),

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './js/i18n';
-import App from './js/App';
-import * as serviceWorker from './js/serviceWorker';
+import './i18n';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
 setTimeout(() => {
   // if (typeof wdtLoading !== 'undefined' && wdtLoadjing) wdtLoading.done();

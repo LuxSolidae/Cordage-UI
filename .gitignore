@@ -22,7 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-src/css/App.css
-src/css/Docz.css
+src/App.css
+src/Docz.css
 
-src/css/build/
+.docz/
