@@ -17,6 +17,32 @@
           "absoluteRuntime": false
         }
       ]
+    ],
+    "plugins": [
+      [
+        "babel-plugin-named-asset-import",
+        {
+          "loaderMap": {
+            "svg": {
+              "ReactComponent": "@svgr/webpack?-svgo,+ref![path]"
+            }
+          }
+        }
+      ],
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ],
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ],
+      "@babel/plugin-proposal-export-default-from",
+      "@babel/plugin-syntax-dynamic-import"
     ]
   },
   "browserslist": {
@@ -84,6 +110,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
@@ -109,6 +136,7 @@
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "4.3.0",
     "flow-bin": "^0.118.0",
+    "gatsby-plugin-flow": "^1.1.19",
     "html-webpack-plugin": "^4.0.0-beta.11",
     "jest": "^24.9.0",
     "jest-environment-jsdom-fourteen": "^1.0.1",

@@ -290,7 +290,7 @@ module.exports = function(webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
-        'cordage_ui': path.resolve(__dirname, '../src/js/'),
+        'cordage_ui': path.resolve(__dirname, '../src/js/lib/'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
@@ -368,7 +368,12 @@ module.exports = function(webpackEnv) {
                 customize: require.resolve(
                   'babel-preset-react-app/webpack-overrides'
                 ),
-                
+
+                presets: [
+                  '@babel/preset-env',
+                  '@babel/preset-react',
+                ],
+
                 plugins: [
                   [
                     require.resolve('babel-plugin-named-asset-import'),
@@ -381,13 +386,27 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
+                  [
+                    require.resolve('@babel/plugin-proposal-decorators'),
+                    {
+                      'legacy': true,
+                    }
+                  ],
+                  [
+                    require.resolve('@babel/plugin-proposal-class-properties'),
+                    {
+                      'loose': true,
+                    }
+                  ],
+                  require.resolve('@babel/plugin-proposal-export-default-from'),
+                  require.resolve('@babel/plugin-syntax-dynamic-import'),
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
                 // directory for faster rebuilds.
                 cacheDirectory: true,
                 // See #6846 for context on why cacheCompression is disabled
-                cacheCompression: false,
+                cacheCompression: isEnvProduction,
                 compact: isEnvProduction,
               },
             },
