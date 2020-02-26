@@ -5,7 +5,7 @@ exports.onCreateWebpackConfig = args => {
   args.actions.setWebpackConfig({
     resolve: {
       alias: {
-        'cordage_ui': path.resolve(__dirname, '../src/js/lib/'),
+        '@cordage_ui': path.resolve(__dirname, '../src/lib/js/'),
       },
     },
   })

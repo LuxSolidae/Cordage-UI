@@ -1,0 +1,36 @@
+---
+name: Sidebar
+route: /organisms/Sidebar
+menu: Organisms
+---
+
+import { Playground, Props } from 'docz';
+import Sidebar from './index';
+import SidebarContext from '@cordage_ui/providers/sidebar';
+import ThemeContext from '@cordage_ui/providers/themes';
+import theme from '@cordage_ui/cordage.json';
+
+import '../../../../Docz.css';
+import logo from '../../../../img/logo.svg';
+
+# Sidebar
+
+---
+
+### Props
+
+<Props of={Sidebar.Menu} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <SidebarContext.Provider>
+        <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
+          <div>Menu</div>
+        </Sidebar.Menu>
+      </SidebarContext.Provider>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
