@@ -1,0 +1,60 @@
+---
+name: Buttons
+route: /atoms/button
+menu: Atoms
+---
+
+import { Playground, Props } from 'docz';
+import ThemeContext from '@cordage_ui/providers/themes';
+import theme from '@cordage_ui/cordage.json';
+import Button from './Button';
+import ButtonToolbar from './ButtonToolbar';
+import '../../../../Docz.css';
+
+# Buttons
+
+---
+
+## Button
+
+### Props
+
+<Props of={Button} />
+
+### Playground
+
+#### Variant
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <div>
+        <ButtonToolbar>
+          <Button variant="primary">Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="success">Success</Button>
+          <Button variant="warning">Warning</Button>
+          <Button variant="danger">Danger</Button>
+          <Button variant="info">Info</Button>
+          <Button variant="light">Light</Button>
+          <Button variant="dark">Dark</Button>
+          <Button variant="link">Link</Button>
+        </ButtonToolbar>
+        <ButtonToolbar>
+          <Button variant="outline-primary">Primary</Button>
+          <Button variant="outline-secondary">Secondary</Button>
+          <Button variant="outline-success">Success</Button>
+          <Button variant="outline-warning">Warning</Button>
+          <Button variant="outline-danger">Danger</Button>
+          <Button variant="outline-info">Info</Button>
+          <Button variant="outline-light">Light</Button>
+          <Button variant="outline-dark">Dark</Button>
+        </ButtonToolbar>
+      </div>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+## Button Toolbar
+
+<Props of={ButtonToolbar} />
