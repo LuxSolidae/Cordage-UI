@@ -1,0 +1,58 @@
+---
+name: Badges
+route: /atoms/badge
+menu: Atoms
+---
+
+import { Playground, Props } from 'docz';
+import ThemeContext from '@cordage_ui/providers/themes';
+import theme from '@cordage_ui/cordage.json';
+import Badge from './Badge';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../../../Docz.css';
+
+# Badges
+
+---
+
+## Badge
+
+### Props
+
+<Props of={Badge} />
+
+### Playground
+
+#### Variant
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Badge variant="primary">Primary</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="success">Success</Badge>
+      <Badge variant="danger">Danger</Badge>
+      <Badge variant="warning">Warning</Badge>
+      <Badge variant="info">Info</Badge>
+      <Badge variant="light">Light</Badge>
+      <Badge variant="dark">Dark</Badge>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+#### Pills
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Badge pill variant="primary">Primary</Badge>
+      <Badge pill variant="secondary">Secondary</Badge>
+      <Badge pill variant="success">Success</Badge>
+      <Badge pill variant="danger">Danger</Badge>
+      <Badge pill variant="warning">Warning</Badge>
+      <Badge pill variant="info">Info</Badge>
+      <Badge pill variant="light">Light</Badge>
+      <Badge pill variant="dark">Dark</Badge>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
