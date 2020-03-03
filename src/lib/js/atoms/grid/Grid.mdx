@@ -70,13 +70,13 @@ import '../../../../Docz.css';
 ### Playground
 
 <Playground>
-  <div className='metro'>
-    <ThemeContext.Provider theme={theme}>
-      <div>
-        {
-          () => {
-            const style = { backgroundColor: '#bbeffd', border: '1px solid #61dafb', };
-            return (
+  {
+    () => {
+      const style = { backgroundColor: '#bbeffd', border: '1px solid #61dafb', };
+      return (
+        <div className='metro'>
+          <ThemeContext.Provider theme={theme}>
+            <div>
               <Grid.Container>
                 <Grid.Row>
                   <Grid.Col style={style}>
@@ -103,11 +103,39 @@ import '../../../../Docz.css';
                   </Grid.Col>
                 </Grid.Row>
               </Grid.Container>
-            );
-          }
-        }
-      </div>
-    </ThemeContext.Provider>
-  </div>
+            </div>
+          </ThemeContext.Provider>
+        </div>
+      );
+    }
+  }
 </Playground>
 
+
+---
+
+<Playground>
+  {
+    () => {
+      const style = { backgroundColor: '#bbeffd', border: '1px solid #61dafb', };
+      return (
+        <div className='metro'>
+          <ThemeContext.Provider theme={theme}>
+            <Grid.Container>
+              <Grid.Row>
+                <Grid.Col style={style}>1 of 3</Grid.Col>
+                <Grid.Col style={style} xs={6}>2 of 3 (wider)</Grid.Col>
+                <Grid.Col style={style}>3 of 3</Grid.Col>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Col style={style}>1 of 3</Grid.Col>
+                <Grid.Col style={style} xs={5}>2 of 3 (wider)</Grid.Col>
+                <Grid.Col style={style}>3 of 3</Grid.Col>
+              </Grid.Row>
+            </Grid.Container>
+          </ThemeContext.Provider>
+        </div>
+      );
+    }
+  }
+</Playground>
