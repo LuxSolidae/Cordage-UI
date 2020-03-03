@@ -22,8 +22,8 @@ export type Props = {
     () => Location
 }
 
-const Link = ({ icon, replace, to, children }: Props) => (
-  <NavLink className='sidebar-link' to={to} replace={replace}>
+const Link = ({ icon, replace, to, children, ...props }: Props) => (
+  <NavLink className='sidebar-link' to={to} replace={replace} {...props}>
     <img src={icon} />
     {children}
   </NavLink>
