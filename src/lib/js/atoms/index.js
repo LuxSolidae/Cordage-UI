@@ -1,5 +1,6 @@
 export * from './avatar';
 export * from './badge';
+export * from './input';
 export * from './checkbox';
 export * from './grid';
 export * from './link';
