@@ -9,11 +9,42 @@ import ThemeContext from '@cordage_ui/providers/themes';
 import theme from '@cordage_ui/cordage.json';
 import Button from './Button';
 import ButtonToolbar from './ButtonToolbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../../Docz.css';
 
 # Buttons
 
 ---
+
+
+## Button Toolbar
+
+### Props
+
+<Props of={ButtonToolbar} />
+
+### Playground
+
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <div>
+        <Button>First</Button>
+        <Button>Second</Button>
+        <Button>Third</Button>
+        <ButtonToolbar>
+          <Button>Fourth</Button>
+          <Button>Fifth</Button>
+          <Button>Sixth</Button>
+        </ButtonToolbar>
+        <Button>Seventh</Button>
+        <Button>Eight</Button>
+        <Button>Nineth</Button>
+      </div>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
 
 ## Button
 
@@ -55,6 +86,3 @@ import '../../../../Docz.css';
   </div>
 </Playground>
 
-## Button Toolbar
-
-<Props of={ButtonToolbar} />
