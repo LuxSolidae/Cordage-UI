@@ -1,0 +1,141 @@
+---
+name: Grid
+route: /atoms/grid
+menu: Atoms
+---
+
+import { Playground, Props } from 'docz';
+import ThemeContext from '@cordage_ui/providers/themes';
+import theme from '@cordage_ui/cordage.json';
+import Grid from './index';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../../../Docz.css';
+
+# Grid 
+
+---
+
+## Container
+
+### Props
+
+<Props of={Grid.Container} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Grid.Container>
+        Something
+      </Grid.Container>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+
+## Row
+
+### Props
+
+<Props of={Grid.Row} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Grid.Container>
+        <Grid.Row>
+          Row 1
+        </Grid.Row>
+        <Grid.Row>
+          Row 2
+        </Grid.Row>
+        <Grid.Row>
+          Row 3
+        </Grid.Row>
+      </Grid.Container>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+
+## Col
+
+### Props
+
+<Props of={Grid.Col} />
+
+### Playground
+
+<Playground>
+  {
+    () => {
+      const style = { backgroundColor: '#bbeffd', border: '1px solid #61dafb', };
+      return (
+        <div className='metro'>
+          <ThemeContext.Provider theme={theme}>
+            <div>
+              <Grid.Container>
+                <Grid.Row>
+                  <Grid.Col style={style}>
+                    Col 1 of 3
+                  </Grid.Col>
+                  <Grid.Col style={style}>
+                    Col 2 of 3
+                  </Grid.Col>
+                  <Grid.Col style={style}>
+                    Col 3 of 3
+                  </Grid.Col>
+                </Grid.Row>
+                <Grid.Row>
+                  <Grid.Col style={style}>
+                    Col 1 of 2
+                  </Grid.Col>
+                  <Grid.Col style={style}>
+                    Col 2 of 2
+                  </Grid.Col>
+                </Grid.Row>
+                <Grid.Row>
+                  <Grid.Col style={style}>
+                    Col 1 of 1
+                  </Grid.Col>
+                </Grid.Row>
+              </Grid.Container>
+            </div>
+          </ThemeContext.Provider>
+        </div>
+      );
+    }
+  }
+</Playground>
+
+
+---
+
+<Playground>
+  {
+    () => {
+      const style = { backgroundColor: '#bbeffd', border: '1px solid #61dafb', };
+      return (
+        <div className='metro'>
+          <ThemeContext.Provider theme={theme}>
+            <Grid.Container>
+              <Grid.Row>
+                <Grid.Col style={style}>1 of 3</Grid.Col>
+                <Grid.Col style={style} xs={6}>2 of 3 (wider)</Grid.Col>
+                <Grid.Col style={style}>3 of 3</Grid.Col>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Col style={style}>1 of 3</Grid.Col>
+                <Grid.Col style={style} xs={5}>2 of 3 (wider)</Grid.Col>
+                <Grid.Col style={style}>3 of 3</Grid.Col>
+              </Grid.Row>
+            </Grid.Container>
+          </ThemeContext.Provider>
+        </div>
+      );
+    }
+  }
+</Playground>

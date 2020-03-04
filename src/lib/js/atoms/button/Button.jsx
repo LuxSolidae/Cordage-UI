@@ -39,17 +39,17 @@ export type Props = {
 
 const Button = (props: Props) => (
   <ButtonComponent {...props} />
-)
+);
 
 Button.defaultProps = {
   active: undefined,
   as: undefined,
   block: undefined,
   disabled: undefined,
+  href: undefined,
   size: undefined,
   type: undefined,
-  value: undefined,
   variant: undefined,
-}
+};
 
 export default Button;
