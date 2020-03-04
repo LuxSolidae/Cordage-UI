@@ -16,7 +16,6 @@ import theme from '@cordage_ui/cordage.json';
 import '../../../../Docz.css';
 import logo from '../../../../img/logo.svg';
 
-
 # Sidebar
 
 ---
@@ -54,7 +53,7 @@ import logo from '../../../../img/logo.svg';
   <div className='metro'>
     <ThemeContext.Provider theme={theme}>
       <SidebarContext.Provider>
-        <Router history={createBrowserHistory()}>
+        <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
           <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
             <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
             <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
@@ -79,7 +78,7 @@ import logo from '../../../../img/logo.svg';
   <div className='metro'>
     <ThemeContext.Provider theme={theme}>
       <SidebarContext.Provider>
-        <Router history={createBrowserHistory()}>
+        <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
           <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
             <Sidebar.Section text='Section 1'>
               <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
@@ -116,7 +115,7 @@ import logo from '../../../../img/logo.svg';
   <div className='metro'>
     <ThemeContext.Provider theme={theme}>
       <SidebarContext.Provider>
-        <Router history={createBrowserHistory()}>
+        <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
           <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
             <Sidebar.Accordion text='Section 1'>
               <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
