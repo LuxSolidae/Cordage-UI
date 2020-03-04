@@ -1,6 +1,6 @@
 {
   "name": "cordage-ui",
-  "version": "0.3.0",
+  "version": "0.2.4",
   "license": "UNLICENSED",
   "private": false,
   "main": "dist/Docz.js",
@@ -245,6 +245,6 @@
     "build:css:components": "postcss src/lib/css/Docz.pcss -o src/Docz.css",
     "docz:dev": "npm-run-all -p watch:css:components partial:docz:dev",
     "docz:build": "npm-run-all build:css:components partial:docz:build",
-    "publish": "npm publish"
+    "publish:npm": "npm run build && npm publish"
   }
 }
