@@ -1,0 +1,57 @@
+---
+name: Pagination
+route: /molecules/pagination
+menu: Molecules
+---
+
+import { Playground, Props } from 'docz';
+import ThemeContext from '@cordage_ui/providers/themes';
+import theme from '@cordage_ui/cordage.json';
+import Pagination from './index';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../../../Docz.css';
+
+# Pagination
+
+---
+
+## Pagination
+
+### Props
+
+<Props of={Pagination.Wrap} />
+
+### Playground
+
+#### Sizes
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <h5>Normal</h5>
+      <Pagination.Wrap>
+        <Pagination.Item>1</Pagination.Item>
+        <Pagination.Item active>2</Pagination.Item>
+        <Pagination.Item>3</Pagination.Item>
+        <Pagination.Item>4</Pagination.Item>
+        <Pagination.Item>5</Pagination.Item>
+      </Pagination.Wrap>
+      <h5>Large</h5>
+      <Pagination.Wrap size='lg'>
+        <Pagination.Item>1</Pagination.Item>
+        <Pagination.Item active>2</Pagination.Item>
+        <Pagination.Item>3</Pagination.Item>
+        <Pagination.Item>4</Pagination.Item>
+        <Pagination.Item>5</Pagination.Item>
+      </Pagination.Wrap>
+      <h5>Small</h5>
+      <Pagination.Wrap size='sm'>
+        <Pagination.Item>1</Pagination.Item>
+        <Pagination.Item active>2</Pagination.Item>
+        <Pagination.Item>3</Pagination.Item>
+        <Pagination.Item>4</Pagination.Item>
+        <Pagination.Item>5</Pagination.Item>
+      </Pagination.Wrap>
+    </ThemeContext.Provider>
+  </div>
+</Playground>

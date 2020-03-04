@@ -1,0 +1,32 @@
+---
+name: Avatars
+route: /atoms/avatar
+menu: Atoms
+---
+
+import Avatar from './Avatar';
+import { Playground, Props } from 'docz'
+import ThemeContext from '@cordage_ui/providers/themes';
+import theme from '@cordage_ui/cordage.json';
+import '../../../../Docz.css';
+
+# Avatars
+
+---
+
+## Avatar
+
+### Props
+
+<Props of={Avatar} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Avatar alt='Abecedario' defaultBaseURL='/public/assets/'/>
+      <Avatar alt='Becedario' defaultBaseURL='/public/assets/'/>
+    </ThemeContext.Provider>
+  </div>
+</Playground>

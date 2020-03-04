@@ -1,0 +1,144 @@
+---
+name: Sidebar
+route: /organisms/Sidebar
+menu: Organisms
+---
+
+import { Playground, Props } from 'docz';
+import { Router } from 'react-router';
+import { createBrowserHistory } from "history";
+
+import Sidebar from './index';
+import SidebarContext from '@cordage_ui/providers/sidebar';
+import ThemeContext from '@cordage_ui/providers/themes';
+import theme from '@cordage_ui/cordage.json';
+
+import '../../../../Docz.css';
+import logo from '../../../../img/logo.svg';
+
+
+# Sidebar
+
+---
+
+## Menu
+
+### Props
+
+<Props of={Sidebar.Menu} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <SidebarContext.Provider>
+        <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
+          <div>Menu</div>
+        </Sidebar.Menu>
+      </SidebarContext.Provider>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+
+## Link
+
+### Props
+
+<Props of={Sidebar.Link} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <SidebarContext.Provider>
+        <Router history={createBrowserHistory()}>
+          <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
+            <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
+            <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
+            <Sidebar.Link to='#link3'>Link 3</Sidebar.Link>
+          </Sidebar.Menu>
+        </Router>
+      </SidebarContext.Provider>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+
+## Section
+
+### Props
+
+<Props of={Sidebar.Section} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <SidebarContext.Provider>
+        <Router history={createBrowserHistory()}>
+          <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
+            <Sidebar.Section text='Section 1'>
+              <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
+              <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
+              <Sidebar.Link to='#link3'>Link 3</Sidebar.Link>
+            </Sidebar.Section>
+            <Sidebar.Section text='Section 2'>
+              <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
+              <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
+              <Sidebar.Link to='#link3'>Link 3</Sidebar.Link>
+            </Sidebar.Section>
+            <Sidebar.Section text='Section 3'>
+              <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
+              <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
+              <Sidebar.Link to='#link3'>Link 3</Sidebar.Link>
+            </Sidebar.Section>
+          </Sidebar.Menu>
+        </Router>
+      </SidebarContext.Provider>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+
+## Accordion
+
+### Props
+
+<Props of={Sidebar.Accordion} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <SidebarContext.Provider>
+        <Router history={createBrowserHistory()}>
+          <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
+            <Sidebar.Accordion text='Section 1'>
+              <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
+              <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
+              <Sidebar.Link to='#link3'>Link 3</Sidebar.Link>
+            </Sidebar.Accordion>
+            <Sidebar.Accordion>
+              <Sidebar.Section text='Section 2'>
+                <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
+                <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
+                <Sidebar.Link to='#link3'>Link 3</Sidebar.Link>
+              </Sidebar.Section>
+              <Sidebar.Section text='Section 3'>
+                <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
+                <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
+                <Sidebar.Link to='#link3'>Link 3</Sidebar.Link>
+              </Sidebar.Section>
+            </Sidebar.Accordion>
+          </Sidebar.Menu>
+        </Router>
+      </SidebarContext.Provider>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+

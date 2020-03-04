@@ -2,6 +2,7 @@
   /* Font */
   --main-font: 'Metropolis', sans-serif;
   --custom-icons: 'Cordage-Icons', sans-serif;
+  --base-font-size: 14px;
 
   --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 
@@ -16,6 +17,10 @@
 @custom-media --mobile-screens (width < 768px);
 
 /* Custom selectors */
+@custom-selector :--title-tags h1, h2, h3, h4, h5, h6;
+@custom-selector :--text-tags p, span, a;
+
+/* Custom pseudo selectors */
 @custom-selector :--active :active, .active;
 @custom-selector :--disabled :disabled, .disabled;
 @custom-selector :--focus :focus, .focus;

@@ -1,0 +1,11 @@
+{
+  "sidebar": {
+    "main": {
+      "backgroundColor": "#151515",
+      "color": "white"
+    },
+    "toggler": {
+      "backgroundColor": "#3d3d3d"
+    }
+  }
+}
