@@ -3,3 +3,32 @@ name: Input
 route: /atoms/inputs
 menu: Atoms
 ---
+
+import { Playground, Props } from 'docz';
+import ThemeContext from '@cordage_ui/providers/themes';
+import theme from '@cordage_ui/cordage.json';
+import Input from './Input';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../../../Docz.css';
+
+# Inputs
+
+---
+
+## Input
+
+### Props
+
+<Props of={Input} />
+
+### Playground
+
+<Playground>
+  <div className='metro custom-pg'>
+    <ThemeContext.Provider theme={theme}>
+      <Input 
+        placeholder='Placeholder'
+      />
+    </ThemeContext.Provider>
+  </div>
+</Playground>

@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { FormGroup, FormControl } from 'react-bootstrap/';
+import { FormGroup, FormControl, FormLabel } from 'react-bootstrap/';
 
 const InputTypesEnum = {
   date: 'date',
@@ -14,15 +14,40 @@ const InputTypesEnum = {
 export type Props = {
   id: string,
   className?: string,
-  type?: $Keys<typeof InputTypesEnum>,
   label?: string,
+  placeholder?: string,
+  type?: $Keys<typeof InputTypesEnum>,
 
 };
 
-const Input = (props: Props) => (
-  <FormControl
-    placeholder="Username"
-  />
-);
+
+const Input = (props: Props) => {
+  const {
+    id,
+    className,
+    label,
+    placeholder,
+    type,
+
+  } = props;
+
+  return (
+    <FormGroup controlId={id}>      
+      { label && <FormLabel>{label}</FormLabel> }
+      <FormControl
+        placeholder={placeholder}
+      />
+    </FormGroup>
+  );
+};
+
+Input.defaultProps ={
+  id: undefined,
+  className: undefined,
+  label: undefined,
+  placeholder: undefined,
+  type: 'text',
+
+}
 
 export default Input;
