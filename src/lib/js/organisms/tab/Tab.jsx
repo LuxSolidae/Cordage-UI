@@ -5,6 +5,7 @@ import TabComponent from 'react-bootstrap/Tab';
 export type Props = {
   eventKey: string,
   title: string,
+  disabled?: boolean,
   children?: React.Node,
 }
 
@@ -15,7 +16,7 @@ const Tab = ({ children, ...props }: Props) => (
 );
 
 Tab.defaultProps = {
-  
+  disabled: false,
 }
 
 export default Tab;

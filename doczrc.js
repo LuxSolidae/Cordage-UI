@@ -21,6 +21,9 @@ export default {
     },
     'Atoms',
   ],
+  ignore: [
+    'dist/'
+  ],
   themeConfig: {
     colors: {
       primary: customColors.seaButton,
