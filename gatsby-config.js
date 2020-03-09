@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
     `gatsby-plugin-flow`,
-    `gatsby-theme-docz`
+    `gatsby-theme-docz`,
   ],
 }
