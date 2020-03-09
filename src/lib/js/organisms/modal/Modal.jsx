@@ -1,13 +1,16 @@
-import React from 'React'
-import { Modal } from 'react-bootstrap';
+// @flow
+import * as React from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
-export const Modal = () => {
 
-  const [show, setShow] = useState(false);
+export const Example = () => {
+  const [show, setShow] = React.useState(false);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  return(
+  return (
     <>
       <Button variant="primary" onClick={handleShow}>
         Launch demo modal
@@ -31,4 +34,4 @@ export const Modal = () => {
   );
 }
 
-export default Modal;
+export default Example;

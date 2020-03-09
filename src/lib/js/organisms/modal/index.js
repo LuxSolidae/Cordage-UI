@@ -1,5 +1,5 @@
-import Modal from './Modal';
+import Example from './Modal';
 
 export {
-  Modal
+  Example
 };
