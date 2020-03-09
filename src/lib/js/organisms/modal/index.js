@@ -1,5 +1,5 @@
-import Example from './Modal';
+import Modalc from './Modal';
 
 export {
-  Example
+  Modalc
 };

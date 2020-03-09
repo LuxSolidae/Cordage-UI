@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 
-export const Example = () => {
+export const Modalc = () => {
   const [show, setShow] = React.useState(false);
 
   const handleClose = () => setShow(false);
@@ -13,10 +13,10 @@ export const Example = () => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Abrir modal
+        Open Modal
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal centered show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
@@ -34,4 +34,4 @@ export const Example = () => {
   );
 }
 
-export default Example;
+export default Modalc;
