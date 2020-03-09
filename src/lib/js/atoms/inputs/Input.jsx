@@ -8,7 +8,7 @@ const InputTypesEnum = {
   password: 'password',
   phone: 'phone',
   text: 'text',
-  textarea: 'textarea',
+  textarea: 'textarea'
 };
 
 export type Props = {
@@ -17,6 +17,9 @@ export type Props = {
   label?: string,
   placeholder?: string,
   type?: $Keys<typeof InputTypesEnum>,
+
+  required?: boolean,
+  readOnly?: boolean,
 
 };
 
@@ -34,7 +37,10 @@ const Input = (props: Props) => {
   return (
     <FormGroup controlId={id}>      
       { label && <FormLabel>{label}</FormLabel> }
+
       <FormControl
+        className={className}
+        type={type}
         placeholder={placeholder}
       />
     </FormGroup>
@@ -47,6 +53,9 @@ Input.defaultProps ={
   label: undefined,
   placeholder: undefined,
   type: 'text',
+
+  required: false,
+  readOnly: false,
 
 }
 
