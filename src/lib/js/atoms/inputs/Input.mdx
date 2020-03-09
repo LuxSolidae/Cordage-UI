@@ -28,8 +28,34 @@ import '../../../../Docz.css';
 <Playground>
   <div className='metro custom-pg'>
     <ThemeContext.Provider theme={theme}>
-      <h1>Comment</h1>
+      <Formik
+        initialValues={{ name: '' }}
+        //TODO: Validation schema
+        onSubmit={ (values, {setSubmitting}) => {
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        {(
+          {
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting
+          }
+        ) => (
+          <Form onSubmit={handleSubmit}>
+            <Input
+              controlID='dummy-ID'
+              placeholder='Name'
+            />
 
+            <button type='submit'>Submit</button>
+          </Form>
+        )}
+      </Formik>
     </ThemeContext.Provider>
   </div>
 </Playground>
