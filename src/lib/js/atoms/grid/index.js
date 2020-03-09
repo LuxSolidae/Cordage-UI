@@ -8,4 +8,6 @@ const Grid = {
   Col,
 }
 
-export default Grid;
+export {
+  Grid
+};
