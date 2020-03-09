@@ -1,7 +1,7 @@
 import Context from './Context';
 import Provider from './Provider';
 
-export const Sidebar = {
+const Sidebar = {
   Context,
   Provider,
 };

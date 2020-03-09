@@ -7,8 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import Accordion from './Accordion';
-import SidebarContext from '../../providers/sidebar';
-import ThemeContext from '../../providers/themes';
+import SidebarContext from '../../providers';
+import ThemeContext from '../../providers';
 import { Hide } from '../../atoms/icons';
 
 export type Props = {
