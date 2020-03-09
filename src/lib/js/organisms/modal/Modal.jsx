@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import className from 'classnames';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
@@ -15,19 +16,11 @@ export const Modalc = ({header, info}) => {
         Open Modal
       </Button>
 
-      <Modal centered show={show} onHide={handleClose}>
+      <Modal className='modal' centered show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{header}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{info}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );
