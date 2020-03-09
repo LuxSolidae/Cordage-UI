@@ -13,7 +13,7 @@ export const Example = () => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        Abrir modal
       </Button>
 
       <Modal show={show} onHide={handleClose}>
