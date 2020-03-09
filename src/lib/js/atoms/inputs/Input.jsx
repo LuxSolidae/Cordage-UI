@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { FormGroup, FormControl, FormLabel } from 'react-bootstrap/';
+import { FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 
 const InputTypesEnum = {
   date: 'date',
@@ -32,6 +32,8 @@ const Input = (props: Props) => {
     placeholder,
     type,
 
+    required,
+    readOnly
   } = props;
 
   return (
@@ -42,6 +44,8 @@ const Input = (props: Props) => {
         className={className}
         type={type}
         placeholder={placeholder}
+        required={required}
+        readOnly={readOnly}
       />
     </FormGroup>
   );

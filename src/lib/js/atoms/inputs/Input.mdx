@@ -6,6 +6,8 @@ menu: Atoms
 
 import { Playground, Props } from 'docz';
 import ThemeContext from '@cordage_ui/providers/themes';
+import { Formik } from 'formik';
+import { Form } from 'react-bootstrap';
 import theme from '@cordage_ui/cordage.json';
 import Input from './Input';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,9 +28,8 @@ import '../../../../Docz.css';
 <Playground>
   <div className='metro custom-pg'>
     <ThemeContext.Provider theme={theme}>
-      <Input 
-        placeholder='Placeholder'
-      />
+      <h1>Comment</h1>
+
     </ThemeContext.Provider>
   </div>
 </Playground>
