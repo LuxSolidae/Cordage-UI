@@ -6,4 +6,6 @@ const Pagination = {
   Item,
 };
 
-export default Pagination;
+export {
+  Pagination,
+};
