@@ -26,6 +26,7 @@ const Modalc = ({header, infoType, info}) => {
 
       <Modal
           className='modal'
+          dialogClassName='modal-container'
           keyboard
           centered
           show={show}
