@@ -44,6 +44,7 @@ const Input = (props: Props) => {
       { label && <FormLabel>{label}</FormLabel> }
 
       <FormControl
+        className={className}
         name={name}
         type={type}
         placeholder={placeholder}
@@ -51,7 +52,6 @@ const Input = (props: Props) => {
         readOnly={readOnly}
         onChange={onChange}
         onBlur={onBlur}
-        className={className}
       />
     </FormGroup>
   );

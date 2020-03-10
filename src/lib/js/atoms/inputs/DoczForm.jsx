@@ -11,7 +11,10 @@ const Schema = Yup.object().shape({
   name: Yup.string()
     .min(3, 'This field must have at least 3 characters.')
     .max(50, 'This field can\'t be longer than 50 characters.')
-    .required('This field is required.')
+    .required('This field is required.'),
+  email: Yup.string()
+    .email('Enter a valid email.')
+    .required('Email is required.'),
 });
 
 
@@ -35,9 +38,9 @@ const DoczForm = () => {
       ) => (
         <Form onSubmit={handleSubmit}>
           <Input
+            id='nameInput'
             type='text'
             name='name'
-            id='nameInput'
             label='Name'
             placeholder='Enter your name'
             value={values.name}
@@ -46,9 +49,24 @@ const DoczForm = () => {
           />
 
           {touched.name && errors.name ? (
-            <div className="error-message">{errors.name}</div>
+            <div className='input-error'>{errors.name}</div>
           ): null}
 
+          <Input
+            id='emailInput'
+            type='email'
+            name='email'
+            label='Email'
+            placeholder='Enter your email'
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+
+          {touched.email && errors.email ? (
+            <div className='input-error'>{errors.email}</div>
+          ): null}
+          
           <button type='submit'>Submit</button>
         </Form>
       )}
