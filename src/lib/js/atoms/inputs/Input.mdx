@@ -10,6 +10,7 @@ import { Formik } from 'formik';
 import { Form } from 'react-bootstrap';
 import theme from '@cordage_ui/cordage.json';
 import Input from './Input';
+import DoczForm from './DoczForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../../Docz.css';
 
@@ -28,34 +29,7 @@ import '../../../../Docz.css';
 <Playground>
   <div className='metro custom-pg'>
     <ThemeContext.Provider theme={theme}>
-      <Formik
-        initialValues={{ name: '' }}
-        //TODO: Validation schema
-        onSubmit={ (values, {setSubmitting}) => {
-          alert(JSON.stringify(values, null, 2));
-        }}
-      >
-        {(
-          {
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            isSubmitting
-          }
-        ) => (
-          <Form onSubmit={handleSubmit}>
-            <Input
-              controlID='dummy-ID'
-              placeholder='Name'
-            />
-
-            <button type='submit'>Submit</button>
-          </Form>
-        )}
-      </Formik>
+      <DoczForm />
     </ThemeContext.Provider>
   </div>
 </Playground>

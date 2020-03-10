@@ -17,10 +17,11 @@ export type Props = {
   label?: string,
   placeholder?: string,
   type?: $Keys<typeof InputTypesEnum>,
-
   required?: boolean,
   readOnly?: boolean,
-
+  name?: string,
+  onChange?: Function,
+  onBlur?: Function,
 };
 
 
@@ -31,9 +32,11 @@ const Input = (props: Props) => {
     label,
     placeholder,
     type,
-
     required,
-    readOnly
+    readOnly,
+    name,
+    onChange,
+    onBlur,
   } = props;
 
   return (
@@ -41,11 +44,14 @@ const Input = (props: Props) => {
       { label && <FormLabel>{label}</FormLabel> }
 
       <FormControl
-        className={className}
+        name={name}
         type={type}
         placeholder={placeholder}
         required={required}
         readOnly={readOnly}
+        onChange={onChange}
+        onBlur={onBlur}
+        className={className}
       />
     </FormGroup>
   );
@@ -57,10 +63,8 @@ Input.defaultProps ={
   label: undefined,
   placeholder: undefined,
   type: 'text',
-
   required: false,
   readOnly: false,
-
 }
 
 export default Input;
