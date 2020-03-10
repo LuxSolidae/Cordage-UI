@@ -1,12 +1,18 @@
-import Wrap from './Tabs'
-import Tab from './Tab'
+import Wrap from './Wrap';
+import Tab from './Tab';
+import Container from './Container';
+import Content from './Content';
+import Pane from './Pane';
 
 const Tabs = {
   Wrap,
-  // Container,
+  Container,
+  Content,
   Tab,
-  // Pane,
+  Pane,
   // Link,
 };
 
-export default Tabs;
+export {
+  Tabs
+};

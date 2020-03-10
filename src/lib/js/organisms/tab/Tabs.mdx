@@ -6,12 +6,10 @@ menu: Organisms
 
 import { Playground, Props } from 'docz';
 import { Router } from 'react-router';
-import { createBrowserHistory } from "history";
 
-import Tabs from './index';
-import ThemeContext from '@cordage_ui/providers/themes';
+import { Tabs, ThemeContext, Grid } from '@cordage_ui';
+import Nav from 'react-bootstrap/Nav'
 import theme from '@cordage_ui/cordage.json';
-// import '@_src_/Docz.css';
 
 # Tabs
 
@@ -46,10 +44,81 @@ import theme from '@cordage_ui/cordage.json';
   <div className='metro'>
     <ThemeContext.Provider theme={theme}>
       <Tabs.Wrap>
-        <Tabs.Tab eventKey='first' title='First'>First Component</Tabs.Tab>
-        <Tabs.Tab eventKey='second' title='Second'>Second Component</Tabs.Tab>
-        <Tabs.Tab eventKey='third' title='Third'>Third Component</Tabs.Tab>
+        <Tabs.Tab eventKey='first' title='First'>
+          First Component
+        </Tabs.Tab>
+        <Tabs.Tab eventKey='second' title={<i>Second</i>}>
+          Second Component
+        </Tabs.Tab>
+        <Tabs.Tab eventKey='third' title={<b>Third</b>}>
+          Third Component
+        </Tabs.Tab>
+        <Tabs.Tab disabled eventKey='fourth' title='Fourth'>
+          Disabled Component
+        </Tabs.Tab>
       </Tabs.Wrap>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+
+## Other Components
+
+### Pane
+
+#### Props
+
+This is a not so automated version of the component `Tab`.
+
+<Props of={Tabs.Pane} />
+
+
+### Content
+
+#### Props
+
+This is a required wrapper of the `Pane` components.
+
+<Props of={Tabs.Content} />
+
+
+### Content
+
+#### Props
+
+This is a required wrapper of the `Content` component and the `Nav` component.
+
+<Props of={Tabs.Content} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Tabs.Container id="left-tabs-example" defaultActiveKey="first">
+        <Grid.Row>
+          <Grid.Col sm={3}>
+            <Nav variant="pills" className="flex-column">
+              <Nav.Item>
+                <Nav.Link eventKey="first">Tab 1</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="second">Tab 2</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Grid.Col>
+          <Grid.Col sm={9}>
+            <Tabs.Content>
+              <Tabs.Pane eventKey="first">
+                First
+              </Tabs.Pane>
+              <Tabs.Pane eventKey="second">
+                Second
+              </Tabs.Pane>
+            </Tabs.Content>
+          </Grid.Col>
+        </Grid.Row>
+      </Tabs.Container>
     </ThemeContext.Provider>
   </div>
 </Playground>
