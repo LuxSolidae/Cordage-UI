@@ -36,7 +36,7 @@ const Menu = ({ logo, zone, children }: Props) => {
         style={typy(theme, 'sidebar.main').safeObject}
       >
         <Container>
-          <Row>
+          <Row className='sticky-head'>
             <Col className='sidebar-head'>
               <img src={typy(logo, 'src').safeString} alt={typy(logo, 'alt').safeString} />
               <span>{zone}</span>
