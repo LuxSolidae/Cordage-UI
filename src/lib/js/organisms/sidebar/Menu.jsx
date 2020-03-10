@@ -44,9 +44,9 @@ const Menu = ({ logo, zone, children }: Props) => {
             </Col>
           </Row>
           <Row>
-            <Col className='sidebar-body'>
+            <div className='sidebar-body'>
               {children}
-            </Col>
+            </div>
           </Row>
         </Container>
       </div>
