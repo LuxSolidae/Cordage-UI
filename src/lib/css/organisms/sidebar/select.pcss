@@ -63,9 +63,14 @@
       letter-spacing: -0.14px;
       line-height: 1.43;
       padding: 0.5rem 1rem;
+      transition: background-color 0.3s;
 
       &:not(:last-child) {
         border-bottom: solid 1px var(--greyish-brown);
+      }
+
+      &:hover {
+        background-color: var(--greyish-brown);
       }
 
       > .image-wrapper {
