@@ -61,26 +61,24 @@ const Input = (props: Props) => {
       break;
     
     default:
-      component = null;
+      component = (
+        <FormControl
+          className={className}
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          required={required}
+          readOnly={readOnly}
+          onChange={onChange}
+          onBlur={onBlur}
+        />
+      );
       break;
   }
 
   return (
     <FormGroup controlId={id}>      
-      { label && <FormLabel>{label}</FormLabel> }
-
-      {/* 
-      <FormControl
-        className={className}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={required}
-        readOnly={readOnly}
-        onChange={onChange}
-        onBlur={onBlur}
-      />
-      */}
+      { label && <FormLabel>{label}</FormLabel> }      
 
       { component }
 

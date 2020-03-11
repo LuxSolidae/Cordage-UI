@@ -8,13 +8,17 @@ import Input from './Input';
 
 
 const Schema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, 'This field must have at least 3 characters.')
-    .max(50, 'This field can\'t be longer than 50 characters.')
-    .required('This field is required.'),
+  text: Yup.string()
+    .min(3, 'Text must have at least 3 characters.')
+    .max(50, 'Text can\'t be longer than 50 characters.')
+    .required('Text is required.'),
   email: Yup.string()
     .email('Enter a valid email.')
     .required('Email is required.'),
+  textarea: Yup.string()
+    .min(10, 'Textarea must have at least 10 characters.')
+    .max(100, 'Textarea can\'t be longer than 100 characters')
+    .required('Textarea is required.'),
 });
 
 
@@ -23,7 +27,10 @@ const DoczForm = () => {
     <Formik
       initialValues={{ name: '' }}
       validationSchema={Schema}
-      onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
+      onSubmit={(values, errors) => {
+        alert(JSON.stringify(values, null, 2));
+        alert(JSON.stringify(errors, null, 2));
+      }}
     >
       {(
         {
@@ -38,18 +45,19 @@ const DoczForm = () => {
       ) => (
         <Form onSubmit={handleSubmit}>
           <Input
-            id='nameInput'
+            id='text'
             type='text'
-            name='name'
-            label='Name'
-            placeholder='Enter your name'
+            name='text'
+            label='Text'
+            placeholder='Enter some characters'
             value={values.name}
             onChange={handleChange}
             onBlur={handleBlur}
+            required
           />
 
           <Input
-            id='emailInput'
+            id='email'
             type='email'
             name='email'
             label='Email'
@@ -57,16 +65,18 @@ const DoczForm = () => {
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
+            required
           />
 
           <Input
-            id='text-box'
+            id='textarea'
             type='textarea'
-            name='text-box'
-            label='Your message'
+            name='textarea'
+            label='Text Area'
             placeholder='Enter your message'
             onChange={handleChange}
             onBlur={handleBlur}
+            required
           />
 
           <button type='submit'>Submit</button>
