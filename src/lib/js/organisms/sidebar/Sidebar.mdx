@@ -14,6 +14,7 @@ import logo from '@_src_/img/logo.svg';
 import documentControl from '@_src_/img/icons/document-control.svg';
 import capas from '@_src_/img/icons/capa-quality-events.svg';
 import users from '@_src_/img/icons/users.svg';
+import locations from '@_src_/img/icons/locations.svg';
 // import '@_src_/Docz.css';
 
 # Sidebar
@@ -35,6 +36,36 @@ import users from '@_src_/img/icons/users.svg';
         <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
           <div>Menu</div>
         </Sidebar.Menu>
+      </SidebarContext.Provider>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+---
+
+## Select
+
+### Props
+
+<Props of={Sidebar.Select} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <SidebarContext.Provider>
+        <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
+          <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
+            <Sidebar.Select
+              options={[
+                { key: 1, text: 'Location 123', icon: locations },
+                { key: 2, text: 'Location 124', icon: locations },
+                { key: 3, text: 'Location 125', icon: locations },
+              ]}
+            />              
+          </Sidebar.Menu>
+        </Router>
       </SidebarContext.Provider>
     </ThemeContext.Provider>
   </div>
