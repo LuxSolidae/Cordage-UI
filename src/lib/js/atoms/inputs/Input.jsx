@@ -1,6 +1,8 @@
 // @flow
 import * as React from 'react';
 import { FormGroup, FormControl, FormLabel } from 'react-bootstrap';
+import { ErrorMessage } from 'formik';
+
 
 const InputTypesEnum = {
   date: 'date',
@@ -24,7 +26,6 @@ export type Props = {
   onBlur?: Function,
 };
 
-
 const Input = (props: Props) => {
   const {
     id,
@@ -36,7 +37,7 @@ const Input = (props: Props) => {
     readOnly,
     name,
     onChange,
-    onBlur,
+    onBlur
   } = props;
 
   return (
@@ -53,6 +54,10 @@ const Input = (props: Props) => {
         onChange={onChange}
         onBlur={onBlur}
       />
+      
+      <div className='input-error'>
+        <ErrorMessage name={name} />
+      </div>
     </FormGroup>
   );
 };

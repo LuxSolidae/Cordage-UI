@@ -47,11 +47,7 @@ const DoczForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-
-          {touched.name && errors.name ? (
-            <div className='input-error'>{errors.name}</div>
-          ): null}
-
+          
           <Input
             id='emailInput'
             type='email'
@@ -62,10 +58,6 @@ const DoczForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-
-          {touched.email && errors.email ? (
-            <div className='input-error'>{errors.email}</div>
-          ): null}
           
           <button type='submit'>Submit</button>
         </Form>
