@@ -7,6 +7,8 @@ import { ErrorMessage } from 'formik';
 const InputTypesEnum = {
   date: 'date',
   email: 'email',
+  file: 'file',
+  image: 'image',
   password: 'password',
   phone: 'phone',
   text: 'text',
@@ -21,7 +23,7 @@ export type Props = {
   type?: $Keys<typeof InputTypesEnum>,
   required?: boolean,
   readOnly?: boolean,
-  name?: string,
+  name?: null,
   onChange?: Function,
   onBlur?: Function,
 };
@@ -40,10 +42,34 @@ const Input = (props: Props) => {
     onBlur
   } = props;
 
+  let component;
+
+  switch(type) {
+    case 'textarea':
+      component = (
+        <FormControl
+          className={className}
+          name={name}
+          as='textarea'
+          placeholder={placeholder}
+          required={required}
+          readOnly={readOnly}
+          onChange={onChange}
+          onBlur={onBlur}
+        />
+      );
+      break;
+    
+    default:
+      component = null;
+      break;
+  }
+
   return (
     <FormGroup controlId={id}>      
       { label && <FormLabel>{label}</FormLabel> }
 
+      {/* 
       <FormControl
         className={className}
         name={name}
@@ -54,7 +80,10 @@ const Input = (props: Props) => {
         onChange={onChange}
         onBlur={onBlur}
       />
-      
+      */}
+
+      { component }
+
       <div className='input-error'>
         <ErrorMessage name={name} />
       </div>

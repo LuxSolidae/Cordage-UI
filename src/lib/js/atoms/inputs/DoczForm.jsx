@@ -47,7 +47,7 @@ const DoczForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          
+
           <Input
             id='emailInput'
             type='email'
@@ -58,7 +58,17 @@ const DoczForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          
+
+          <Input
+            id='text-box'
+            type='textarea'
+            name='text-box'
+            label='Your message'
+            placeholder='Enter your message'
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+
           <button type='submit'>Submit</button>
         </Form>
       )}
