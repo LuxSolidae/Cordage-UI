@@ -7,15 +7,14 @@ export type Props = {
   /** Header of the modal */
   header: string,
   /** Type of modal to be used (Success, Error, etc.) */
-  modalType?: 'success' | 'error' | 'confirm' |'danger',
+  variant?: 'success' | 'error' | 'confirm' |'danger',
   /** Text inside the modal. */
   info: string,
   /** Text inside the button. */
   buttonText: string,
-
 };
 
-const Modalc = ( {header, modalType, info, buttonText}: Props ) => {
+const Modalc = ( {header, variant, info, buttonText}: Props ) => {
 
   const [show, setShow] = React.useState(false);
 
@@ -24,7 +23,7 @@ const Modalc = ( {header, modalType, info, buttonText}: Props ) => {
 
   return (
     <>
-      <Button variant='primary' onClick={handleShow}>
+      <Button variant={variant}  onClick={handleShow}>
         {buttonText}
       </Button>
 
@@ -46,6 +45,10 @@ const Modalc = ( {header, modalType, info, buttonText}: Props ) => {
       </Modal>
     </>
   );
+}
+
+Modalc.defaultProps = {
+  variant: 'success'
 }
 
 export default Modalc;

@@ -5,12 +5,58 @@ menu: Organisms
 ---
 
 import Modalc from './Modal';
+import { Playground, Props } from 'docz';
+//import { ThemeContext, Pagination } from '@cordage_ui';
+import theme from '@cordage_ui/cordage.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+# Modal
+
+---
+
+### Props
+
+<Props of={ Modalc } />
+
+### Playground
+
+### Variants
 
 <Modalc
-  buttonText='Open the modal'
+  buttonText='Success'
   header='Invitation sent'
-  infoType='Success!'
+  variant='success'
   info='We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them
   check their emails. In case they don’t receive a message ask them to check their spam folder. This action
   make take up to 5 minutes.'
 />
+
+<Modalc
+  buttonText='Error'
+  header='Invitation sent'
+  variant='success'
+  info='We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them
+  check their emails. In case they don’t receive a message ask them to check their spam folder. This action
+  make take up to 5 minutes.'
+/>
+
+<Modalc
+  buttonText='Confirm'
+  header='Invitation sent'
+  variant='success'
+  info='We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them
+  check their emails. In case they don’t receive a message ask them to check their spam folder. This action
+  make take up to 5 minutes.'
+/>
+
+<Modalc
+  buttonText='Danger'
+  header='Invitation sent'
+  variant='danger'
+  info='We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them
+  check their emails. In case they don’t receive a message ask them to check their spam folder. This action
+  make take up to 5 minutes.'
+/>
+
+
