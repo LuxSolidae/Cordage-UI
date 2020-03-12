@@ -8,7 +8,7 @@ type Props = {
   description?: string,
 };
 
-export const Administrative = ({ children, title, description }:Props) => (
+export const Administrative = ({ children, title, description }: Props) => (
   <div className='page page-administrative'>
     <div className='page-header'>
       <Grid.Container>
