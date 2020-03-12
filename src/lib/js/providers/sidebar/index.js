@@ -1,9 +1,9 @@
 import Context from './Context';
 import Provider from './Provider';
 
-const Sidebar = {
+const SidebarContext = {
   Context,
   Provider,
 };
 
-export default Sidebar;
+export default SidebarContext;
