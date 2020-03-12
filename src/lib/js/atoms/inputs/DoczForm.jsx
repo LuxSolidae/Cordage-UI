@@ -25,7 +25,7 @@ const Schema = Yup.object().shape({
 const DoczForm = () => {
   return (
     <Formik
-      initialValues={{ name: '' }}
+      initialValues={{ text: '', email: '', textarea: '' }}
       validationSchema={Schema}
       onSubmit={(values, errors) => {
         alert(JSON.stringify(values, null, 2));
