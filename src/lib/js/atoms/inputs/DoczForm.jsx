@@ -58,6 +58,7 @@ const DoczForm = () => {
 
           <Input
             id='email'
+            icon='email'
             type='email'
             name='email'
             label='Email'

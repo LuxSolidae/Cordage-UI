@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import classnames from 'classnames';
 import { FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import { ErrorMessage } from 'formik';
 
@@ -17,6 +18,7 @@ const InputTypesEnum = {
 
 export type Props = {
   id: string,
+  icon?: string,
   className?: string,
   label?: string,
   placeholder?: string,
@@ -31,6 +33,7 @@ export type Props = {
 const Input = (props: Props) => {
   const {
     id,
+    icon,
     className,
     label,
     placeholder,
@@ -56,6 +59,7 @@ const Input = (props: Props) => {
           readOnly={readOnly}
           onChange={onChange}
           onBlur={onBlur}
+          icon={type}
         />
       );
       break;
@@ -71,16 +75,20 @@ const Input = (props: Props) => {
           readOnly={readOnly}
           onChange={onChange}
           onBlur={onBlur}
+          icon={icon}
         />
       );
       break;
   }
 
   return (
-    <FormGroup controlId={id}>      
+    <FormGroup controlId={id} className={classnames({ 'with-decorator': icon }) }>      
       { label && <FormLabel>{label}</FormLabel> }      
 
       { component }
+      
+      <i className="fab fa-500px input-icon"></i>
+      {icon}
 
       <div className='input-error'>
         <ErrorMessage name={name} />
@@ -89,8 +97,10 @@ const Input = (props: Props) => {
   );
 };
 
+
 Input.defaultProps ={
   id: undefined,
+  icon: '',
   className: undefined,
   label: undefined,
   placeholder: undefined,
