@@ -14,7 +14,7 @@ type Props = {
   /**
    * Expects the key of the selected option.
    */
-  selected?: number, 
+  defaultSelected?: number, 
   options: Option[],
   onSelect?: (option: Option) => void,
 }
@@ -35,21 +35,23 @@ export const useOutsideCallback = (ref, setOpen) => {
   });
 }
 
-export const Select = ({ options, onSelect }: Props) => {
+export const Select = ({ options, onSelect, defaultSelected }: Props) => {
   const [selected, setSelected] = React.useState({});
   const [open, setOpen] = React.useState(false);
   const wrapperRef = React.useRef(null);
   useOutsideCallback(wrapperRef, setOpen);
 
   React.useEffect(() => {
-    let selected;
-    if (typy(selected).isNumber) {
-      // TODO: Select the option
+    let newSelected;
+    if (typy(defaultSelected).isNumber) {
+      const [defaultOption] = options
+        .filter(option => option.key === defaultSelected);
+      newSelected = defaultOption;
     } else {
       const [defaultSelectedOption] = options;
-      selected = defaultSelectedOption;
+      newSelected = defaultSelectedOption;
     }
-    setSelected(selected);
+    setSelected(newSelected);
   }, []);
 
   return (

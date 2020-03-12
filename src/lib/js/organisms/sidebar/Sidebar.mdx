@@ -58,6 +58,7 @@ import locations from '@_src_/img/icons/locations.svg';
         <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
           <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
             <Sidebar.Select
+              defaultSelected={3}
               options={[
                 { key: 1, text: 'Location 123', icon: locations },
                 { key: 2, text: 'Location 124', icon: locations },
