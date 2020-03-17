@@ -4,7 +4,7 @@ route: /organisms/Modal
 menu: Organisms
 ---
 
-import Modalc from './Modal';
+import CustomModal from './Modal';
 import { Playground, Props } from 'docz';
 //import { ThemeContext, Pagination } from '@cordage_ui';
 import theme from '@cordage_ui/cordage.json';
@@ -15,15 +15,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 ---
 
+#### CustomModal
+
 ### Props
 
-<Props of={ Modalc } />
+<Props of={ CustomModal } />
 
 ### Playground
 
 ### Variants
 
-<Modalc
+<CustomModal
   buttonText='Success'
   header='Invitation sent'
   variant='success'
@@ -32,7 +34,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   make take up to 5 minutes.'
 />
 
-<Modalc
+<CustomModal
   buttonText='Error'
   header='Invitation sent'
   variant='success'
@@ -41,7 +43,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   make take up to 5 minutes.'
 />
 
-<Modalc
+<CustomModal
   buttonText='Confirm'
   header='Invitation sent'
   variant='success'
@@ -50,7 +52,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
   make take up to 5 minutes.'
 />
 
-<Modalc
+<CustomModal
   buttonText='Danger'
   header='Invitation sent'
   variant='danger'

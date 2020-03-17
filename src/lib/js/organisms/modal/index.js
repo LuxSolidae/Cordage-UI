@@ -1,5 +1,5 @@
-import Modalc from './Modal';
+import CustomModal from './Modal';
 
 export {
-  Modalc
+  CustomModal
 };

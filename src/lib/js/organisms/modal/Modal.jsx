@@ -14,7 +14,7 @@ export type Props = {
   buttonText: string,
 };
 
-const Modalc = ( {header, variant, info, buttonText}: Props ) => {
+const CustomModal = ({header, variant, info, buttonText}: Props) => {
 
   const [show, setShow] = React.useState(false);
 
@@ -47,8 +47,8 @@ const Modalc = ( {header, variant, info, buttonText}: Props ) => {
   );
 }
 
-Modalc.defaultProps = {
-  variant: 'success'
-}
+CustomModal.defaultProps = {
+  variant: 'success',
+};
 
-export default Modalc;
+export default CustomModal;
