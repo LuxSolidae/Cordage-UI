@@ -45,7 +45,7 @@ const Input = (props: Props) => {
   } = props;
 
   let icon;
-  let component;
+  let fieldComponent;
 
   const iconTypes = {
     email: 'fa-envelope',
@@ -65,11 +65,15 @@ const Input = (props: Props) => {
     case 'phone':
       icon = iconTypes.phone;
       break;
+    
+    default:
+      icon = null;
+      break;
   }
 
   switch(type) {
     case 'textarea':
-      component = (
+      fieldComponent = (
         <FormControl
           className={className}
           name={name}
@@ -85,7 +89,7 @@ const Input = (props: Props) => {
       break;
     
     default:
-      component = (
+      fieldComponent = (
         <FormControl
           className={className}
           name={name}
@@ -102,12 +106,13 @@ const Input = (props: Props) => {
   }
 
   return (
-    <FormGroup controlId={id} className={classnames({ 'with-decorator': icon }) }>      
-      { label && <FormLabel>{label}</FormLabel> }      
+    <FormGroup controlId={id}>      
+      { label && <FormLabel>{label}</FormLabel> }
 
-      { component }
-
-      { icon && <i className={classnames('fas', icon)}></i>}
+      <div className={classnames('input-wrapper', { with_icon: icon})}>
+        { fieldComponent }
+        { icon && <i className={classnames('input-icon fas', icon)}></i>}
+      </div>
 
       <div className='input-error'>
         <ErrorMessage name={name} />
