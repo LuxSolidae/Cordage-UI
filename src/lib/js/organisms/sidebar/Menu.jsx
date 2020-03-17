@@ -24,29 +24,30 @@ const Menu = ({ logo, zone, children }: Props) => {
   const { theme } = React.useContext(ThemeContext.Context);
   return (
     <div className={classnames('sidebar-wrapper', { open })}>
+      <button
+        className='sidebar-toggler'
+        style={typy(theme, 'sidebar.toggler').safeObject}
+        onClick={toggleOpen}
+      >
+        <Hide />
+      </button>
       <div
         className={classnames('sidebar')}
         style={typy(theme, 'sidebar.main').safeObject}
       >
         <Container>
-          <Row>
+          <Row className='sticky-head'>
             <Col className='sidebar-head'>
               <img src={typy(logo, 'src').safeString} alt={typy(logo, 'alt').safeString} />
               <span>{zone}</span>
 
-              <button
-                className='sidebar-toggler'
-                style={typy(theme, 'sidebar.toggler').safeObject}
-                onClick={toggleOpen}
-              >
-                <Hide />
-              </button>
+              
             </Col>
           </Row>
           <Row>
-            <Col className='sidebar-body'>
+            <div className='sidebar-body'>
               {children}
-            </Col>
+            </div>
           </Row>
         </Container>
       </div>

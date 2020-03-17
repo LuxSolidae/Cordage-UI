@@ -24,7 +24,11 @@ export type Props = {
 
 const Link = ({ icon, replace, to, children, ...props }: Props) => (
   <NavLink className='sidebar-link' to={to} replace={replace} {...props}>
-    <img src={icon} />
+    {
+      icon && (
+        <img src={icon} />
+      )
+    }
     {children}
   </NavLink>
 );
