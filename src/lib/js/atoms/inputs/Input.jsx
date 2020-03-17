@@ -33,7 +33,6 @@ export type Props = {
 const Input = (props: Props) => {
   const {
     id,
-    icon,
     className,
     label,
     placeholder,
@@ -45,7 +44,28 @@ const Input = (props: Props) => {
     onBlur
   } = props;
 
+  let icon;
   let component;
+
+  const iconTypes = {
+    email: 'fa-envelope',
+    password: 'fa-lock',
+    phone: 'fa-phone',
+  }
+
+  switch(type) {
+    case 'email':
+      icon = iconTypes.email;
+      break;
+    
+    case 'password':
+      icon = iconTypes.password;
+      break;
+
+    case 'phone':
+      icon = iconTypes.phone;
+      break;
+  }
 
   switch(type) {
     case 'textarea':
@@ -86,9 +106,8 @@ const Input = (props: Props) => {
       { label && <FormLabel>{label}</FormLabel> }      
 
       { component }
-      
-      <i className="fab fa-500px input-icon"></i>
-      {icon}
+
+      { icon && <i className={classnames('fas', icon)}></i>}
 
       <div className='input-error'>
         <ErrorMessage name={name} />
