@@ -106,7 +106,8 @@
     "rxjs": "^6.5.4",
     "semver": "6.3.0",
     "ts-pnp": "1.1.5",
-    "typy": "^3.3.0"
+    "typy": "^3.3.0",
+    "yup": "^0.28.3"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
