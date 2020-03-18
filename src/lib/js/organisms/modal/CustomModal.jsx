@@ -37,7 +37,7 @@ export const CustomModal = ({header, content, buttonText}: Props) => {
           <Modal.Title>{header}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='modal-content'>
-          <h3 className='modal-infotyp'>Success</h3>
+          <h3 className='modal-type'>Success</h3>
           {content}
         </Modal.Body>
       </Modal>
