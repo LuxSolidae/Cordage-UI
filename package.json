@@ -105,6 +105,7 @@
     "resolve-url-loader": "3.1.1",
     "rxjs": "^6.5.4",
     "semver": "6.3.0",
+    "styled-components": "^5.0.1",
     "ts-pnp": "1.1.5",
     "typy": "^3.3.0"
   },
