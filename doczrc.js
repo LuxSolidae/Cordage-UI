@@ -16,10 +16,15 @@ export default {
         'Introduction',
         'Atomic Design Methodology',
         'File Tree',
-        'Pure Components vs Stateless Functional Components'
+        'Pure Components vs Stateless Functional Components',
+        'Readme',
       ],
     },
     'Atoms',
+    'Molecules',
+    'Organisms',
+    'Templates',
+    'Styleguide',
   ],
   ignore: [
     'dist/'

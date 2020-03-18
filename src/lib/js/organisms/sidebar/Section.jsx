@@ -8,7 +8,7 @@ export type Props = {
 
 const Section = ({ text, children }: Props) => (
   <div className='sidebar-section'>
-    {text}
+    <span className="section-text">{text}</span>
     {children}
   </div>
 );
