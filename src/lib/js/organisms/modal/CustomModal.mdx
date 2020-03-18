@@ -1,0 +1,29 @@
+---
+name: Modal
+route: /organisms/Modal
+menu: Organisms
+---
+
+import CustomModal from './CustomModal';
+import { Playground, Props } from 'docz';
+//import { ThemeContext, Pagination } from '@cordage_ui';
+import theme from '@cordage_ui/cordage.json';
+
+
+# Modal
+
+---
+
+#### CustomModal
+
+### Props
+
+<Props of={ CustomModal } />
+
+<Playground>
+  <CustomModal
+    header='This is the header'
+    content='This is the content'
+    buttonText='Click to open modal'
+  />
+</Playground>
