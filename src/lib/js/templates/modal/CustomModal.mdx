@@ -1,0 +1,30 @@
+---
+name: Modal
+route: /templates/CustomModal
+menu: Templates
+---
+
+import { Playground, Props } from 'docz';
+import CustomModal from './CustomModal';
+
+# Modal
+
+---
+
+#### CustomModal
+
+### Props
+
+<Props of={ CustomModal } />
+
+### Playground
+
+<CustomModal
+  buttonText='Click to open modal'
+  header='Invitation sent'
+  variant='success'
+  info='We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them
+  check their emails. In case they don’t receive a message ask them to check their spam folder. This action
+  make take up to 5 minutes.'
+/>
+
