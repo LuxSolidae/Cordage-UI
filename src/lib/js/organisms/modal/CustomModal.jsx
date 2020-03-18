@@ -11,9 +11,11 @@ export type Props = {
   content: string,
   /** Text inside the button. */
   buttonText: string,
+  /** Type of notification */
+  type: string,
 };
 
-export const CustomModal = ({header, content, buttonText}: Props) => {
+export const CustomModal = ({header, content, buttonText, type}: Props) => {
 
   const [show, setShow] = React.useState(false);
   const handleClose = () => setShow(false);
@@ -37,7 +39,7 @@ export const CustomModal = ({header, content, buttonText}: Props) => {
           <Modal.Title>{header}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='modal-content'>
-          <h3 className='modal-type'>Success</h3>
+          <h3 className='modal-type'>{type}</h3>
           {content}
         </Modal.Body>
       </Modal>
@@ -49,6 +51,7 @@ CustomModal.defaultProps ={
   header: 'Header',
   content: '',
   buttonText: 'Click to open modal',
+  type: 'Success!',
 }
 
 export default CustomModal;
