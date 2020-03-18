@@ -11,11 +11,13 @@ export type Props = {
   content: string,
   /** Text inside the button. */
   buttonText: string,
-  /** Type of notification */
+  /** Type of notification. */
   type: string,
+  /** Changes the background color of the modal (therefore the font's one too). */
+  color: 'white' | 'black',
 };
 
-export const CustomModal = ({header, content, buttonText, type}: Props) => {
+export const CustomModal = ({header, content, buttonText, type, color}: Props) => {
 
   const [show, setShow] = React.useState(false);
   const handleClose = () => setShow(false);
@@ -35,7 +37,7 @@ export const CustomModal = ({header, content, buttonText, type}: Props) => {
         show={show}
         onHide={handleClose}
       >
-        <Modal.Header className={classnames('modal-header')} closeButton>
+        <Modal.Header className={classnames('modal-header', color)} closeButton>
           <Modal.Title>{header}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='modal-content'>
@@ -52,6 +54,7 @@ CustomModal.defaultProps ={
   content: '',
   buttonText: 'Click to open modal',
   type: 'Success!',
+  color: 'white'
 }
 
 export default CustomModal;
