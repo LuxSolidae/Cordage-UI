@@ -1,6 +1,7 @@
 // @flow
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import classnames from 'classnames';
 import * as React from 'react';
 
 export type Props = {
@@ -12,16 +13,15 @@ export type Props = {
   buttonText: string,
 };
 
-const CustomModal = ({header, variant, info, buttonText}: Props) => {
+export const CustomModal = ({header, content, buttonText}: Props) => {
 
   const [show, setShow] = React.useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <>
-      <Button variant={variant}  onClick={handleShow}>
+      <Button variant='success'  onClick={handleShow}>
         {buttonText}
       </Button>
 
@@ -33,16 +33,22 @@ const CustomModal = ({header, variant, info, buttonText}: Props) => {
         show={show}
         onHide={handleClose}
       >
-        <Modal.Header className='modal-header' closeButton>
+        <Modal.Header className={classnames('modal-header')} closeButton>
           <Modal.Title>{header}</Modal.Title>
         </Modal.Header>
-        <Modal.Body className='modal-body'>
-          <h3 className='modal-infotype'>Success</h3>
-          {info}
+        <Modal.Body className='modal-content'>
+          <h3 className='modal-infotyp'>Success</h3>
+          {content}
         </Modal.Body>
       </Modal>
     </>
   );
+};
+
+CustomModal.defaultProps ={
+  header: 'Header',
+  content: '',
+  buttonText: 'Click to open modal',
 }
 
 export default CustomModal;
