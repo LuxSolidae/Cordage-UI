@@ -2,7 +2,8 @@
 import * as React from 'react';
 import { t as typy } from 'typy';
 import classNames from 'classnames';
-import arrow from '@_src_/img/icons/down-arrow.svg';
+// TODO: Fix global imports
+// import arrow from '@_src_/img/icons/down-arrow.svg';
 
 type Option = {
   key: number,
@@ -74,6 +75,7 @@ export const Select = ({ options, onSelect, defaultSelected }: Props) => {
         </span>
         <img
           src={arrow}
+          alt='>'
           className={
             classNames(
               'accordion-arrow',
