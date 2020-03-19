@@ -4,7 +4,7 @@ export * from './badge';
 export * from './button';
 export * from './checkbox';
 export * from './grid';
-export * from './input';
+export * from './inputs';
 export * from './link';
 export * from './multiselect';
 export * from './select';

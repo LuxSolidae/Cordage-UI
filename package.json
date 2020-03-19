@@ -1,6 +1,6 @@
 {
   "name": "cordage-ui",
-  "version": "0.2.11",
+  "version": "0.3.3",
   "license": "UNLICENSED",
   "private": false,
   "main": "dist/index.js",
@@ -106,7 +106,8 @@
     "rxjs": "^6.5.4",
     "semver": "6.3.0",
     "ts-pnp": "1.1.5",
-    "typy": "^3.3.0"
+    "typy": "^3.3.0",
+    "yup": "^0.28.3"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -118,6 +119,7 @@
     "@babel/preset-react": "^7.8.3",
     "@babel/register": "^7.8.3",
     "@svgr/webpack": "4.3.3",
+    "@types/jest": "^25.1.4",
     "autoprefixer": "^9.7.4",
     "babel-plugin-i18next-extract": "^0.6.1",
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
@@ -177,56 +179,6 @@
     "workbox-webpack-plugin": "^5.0.0"
   },
   "peerDependencies": {},
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
-    ],
-    "setupFiles": [
-      "react-app-polyfill/jsdom"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
-    ],
-    "testEnvironment": "jest-environment-jsdom-fourteen",
-    "transform": {
-      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "modulePaths": [],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "web.ts",
-      "ts",
-      "web.tsx",
-      "tsx",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ],
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ]
-  },
   "resolutions": {
     "docz/**/webpack": "4.28.4"
   },

@@ -1,0 +1,35 @@
+---
+name: Input
+route: /atoms/inputs
+menu: Atoms
+---
+
+import { Playground, Props } from 'docz';
+import ThemeContext from '@cordage_ui/providers/themes';
+import { Formik } from 'formik';
+import { Form } from 'react-bootstrap';
+import theme from '@cordage_ui/cordage.json';
+import Input from './Input';
+import DoczForm from './DoczForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../../../Docz.css';
+
+# Inputs
+
+---
+
+## Input
+
+### Props
+
+<Props of={Input} />
+
+### Playground
+
+<Playground>
+  <div className='metro custom-pg'>
+    <ThemeContext.Provider theme={theme}>
+      <DoczForm />
+    </ThemeContext.Provider>
+  </div>
+</Playground>
