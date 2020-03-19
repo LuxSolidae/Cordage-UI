@@ -15,40 +15,48 @@
 
 .custom-modal {
   background-color: black;
+}
 
-  &.header {
+.modal-header {
     border-bottom: 1px;
-    border-color: #e4e4e4;
     font-size: 1.25rem;
     letter-spacing: -0.2px;
     padding-left: 1.875rem;
     padding-top: 1.875rem;
+    border-bottom: 0px;
 
-    &.black {
+    &.header-dark {
       background-color: black;
+      border-color: #e4e4e4;
       color: white;
     }
 
-    &.white {
+    &.header-white {
       background-color: white;
+      border-color: #e4e4e4;
       color: black;
     }
-  }
+
 }
-
-
 
 .modal-body {
   background-color: black;
-  color: #919191;
   font-size: 0.875rem;
   letter-spacing: -0.14px;
   line-height: 1.25em;
   padding: 7rem 1.875rem 3.75rem 1.875rem;
-}
 
-.modal-type {
-  color: white;
-  font-size: 1.125rem;
-  letter-spacing: -0.18px;
+  &.modal-type {
+    font-size: 1.125rem;
+    letter-spacing: -0.18px;
+  }
+
+  &.body-white {
+    background-color: white;
+    color: black;
+  }
+  &.body-dark {
+    background-color: black;
+    color: #919191;
+  }
 }
