@@ -49,12 +49,4 @@ export const CustomModal = ({ header, content, buttonText, type, color }: Props)
   );
 };
 
-CustomModal.defaultProps ={
-  header: 'Header',
-  content: 'Content',
-  buttonText: 'Click to open modal',
-  type: 'Success!',
-  color: 'dark'
-}
-
 export default CustomModal;
