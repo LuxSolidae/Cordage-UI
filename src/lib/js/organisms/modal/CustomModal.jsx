@@ -41,7 +41,7 @@ export const CustomModal = ({ header, content, buttonText, type, color }: Props)
           <Modal.Title>{header}</Modal.Title>
         </Modal.Header>
         <Modal.Body className={classnames('modal-body', `body-${ color }`)}>
-          <h5 classNames={classnames('modal-type', `type-${ color }`)}>{type}</h5>
+          <h6 className={classnames('modal-message', `type-${ color }`)}>{type}</h6>
           {content}
         </Modal.Body>
       </Modal>
