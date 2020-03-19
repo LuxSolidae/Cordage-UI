@@ -1,0 +1,39 @@
+---
+name: Modal
+route: /organisms/Modal
+menu: Organisms
+---
+
+import CustomModal from './CustomModal';
+import { Playground, Props } from 'docz';
+//import { ThemeContext, Pagination } from '@cordage_ui';
+import theme from '@cordage_ui/cordage.json';
+
+
+# Modal
+
+---
+
+#### CustomModal
+
+### Props
+
+<Props of={ CustomModal } />
+
+<Playground>
+  <CustomModal
+    header='Header of modal'
+    content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    buttonText='Click to open dark modal'
+    type='Success!'
+    color='dark'
+  />
+
+    <CustomModal
+    header='Header of modal'
+    content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    buttonText='Click to open white modal'
+    type='Success!'
+    color='white'
+  />
+</Playground>
