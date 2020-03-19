@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Grid } from '@cordage_ui';
+import { Grid } from './../../atoms';
 
 type Props = {
   children: React.Node,
