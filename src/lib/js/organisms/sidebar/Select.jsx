@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { t as typy } from 'typy';
 import classNames from 'classnames';
-import arrow from './../../../../img/down-arrow.svg';
+import arrow from '@_src_/img/icons/down-arrow.svg';
 
 
 type Option = {
