@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './img/logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './lib/cordage-ui.css';
 
 function App() {
   return (
