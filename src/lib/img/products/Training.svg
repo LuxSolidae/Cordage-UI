@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Training</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Training">
+            <rect id="Rectangle" fill="#005CFF" x="0" y="0" width="64" height="64" rx="2"></rect>
+            <g id="feather" transform="translate(13.000000, 11.000000)" stroke="#FFFFFF" stroke-linecap="square" stroke-width="2">
+                <path d="M0.312134118,32.1176471 C0.105518824,33.7410706 -4.4408921e-16,35.3911765 -4.4408921e-16,37.0588235 L-4.4408921e-16,42 M0.312134118,32.1176471 C2.55419294,14.4989188 16.6996941,0 37.0588235,0 L34.5882353,9.88235294 L27.1764706,9.88235294 L29.6470588,14.8235294 L24.7058824,19.7647059 L14.8235294,19.7647059 L19.7647059,24.7058824 L17.2941176,29.6470588 L7.41176471,29.6470588 L0.312134118,32.1176471 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
