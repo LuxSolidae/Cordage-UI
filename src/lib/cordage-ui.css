@@ -1,0 +1,255 @@
+:root {
+  /* Font */
+  --main-font: 'Metropolis', sans-serif;
+  --custom-icons: 'Cordage-Icons', sans-serif;
+  --base-font-size: 14px;
+
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  --navbar-height: 70px;
+  --sidebar-width: 22rem;
+}
+
+/* Media Queries */
+
+/* Custom selectors */
+
+/* Custom pseudo selectors */
+
+/* Main app font. */
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 100;
+  src: url('./lib/fonts/Metropolis-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 200;
+  src: url('./lib/fonts/Metropolis-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./lib/fonts/Metropolis-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('./lib/fonts/Metropolis-Regular.woff2') format('woff2'),
+    url('./lib/fonts/Metropolis-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url('./lib/fonts/Metropolis-Medium.woff2') format('woff2'),
+    url('./lib/fonts/Metropolis-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./lib/fonts/Metropolis-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('./lib/fonts/Metropolis-Bold.woff2') format('woff2'),
+    url('./lib/fonts/Metropolis-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./lib/fonts/Metropolis-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 900;
+  src: url('./lib/fonts/Metropolis-Black.woff') format('woff');
+}
+
+html,
+body {
+  color: var(--iron);
+  font-size: 14px;
+  font-size: var(--base-font-size);
+}
+
+input::-webkit-input-placeholder {
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+}
+
+input:-ms-input-placeholder {
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+}
+
+input::-ms-input-placeholder {
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+}
+
+html,
+body,
+button,
+input::placeholder {
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.42rem;
+  letter-spacing: -0.48px;
+}
+
+h2 {
+  font-size: 2.57rem;
+  letter-spacing: -0.36px;
+}
+
+h3 {
+  font-size: 2.28rem;
+  letter-spacing: -0.32px;
+}
+
+h4 {
+  font-size: 1.85rem;
+  letter-spacing: -0.26px;
+}
+
+h5 {
+  font-size: 1.42rem;
+  letter-spacing: -0.2px;
+}
+
+h6 {
+  font-size: 1.28rem;
+  letter-spacing: -0.18px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-light {
+  font-weight: light;
+}
+
+.text-caps {
+  text-transform: uppercase;
+}
+
+.avatar {
+  height: 2.71rem;
+  width: 2.71rem;
+}
+
+.avatar > img {
+    border-radius: 2px;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+.sidebar-wrapper {
+  display: -webkit-box;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  overflow: hidden;
+  padding-right: 1.14rem;
+  position: relative;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  width: 3.285rem
+}
+
+.sidebar-wrapper.open {
+    width: 20.42rem;
+  }
+
+.sidebar-wrapper .sidebar {
+    /* background-color: #151515; */
+    /* color: white; */
+    height: 100%;
+    padding: 0 0 2rem;
+    position: absolute;
+    width: 19.28rem;
+  }
+
+.sidebar-wrapper .sidebar .sidebar-head {
+      padding: 2.28rem 2.28rem 1rem 2.28rem;
+      position: relative;
+    }
+
+.sidebar-wrapper .sidebar .sidebar-head > img {
+        width: 60%;
+      }
+
+.sidebar-wrapper .sidebar .sidebar-head > span {
+        font-size: 0.78rem;
+        letter-spacing: normal;
+        line-height: 1.64;
+        text-transform: uppercase;
+      }
+
+.sidebar-wrapper .sidebar .sidebar-head .sidebar-toggler {
+        -webkit-box-align: center;
+                align-items: center;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        border: 0;
+        border-radius: 3rem;
+        bottom: 0;
+        cursor: pointer;
+        display: -webkit-box;
+        display: flex;
+        height: 2.14rem;
+        -webkit-box-pack: center;
+                justify-content: center;
+        margin: auto;
+        outline: 0;
+        position: absolute;
+        right: -1.07rem;
+        top: 0;
+        width: 2.14rem;
+      }
+
+.sidebar-wrapper .sidebar .sidebar-head .sidebar-toggler > svg {
+          height: 100%;
+          width: 100%;
+        }
+
+.sidebar-wrapper .sidebar .sidebar-body {
+
+    }
