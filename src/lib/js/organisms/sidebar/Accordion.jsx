@@ -1,8 +1,8 @@
 // @flow
 import * as React from 'react';
 import classNames from 'classnames';
-// TODO: Fix global imports
-// import arrow from '@_src_/img/icons/down-arrow.svg';
+import arrow from './../../../../img/down-arrow.svg';
+
 
 export type Props = {
   children: React.Node,
@@ -31,8 +31,6 @@ const Accordion = ({ children, text, icon }: Props) => {
         <span className='accordion-title'>{text}</span>
         <img
           src={arrow}
-          
-          alt='>'
           className={
             classNames(
               'accordion-arrow',
