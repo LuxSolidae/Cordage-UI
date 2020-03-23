@@ -31,6 +31,7 @@
   font-style: normal;
   font-weight: 100;
   src: url('./fonts/Metropolis-Thin.woff') format('woff');
+  src: url('./fonts/Metropolis-Thin.woff') format('woff');
 }
 
 @font-face {

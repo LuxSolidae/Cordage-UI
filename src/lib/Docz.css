@@ -1,7 +1,106 @@
+:root {
+  /* Font */
+  --main-font: 'Metropolis', sans-serif;
+  --custom-icons: 'Cordage-Icons', sans-serif;
+  --base-font-size: 14px;
+
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  --navbar-height: 70px;
+  --sidebar-width: 22rem;
+
+  --white: #fff;
+  --white-40: #666;
+  --black: #151515;
+  --black-2: #272727;
+  --greyish-brown: #3d3d3d;
+  --salmon: #fd8f67;
+  --very-light-pink: #e4e4e4;
+}
+
+/* Media Queries */
+
+/* Custom selectors */
+
+/* Custom pseudo selectors */
+
+/* Main app font. */
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 100;
+  src: url('./fonts/Metropolis-Thin.woff') format('woff');
+  src: url('./fonts/Metropolis-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 200;
+  src: url('./fonts/Metropolis-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./fonts/Metropolis-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('./fonts/Metropolis-Regular.woff2') format('woff2'),
+    url('./fonts/Metropolis-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url('./fonts/Metropolis-Medium.woff2') format('woff2'),
+    url('./fonts/Metropolis-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./fonts/Metropolis-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('./fonts/Metropolis-Bold.woff2') format('woff2'),
+    url('./fonts/Metropolis-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./fonts/Metropolis-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-weight: 900;
+  src: url('./fonts/Metropolis-Black.woff') format('woff');
+}
+
 /*!
  * Font Awesome Free 5.12.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
+
 .fa,
 .fas,
 .far,
@@ -12,6 +111,7 @@
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-style: normal;
+  font-feature-settings: normal;
   font-variant: normal;
   text-rendering: auto;
   line-height: 1; }
@@ -65,7 +165,8 @@
   list-style-type: none;
   margin-left: 2.5em;
   padding-left: 0; }
-  .fa-ul > li {
+
+.fa-ul > li {
     position: relative; }
 
 .fa-li {
@@ -101,58 +202,40 @@
   margin-left: .3em; }
 
 .fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
-          animation: fa-spin 2s infinite linear; }
+  animation: fa-spin 2s infinite linear; }
 
 .fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
-          animation: fa-spin 1s infinite steps(8); }
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+  animation: fa-spin 1s infinite steps(8); }
 
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    transform: rotate(360deg); } }
 
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg); }
+  transform: rotate(90deg); }
 
 .fa-rotate-180 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg); }
+  transform: rotate(180deg); }
 
 .fa-rotate-270 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg); }
+  transform: rotate(270deg); }
 
 .fa-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
-  -webkit-transform: scale(-1, 1);
-          transform: scale(-1, 1); }
+  transform: scale(-1, 1); }
 
 .fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -webkit-transform: scale(1, -1);
-          transform: scale(1, -1); }
+  transform: scale(1, -1); }
 
 .fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -webkit-transform: scale(-1, -1);
-          transform: scale(-1, -1); }
+  transform: scale(-1, -1); }
 
 :root .fa-rotate-90,
 :root .fa-rotate-180,
@@ -160,8 +243,7 @@
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical,
 :root .fa-flip-both {
-  -webkit-filter: none;
-          filter: none; }
+  filter: none; }
 
 .fa-stack {
   display: inline-block;
@@ -189,6 +271,7 @@
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
 readers do not read off random characters that represent icons */
+
 .fa-500px:before {
   content: "\f26e"; }
 
@@ -4427,6 +4510,7 @@ readers do not read off random characters that represent icons */
   overflow: visible;
   position: static;
   width: auto; }
+
 @font-face {
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;
@@ -4438,6 +4522,7 @@ readers do not read off random characters that represent icons */
 .fab {
   font-family: 'Font Awesome 5 Brands';
   font-weight: 400; }
+
 @font-face {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
@@ -4449,6 +4534,7 @@ readers do not read off random characters that represent icons */
 .far {
   font-family: 'Font Awesome 5 Free';
   font-weight: 400; }
+
 @font-face {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
@@ -4461,3 +4547,425 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
+
+html,
+body {
+  color: var(--iron);
+  font-size: var(--base-font-size);
+}
+
+html,
+body,
+button,
+input::placeholder {
+  font-family: var(--main-font);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.42rem;
+  letter-spacing: -0.48px;
+}
+
+h2 {
+  font-size: 2.57rem;
+  letter-spacing: -0.36px;
+}
+
+h3 {
+  font-size: 2.28rem;
+  letter-spacing: -0.32px;
+}
+
+h4 {
+  font-size: 1.85rem;
+  letter-spacing: -0.26px;
+}
+
+h5 {
+  font-size: 1.42rem;
+  letter-spacing: -0.2px;
+}
+
+h6 {
+  font-size: 1.28rem;
+  letter-spacing: -0.18px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-light {
+  font-weight: light;
+}
+
+.text-caps {
+  text-transform: uppercase;
+}
+
+.avatar {
+  height: 2.71rem;
+  width: 2.71rem;
+}
+
+.avatar > img {
+    border-radius: 2px;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+.form-control {
+  height: calc(2.125em + .75rem + 2px)
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 0.375rem;
+}
+
+.with_icon .form-control {
+    padding-right: 3rem;
+  }
+
+.input-icon {
+  position: absolute;
+  color: #D3D3D3;
+  top: 50%;
+  right: 1rem;
+  font-size: 1.25rem;
+  transform: translate(0, -50%);
+}
+
+.input-error {
+  font-size: 0.75rem;
+  color: red;
+}
+
+.sidebar-accordion {
+  transition: background-color 0.3s;
+}
+
+.sidebar-accordion > .accordion-title-container {
+    align-items: center;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    font-size: 0.875rem;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.14px;
+    line-height: 1.43;
+    padding: 0.75rem 1.875rem;
+    transition: background-color 0.3s
+  }
+
+.sidebar-accordion > .accordion-title-container:hover {
+      background-color: var(--black-2);
+    }
+
+.sidebar-accordion > .accordion-title-container > img.accordion-icon {
+      margin-right: 0.5rem;
+    }
+
+.sidebar-accordion > .accordion-title-container > img.accordion-arrow {
+      margin-left: auto;
+      transition: transform 0.3s
+    }
+
+.sidebar-accordion > .accordion-title-container > img.accordion-arrow.open {
+        transform: rotate(180deg);
+      }
+
+.sidebar-accordion > .accordion-content {
+    overflow: hidden;
+    transition: max-height 0.4s;
+  }
+
+.sidebar-accordion.open {
+    background-color: var(--black-2);
+  }
+
+.sidebar-accordion.open > .accordion-title-container {
+      background-color: var(--black-2);
+    }
+
+.sidebar-accordion.open .sidebar-link:hover {
+      background-color: var(--greyish-brown);
+    }
+
+.sidebar-link {
+  color: var(--white);
+  display: block;
+  font-size: 0.875rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+  line-height: 1.43;
+  padding: 0.75rem 1.875rem;
+  transition: background-color 0.3s
+}
+
+.sidebar-link:hover {
+    background-color: var(--black-2);
+    color: var(--white);
+    text-decoration: none;
+  }
+
+.sidebar-link > img {
+    margin-right: 0.5rem;
+    width: 1.5rem;
+  }
+
+.sidebar-wrapper {
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  margin-right: -1.07rem;
+  max-width: 3.285rem;
+  min-width: 3.285rem;
+  overflow: hidden;
+  padding-right: 1.14rem;
+  position: relative;
+  transition:
+    max-width 0.3s ease-in-out,
+    min-width 0.3s ease-in-out
+}
+
+.sidebar-wrapper.open {
+    max-width: 20.42rem;
+    min-width: 20.42rem;
+  }
+
+.sidebar-wrapper > .sidebar-toggler {
+    align-items: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: 0;
+    border-radius: 3rem;
+    cursor: pointer;
+    display: flex;
+    height: 2.14rem;
+    justify-content: center;
+    margin: auto;
+    outline: 0;
+    position: absolute;
+    right: 0;
+    top: 2.0625rem;
+    width: 2.14rem;
+    z-index: 1;
+  }
+
+.sidebar-wrapper > .sidebar-toggler > svg {
+      height: 100%;
+      width: 100%;
+    }
+
+.sidebar-wrapper .sidebar {
+    /* background-color: #151515; */
+    /* color: white; */
+    height: 100%;
+    overflow-y: auto;
+    padding: 0 0 2rem;
+    position: absolute;
+    width: 19.28rem;
+  }
+
+.sidebar-wrapper .sidebar .sticky-head {
+      background-color: var(--black);
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    }
+
+.sidebar-wrapper .sidebar .sticky-head > .sidebar-head {
+        padding: 2rem 1.875rem 1rem 1.875rem;
+        position: relative;
+      }
+
+.sidebar-wrapper .sidebar .sticky-head > .sidebar-head > img {
+          width: 60%;
+        }
+
+.sidebar-wrapper .sidebar .sticky-head > .sidebar-head > span {
+          font-size: 0.78rem;
+          letter-spacing: normal;
+          line-height: 1.64;
+          text-transform: uppercase;
+        }
+
+.sidebar-wrapper .sidebar .sidebar-body {
+      width: 100%;
+    }
+
+.sidebar-section > .section-text {
+  color: var(--white-40);
+  display: block;
+  font-size: 11px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.28px;
+  line-height: 1.64;
+  padding: 1.625rem 1.875rem 0.75rem;
+  text-transform: uppercase;
+}
+
+.sidebar-select {
+  position: relative;
+}
+
+.sidebar-select > .sidebar-selected {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.16px;
+    line-height: 1.25;
+    padding: 0.75rem 1.875rem;
+  }
+
+.sidebar-select > .sidebar-selected > img.accordion-arrow {
+      margin-left: auto;
+    }
+
+.sidebar-select > .sidebar-selected > .image-wrapper {
+      background-color: var(--salmon);
+      border-radius: 1.6px;
+      display: inline-flex;
+      height: 2.375rem;
+      justify-content: center;
+      margin-right: 0.75rem;
+      width: 2.375rem;
+    }
+
+.sidebar-select > .sidebar-selected > .image-wrapper > img {
+        border-radius: 1.6px;
+      }
+
+.sidebar-select > .sidebar-select-options {
+    background-color: var(--black-2);
+    border: solid 1px var(--greyish-brown);
+    border-radius: 2px;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5625rem);
+    transition: opacity 0.3s;
+    width: calc(100% - 3.75rem)
+  }
+
+.sidebar-select > .sidebar-select-options.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+.sidebar-select > .sidebar-select-options > .sidebar-select-option {
+      align-items: center;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      font-size: 0.875rem;
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: -0.14px;
+      line-height: 1.43;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s
+    }
+
+.sidebar-select > .sidebar-select-options > .sidebar-select-option:not(:last-child) {
+        border-bottom: solid 1px var(--greyish-brown);
+      }
+
+.sidebar-select > .sidebar-select-options > .sidebar-select-option:hover {
+        background-color: var(--greyish-brown);
+      }
+
+.sidebar-select > .sidebar-select-options > .sidebar-select-option > .image-wrapper {
+        background-color: var(--salmon);
+        border-radius: 1.6px;
+        display: inline-flex;
+        height: 2.1875rem;
+        justify-content: center;
+        margin-right: 0.8125rem;
+        width: 2.1875rem;
+      }
+
+.sidebar-select > .sidebar-select-options > .sidebar-select-option > .image-wrapper > img {
+          border-radius: 1.6px;
+        }
+
+.page.page-administrative > .page-header {
+      padding: 1.625rem 1.875rem;
+    }
+
+.page.page-administrative > .page-header h1 {
+        color: var(--black);
+        font-size: 2.25rem;
+        font-stretch: normal;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -0.36px;
+        line-height: normal;
+        margin-bottom: 1.125rem;
+      }
+
+.page.page-administrative > .page-header p {
+        color: var(--brown-grey);
+        font-size: 0.875rem;
+        font-stretch: normal;
+        font-style: normal;
+        font-weight: 300;
+        letter-spacing: -0.14px;
+        line-height: 1.43;
+      }
+
+.page-content {
+  background-color: #fafdfa;
+  border-top: solid 1px var(--very-light-pink);
+  font-size: 1rem;
+  height: 100%;
+  padding: 3.5rem 1.875rem 2.5rem;
+}
+
+.page-content h2 {
+    color: #000;
+    font-size: 1.625rem;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.26px;
+    line-height: normal;
+    margin-bottom: 1.625rem;
+  }
+
+.metro {
+  font-family: var(--main-font);
+}
+
+.custom-pg {
+  padding: 2rem;
+}
+
+.sidebar-wrapper {
+  height: 450px;
+}
