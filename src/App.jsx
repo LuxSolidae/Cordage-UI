@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './lib/cordage-ui.css';
 import logo from './img/logo.svg';
-import './App.css';
 
 export const App = () => (
   <div className="App">
