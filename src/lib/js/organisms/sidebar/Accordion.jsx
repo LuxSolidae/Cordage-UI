@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import classNames from 'classnames';
-import arrow from '@_src_/img/icons/down-arrow.svg';
+import arrow from '../../../img/icons/down-arrow.svg';
 
 
 export type Props = {
