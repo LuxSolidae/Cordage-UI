@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import { Formik } from 'formik';
+import { Formik, Field, ErrorMessage } from 'formik';
 import { Form } from 'react-bootstrap';
 import * as Yup from 'yup';
 
@@ -9,6 +9,10 @@ import Input from './Input';
 
 const Schema = Yup.object().shape({
   text: Yup.string()
+    .min(3, 'Text must have at least 3 characters.')
+    .max(50, 'Text can\'t be longer than 50 characters.')
+    .required('Text is required.'),
+  native: Yup.string()
     .min(3, 'Text must have at least 3 characters.')
     .max(50, 'Text can\'t be longer than 50 characters.')
     .required('Text is required.'),
@@ -30,7 +34,7 @@ const Schema = Yup.object().shape({
 const DoczForm = () => {
   return (
     <Formik
-      initialValues={{ text: '', email: '', textarea: '', phone: '', password: '', }}
+      initialValues={{ text: 'This should render.', email: '', textarea: '', phone: '', password: '', native: 'Cordage' }}
       validationSchema={Schema}
       onSubmit={(values, errors) => {
         alert(JSON.stringify(values, null, 2));
@@ -39,6 +43,7 @@ const DoczForm = () => {
     >
       {(
         {
+          initialValues,
           values,
           errors,
           touched,
@@ -49,6 +54,8 @@ const DoczForm = () => {
         }
       ) => (
         <Form onSubmit={handleSubmit}>
+          <Field type="text" name="native" placeholder="Enter some characters"/>
+
           <Input
             id='text'
             type='text'
