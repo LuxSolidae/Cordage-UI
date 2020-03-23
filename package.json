@@ -1,6 +1,6 @@
 {
   "name": "cordage-ui",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "license": "UNLICENSED",
   "private": false,
   "main": "dist/index.js",
@@ -183,18 +183,18 @@
     "docz/**/webpack": "4.28.4"
   },
   "scripts": {
-    "build:css": "postcss src/App.pcss -o src/App.css",
-    "watch:css": "postcss src/App.pcss -o src/App.css -w",
+    "build:css": "postcss src/App.pcss -o src/lib/cordage-ui.css",
+    "watch:css": "postcss src/App.pcss -o src/lib/cordage-ui.css -w",
     "start": "npm-run-all -p watch:css start-js",
     "start-js": "node scripts/start.js",
     "build-js": "node scripts/build.js",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "build": "rm -rf dist && NODE_ENV=production npm run build:css && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__ && cp -av ./README.md ./dist/README.md && rm -f ./dist/Docz.css",
     "test": "node scripts/test.js --env=jsdom",
     "flow": "flow",
     "partial:docz:dev": "docz dev",
     "partial:docz:build": "docz build",
-    "watch:css:components": "postcss src/lib/css/Docz.pcss -o src/Docz.css -w",
-    "build:css:components": "postcss src/lib/css/Docz.pcss -o src/Docz.css",
+    "watch:css:components": "postcss src/lib/css/Docz.pcss -o src/lib/Docz.css -w",
+    "build:css:components": "postcss src/lib/css/Docz.pcss -o src/lib/Docz.css",
     "docz:dev": "npm-run-all -p watch:css:components partial:docz:dev",
     "docz:build": "npm-run-all build:css:components partial:docz:build",
     "publish:npm": "npm run build && npm publish"
