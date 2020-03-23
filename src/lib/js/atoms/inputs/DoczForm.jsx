@@ -1,67 +1,71 @@
 // @flow
-import * as React from 'react';
-import { Formik, Field, ErrorMessage } from 'formik';
-import { Form } from 'react-bootstrap';
-import * as Yup from 'yup';
+import * as React from "react";
+import { Formik, Field, ErrorMessage } from "formik";
+import { Form } from "react-bootstrap";
+import * as Yup from "yup";
 
-import Input from './Input';
-
+import Input from "./Input";
 
 const Schema = Yup.object().shape({
   text: Yup.string()
-    .min(3, 'Text must have at least 3 characters.')
-    .max(50, 'Text can\'t be longer than 50 characters.')
-    .required('Text is required.'),
+    .min(3, "Text must have at least 3 characters.")
+    .max(50, "Text can't be longer than 50 characters.")
+    .required("Text is required."),
   native: Yup.string()
-    .min(3, 'Text must have at least 3 characters.')
-    .max(50, 'Text can\'t be longer than 50 characters.')
-    .required('Text is required.'),
+    .min(3, "Text must have at least 3 characters.")
+    .max(50, "Text can't be longer than 50 characters.")
+    .required("Text is required."),
   email: Yup.string()
-    .email('Enter a valid email.')
-    .required('Email is required.'),
+    .email("Enter a valid email.")
+    .required("Email is required."),
   phone: Yup.string()
-    .min(8, 'Phone must have at least 8 numbers.')
-    .max(12, 'Phone can\' be longer than 12 characters.'),
-  password: Yup.string()
-    .min(5, 'Password must be at least 5 characters.'),
+    .min(8, "Phone must have at least 8 numbers.")
+    .max(12, "Phone can' be longer than 12 characters."),
+  password: Yup.string().min(5, "Password must be at least 5 characters."),
   textarea: Yup.string()
-    .min(10, 'Textarea must have at least 10 characters.')
-    .max(100, 'Textarea can\'t be longer than 100 characters')
-    .required('Textarea is required.'),
+    .min(10, "Textarea must have at least 10 characters.")
+    .max(100, "Textarea can't be longer than 100 characters")
+    .required("Textarea is required.")
 });
-
 
 const DoczForm = () => {
   return (
     <Formik
-      initialValues={{ text: 'This should render.', email: '', textarea: '', phone: '', password: '', native: 'Cordage' }}
+      initialValues={{
+        text: "This should render.",
+        email: "",
+        textarea: "",
+        phone: "",
+        password: "",
+        native: "Cordage"
+      }}
       validationSchema={Schema}
       onSubmit={(values, errors) => {
         alert(JSON.stringify(values, null, 2));
         alert(JSON.stringify(errors, null, 2));
       }}
-    >
-      {(
-        {
-          initialValues,
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting
-        }
-      ) => (
+      render={({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting
+      }) => (
         <Form onSubmit={handleSubmit}>
-          <Field type="text" name="native" placeholder="Enter some characters"/>
+          <Field
+            type="text"
+            name="native"
+            placeholder="Enter some characters"
+          />
 
           <Input
-            id='text'
-            type='text'
-            name='text'
-            label='Text'
-            placeholder='Enter some characters'
+            id="text"
+            type="text"
+            name="text"
+            label="Text"
+            placeholder="Enter some characters"
             value={values.name}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -69,11 +73,11 @@ const DoczForm = () => {
           />
 
           <Input
-            id='email'
-            type='email'
-            name='email'
-            label='Email'
-            placeholder='Enter your email'
+            id="email"
+            type="email"
+            name="email"
+            label="Email"
+            placeholder="Enter your email"
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -81,43 +85,42 @@ const DoczForm = () => {
           />
 
           <Input
-            id='phone'
-            type='phone'
-            name='phone'
-            label='Phone'
-            placeholder='Enter your phone number.'
+            id="phone"
+            type="phone"
+            name="phone"
+            label="Phone"
+            placeholder="Enter your phone number."
             value={values.phone}
             onChange={handleChange}
             onBlur={handleBlur}
           />
 
           <Input
-            id='password'
-            type='password'
-            name='password'
-            label='Password'
+            id="password"
+            type="password"
+            name="password"
+            label="Password"
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
           />
 
           <Input
-            id='textarea'
-            type='textarea'
-            name='textarea'
-            label='Text Area'
-            placeholder='Enter your message'
+            id="textarea"
+            type="textarea"
+            name="textarea"
+            label="Text Area"
+            placeholder="Enter your message"
             onChange={handleChange}
             onBlur={handleBlur}
             required
           />
 
-          <button type='submit'>Submit</button>
+          <button type="submit">Submit</button>
         </Form>
       )}
-
-    </Formik>
+    />
   );
-}
+};
 
 export default DoczForm;
