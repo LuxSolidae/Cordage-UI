@@ -189,7 +189,7 @@
     "start": "npm-run-all -p watch:css start-js",
     "start-js": "node scripts/start.js",
     "build-js": "node scripts/build.js",
-    "build": "rm -rf dist && NODE_ENV=production npm run build:css && NODE_ENV=production babel src/lib --out-dir dist --copy-files --no-copy-ignored --ignore \"src/lib/js/Docz.js\",\"src/lib/Docz.css\",\"test.js\" && cp -av ./README.md ./dist/README.md && rm -rf dist/css dist/Docz.css",
+    "build": "rm -rf dist && NODE_ENV=production npm run build:css && NODE_ENV=production babel src/lib --out-dir dist --copy-files --no-copy-ignored --ignore \"src/lib/js/Docz.js\",\"src/lib/Docz.css\",\"test.js\" && rm -rf dist/css dist/Docz.css",
     "test": "node scripts/test.js --env=jsdom",
     "flow": "flow",
     "partial:docz:dev": "docz dev",
