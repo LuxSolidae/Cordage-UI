@@ -1,5 +1,6 @@
 import React from 'react';
-import {Card, Button} from 'react-bootstrap';
+// import Button from './Button';
+import { Card } from 'react-bootstrap';
 
 export type Props = {
   title: String,
@@ -14,7 +15,7 @@ const CardComponent = (props: Props) => {
     title,
     content,
     subcontent,
-    width
+    width,
   } = props;
 
   return(
@@ -25,7 +26,9 @@ const CardComponent = (props: Props) => {
       <Card.Text className='card-content'>
         {content}
       </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
+      <div className='card-divider'></div>
+      {/*FIXME Needs to use Button from Cordage. */}
+      <a className='card-link' href='#'>{ subcontent }</a>
     </Card.Body>
   </Card>
   )
