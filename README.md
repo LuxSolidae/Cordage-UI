@@ -4,19 +4,20 @@
 
 ## Installation
 
-To install, you can either run 
+This package uses bootstrap for some components. To install, you can either run 
 
-`npm install cordage-ui`
+`npm install cordage-ui bootstrap`
 
 or
 
-`yarn add cordage-ui`
+`yarn add cordage-ui bootstrap`
 
 ## Import
 
 
 ES6 import
 ```javascript
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'cordage-ui/dist/cordage-ui.css';
 import { Button } from 'cordage-ui';
 
