@@ -18,7 +18,7 @@ const CardComponent = (props: Props) => {
   return(
   <Card style={{ width: '18rem' }}>
     <Card.Img variant="top"/>
-      <Card.Body>
+      <Card.Body className='card'>
       <Card.Title>{title}</Card.Title>
       <Card.Text>
         {content}

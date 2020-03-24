@@ -4650,6 +4650,10 @@ h6 {
   color: red;
 }
 
+.card{
+  background-color: red;
+}
+
 .sidebar-accordion {
   transition: background-color 0.3s;
 }
