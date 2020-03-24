@@ -4650,8 +4650,18 @@ h6 {
   color: red;
 }
 
-.card{
-  background-color: red;
+.card-title {
+  font-family: var(--main-font);
+  font-weight: bold;
+  color: var(--black);
+  font-size: 1.125rem;
+  letter-spacing: -0.18px;
+}
+
+.card-content {
+  font-family: var(--main-font);
+  font-weight: light;
+  font-size: var(--base-font-size);
 }
 
 .sidebar-accordion {
