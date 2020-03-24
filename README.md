@@ -17,7 +17,7 @@ or
 
 ES6 import
 ```javascript
-import 'cordage-ui/cordage-ui.css';
+import 'cordage-ui/dist/cordage-ui.css';
 import { Button } from 'cordage-ui';
 
 // Do some cool stuff with the UI
