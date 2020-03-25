@@ -1,9 +1,10 @@
 import React from 'react';
-// import Button from './Button';
 import { Card } from 'react-bootstrap';
+import classnames from 'classnames';
 
 export type Props = {
   title: String,
+  image: String,
   content: String,
   subcontent: String,
   width: 'small' | 'large'
@@ -13,14 +14,15 @@ const CardComponent = (props: Props) => {
 
   const {
     title,
+    image,
     content,
     subcontent,
     width,
   } = props;
 
   return(
-  <Card style={{ width: '21.875rem', }}>
-    <Card.Img className='card-image' variant="top" src='https://images.dog.ceo/breeds/terrier-australian/n02096294_4440.jpg'/>
+  <Card className={classnames('card-component', `card-${ width }`)}>
+    <Card.Img className='card-image' variant="top" src={ image }/>
       <Card.Body className='card small'>
       <Card.Title>{title}</Card.Title>
       <Card.Text className='card-content'>
@@ -32,6 +34,10 @@ const CardComponent = (props: Props) => {
     </Card.Body>
   </Card>
   )
+}
+
+CardComponent.defaultProps = {
+  width: 'small',
 }
 
 export default CardComponent;

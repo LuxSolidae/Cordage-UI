@@ -4651,6 +4651,11 @@ h6 {
   color: red;
 }
 
+.card-component {
+  min-height: 22.5625rem;
+  width: 21.875rem;
+}
+
 .card-title {
   color: var(--black);
   font-family: var(--main-font);
@@ -4663,6 +4668,7 @@ h6 {
   color: #919191;
   font-family: var(--main-font);
   font-size: var(--base-font-size);
+  margin-bottom: 0;
 }
 
 .card-divider {
@@ -4678,12 +4684,12 @@ h6 {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: -0.27px;
-  line-height: 1em
-}
+  line-height: 1em;
 
-.card-link:hover {
+  /* &:hover {
     font-size: 0.75rem;
-  }
+  } */
+}
 
 .sidebar-accordion {
   transition: background-color 0.3s;
