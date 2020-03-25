@@ -1,6 +1,8 @@
 // @flow
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
+import ilusSuccess from '@_src_/lib/img/illustrations/modal-success.png';
 import classnames from 'classnames';
 import * as React from 'react';
 
@@ -41,6 +43,9 @@ export const CustomModal = ({ header, content, buttonText, type, color }: Props)
           <Modal.Title>{header}</Modal.Title>
         </Modal.Header>
         <Modal.Body className={classnames('modal-body', `body-${ color }`)}>
+        <div>
+          <Image src={ ilusSuccess } fluid />
+        </div>
           <h6 className={classnames('modal-message', `type-${ color }`)}>{type}</h6>
           {content}
         </Modal.Body>

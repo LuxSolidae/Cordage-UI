@@ -4973,7 +4973,8 @@ h6 {
 
 .modal-message {
   font-size: 1.125rem;
-  letter-spacing: -0.18px
+  letter-spacing: -0.18px;
+  margin-top: 1.625rem
 }
 
 .modal-message.type-white {
