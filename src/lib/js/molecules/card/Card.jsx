@@ -3,9 +3,13 @@ import { Card } from 'react-bootstrap';
 import classnames from 'classnames';
 
 export type Props = {
+  /**Tittle of card */
   title: String,
+  /**String of image to fetch */
   image: String,
+  /**Text inside card. */
   content: String,
+  /**Subcontent (link) */
   subcontent: String,
 };
 

@@ -11,9 +11,11 @@
 
   --white: #fff;
   --white-40: #666;
+  --off-white: #f7f8f7;
   --black: #151515;
   --black-2: #272727;
   --greyish-brown: #3d3d3d;
+  --brown-grey: #919191;
   --salmon: #fd8f67;
   --very-light-pink: #e4e4e4;
   --bright-blue: #005cff;
@@ -4689,6 +4691,39 @@ h6 {
   /* &:hover {
     font-size: 0.75rem;
   } */
+}
+
+.card-extended {
+  /* padding: 1.5625rem; */
+  background-color: white;
+  min-height: 6rem;
+}
+
+.card-extended-body {
+  background-color: var(--off-white);
+}
+
+.card-extended-info {
+  color: var(--brown-grey);
+  font-family: var(--main-font);
+  font-size: 0.75rem;
+  line-height: 1.33em;
+}
+
+.card-extended-titles {
+  color: var(--salmon);
+  font-family: var(--main-font);
+  font-size: 0.75rem;
+  letter-spacing: -0.2px;
+  line-height: 1em;
+}
+
+.card-extended-subtitles {
+  color: var(--black-2);
+  font-family: var(--main-font);
+  font-size: 0.875rem;
+  letter-spacing: -0.14px;
+  line-height: 1.25em;
 }
 
 .sidebar-accordion {
