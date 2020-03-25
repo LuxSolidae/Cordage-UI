@@ -5,6 +5,7 @@ menu: Organisms
 ---
 
 import CustomModal from './CustomModal';
+import ConfirmationModal from './ConfirmationModal';
 import { ThemeContext } from '@cordage_ui';
 import { Playground, Props } from 'docz';
 import theme from '@cordage_ui/cordage.json';
@@ -39,4 +40,16 @@ import theme from '@cordage_ui/cordage.json';
       color='white'
     />
   </ThemeContext.Provider>
+</Playground>
+
+---
+
+### Confirmation Modal
+
+<Playground>
+  <ConfirmationModal
+    header='Confirm action?'
+    content='The elimination of a user does not delete the activities the users have performed previously. There will be no implications in your organization’s Logs. '
+    btnConfirm='Yes, confirm'
+  />
 </Playground>
