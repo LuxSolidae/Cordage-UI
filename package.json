@@ -1,6 +1,6 @@
 {
   "name": "cordage-ui",
-  "version": "0.2.11",
+  "version": "0.4.5",
   "license": "UNLICENSED",
   "private": false,
   "main": "dist/index.js",
@@ -11,12 +11,9 @@
   },
   "babel": {
     "presets": [
-      [
-        "react-app",
-        {
-          "absoluteRuntime": false
-        }
-      ]
+      "@babel/preset-react",
+      "@babel/preset-flow",
+      "@babel/preset-env"
     ],
     "plugins": [
       [
@@ -93,12 +90,10 @@
     "i18next-xhr-backend": "^3.2.2",
     "identity-obj-proxy": "3.0.0",
     "moment": "^2.24.0",
-    "react": "^16.12.0",
     "react-app-polyfill": "^1.0.6",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-custom-scrollbars": "^4.2.1",
     "react-dev-utils": "^10.2.0",
-    "react-dom": "^16.12.0",
     "react-i18next": "^11.3.3",
     "react-router-dom": "^5.1.2",
     "resolve": "1.15.0",
@@ -110,18 +105,21 @@
     "yup": "^0.28.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-proposal-export-default-from": "^7.8.3",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
+    "@babel/preset-flow": "^7.9.0",
     "@babel/preset-react": "^7.8.3",
     "@babel/register": "^7.8.3",
     "@svgr/webpack": "4.3.3",
     "@types/jest": "^25.1.4",
     "autoprefixer": "^9.7.4",
     "babel-plugin-i18next-extract": "^0.6.1",
+    "babel-preset-env": "^1.7.0",
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "css-loader": "^3.4.2",
     "docz": "^2.2.0",
@@ -178,23 +176,24 @@
     "webpack-manifest-plugin": "^2.2.0",
     "workbox-webpack-plugin": "^5.0.0"
   },
-  "peerDependencies": {},
-  "resolutions": {
-    "docz/**/webpack": "4.28.4"
+  "peerDependencies": {
+    "bootstrap": "^4.4.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "scripts": {
-    "build:css": "postcss src/App.pcss -o src/App.css",
-    "watch:css": "postcss src/App.pcss -o src/App.css -w",
+    "build:css": "postcss src/App.pcss -o src/lib/cordage-ui.css",
+    "watch:css": "postcss src/App.pcss -o src/lib/cordage-ui.css -w",
     "start": "npm-run-all -p watch:css start-js",
     "start-js": "node scripts/start.js",
     "build-js": "node scripts/build.js",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "build": "rm -rf dist && NODE_ENV=production npm run build:css && NODE_ENV=production babel src/lib --out-dir dist --copy-files --no-copy-ignored --ignore \"src/lib/js/Docz.js\",\"src/lib/Docz.css\",\"test.js\" && rm -rf dist/css dist/Docz.css",
     "test": "node scripts/test.js --env=jsdom",
     "flow": "flow",
     "partial:docz:dev": "docz dev",
     "partial:docz:build": "docz build",
-    "watch:css:components": "postcss src/lib/css/Docz.pcss -o src/Docz.css -w",
-    "build:css:components": "postcss src/lib/css/Docz.pcss -o src/Docz.css",
+    "watch:css:components": "postcss src/lib/css/Docz.pcss -o src/lib/Docz.css -w",
+    "build:css:components": "postcss src/lib/css/Docz.pcss -o src/lib/Docz.css",
     "docz:dev": "npm-run-all -p watch:css:components partial:docz:dev",
     "docz:build": "npm-run-all build:css:components partial:docz:build",
     "publish:npm": "npm run build && npm publish"
