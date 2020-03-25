@@ -66,9 +66,8 @@ const CardExtended = (props: Props) => {
             <p className='card-extended-titles'>Job Functions</p>
             <p className='card-extended-subtitles'>{ jobFunctions }</p>
           </Col>
-          <Col>
-            <p className='card-extended-titles'>Seniority Level</p>
-            <p className='card-extended-subtitles'>Not applicable</p>
+          <Col >
+            <Button variant="primary" size='lg' style={{ width: '100%' }}>Apply</Button>
           </Col>
         </Container>
         </Card.Body>
