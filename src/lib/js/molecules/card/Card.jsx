@@ -7,7 +7,6 @@ export type Props = {
   image: String,
   content: String,
   subcontent: String,
-  width: 'small' | 'large'
 };
 
 const CardComponent = (props: Props) => {
@@ -17,11 +16,10 @@ const CardComponent = (props: Props) => {
     image,
     content,
     subcontent,
-    width,
   } = props;
 
   return(
-  <Card className={classnames('card-component', `card-${ width }`)}>
+  <Card className={classnames('card-component')}>
     <Card.Img className='card-image' variant="top" src={ image }/>
       <Card.Body className='card small'>
       <Card.Title>{title}</Card.Title>
@@ -36,8 +34,5 @@ const CardComponent = (props: Props) => {
   )
 }
 
-CardComponent.defaultProps = {
-  width: 'small',
-}
 
 export default CardComponent;
