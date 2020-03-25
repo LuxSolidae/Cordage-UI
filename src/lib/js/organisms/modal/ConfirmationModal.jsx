@@ -6,13 +6,15 @@ import * as React from 'react';
 export type Props = {
   /** Header of the modal */
   header: string,
+  /** Subheader of the modal */
+  subheader: String,
   /** Text inside the modal. */
   content: string,
   /** Text inside the button. */
   btnConfirm: string,
 };
 
-export const ConfirmationModal = ({ header, content, btnConfirm }: Props) => {
+export const ConfirmationModal = ({ header, subheader, content, btnConfirm }: Props) => {
 
   const [show, setShow] = React.useState(false);
 
@@ -31,6 +33,7 @@ export const ConfirmationModal = ({ header, content, btnConfirm }: Props) => {
             <Modal.Title>{ header }</Modal.Title>
           </Modal.Header>
           <Modal.Body className='modal-confirm-body'>
+            <h6>{subheader}</h6>
             { content }
           </Modal.Body>
           <Modal.Footer>
