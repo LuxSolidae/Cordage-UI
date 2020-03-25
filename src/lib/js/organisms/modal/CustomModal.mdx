@@ -27,17 +27,17 @@ import theme from '@cordage_ui/cordage.json';
     <CustomModal
       header='Header of modal'
       content='We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them check their emails. In case they don’t receive a message ask them to check their spam folder. This action make take up to 5 minutes.'
-      buttonText='Click to open dark modal'
-      type='Success!'
+      buttonText='Click to open success modal'
+      isError= {false}
       color='dark'
     />
 
       <CustomModal
       header='Header of modal'
       content='We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them check their emails. In case they don’t receive a message ask them to check their spam folder. This action make take up to 5 minutes.'
-      buttonText='Click to open white modal'
-      type='Success!'
-      color='white'
+      buttonText='Click to open error modal'
+      isError
+      color='dark'
     />
   </ThemeContext.Provider>
 </Playground>

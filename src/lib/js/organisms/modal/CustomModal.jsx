@@ -3,8 +3,10 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import ilusSuccess from '@_src_/lib/img/illustrations/modal-success.png';
+import ilusError from '@_src_/lib/img/illustrations/modal-error.png';
 import classnames from 'classnames';
 import * as React from 'react';
+import { boolean } from 'yup';
 
 export type Props = {
   /** Header of the modal */
@@ -13,13 +15,14 @@ export type Props = {
   content: string,
   /** Text inside the button. */
   buttonText: string,
-  /** Type of notification. */
-  type: string,
+  /** If isError true, it will show Error modal. Otherwise it will show Success */
+  isError: boolean,
   /** Changes the background color of the modal (therefore the font's one too). */
   color: 'white' | 'dark',
+
 };
 
-export const CustomModal = ({ header, content, buttonText, type, color }: Props) => {
+export const CustomModal = ({ header, content, buttonText, isError, color }: Props) => {
 
   const [show, setShow] = React.useState(false);
   const handleClose = () => setShow(false);
@@ -44,9 +47,10 @@ export const CustomModal = ({ header, content, buttonText, type, color }: Props)
         </Modal.Header>
         <Modal.Body className={classnames('modal-body', `body-${ color }`)}>
         <div>
-          <Image src={ ilusSuccess } fluid />
+          <Image src={ isError ? ilusError : ilusSuccess }
+          fluid />
         </div>
-          <h6 className={classnames('modal-message', `type-${ color }`)}>{type}</h6>
+          <h6 className={classnames('modal-message', `type-${ color }`)}>{ isError ? 'Error' : 'Success!'  }</h6>
           {content}
         </Modal.Body>
       </Modal>
