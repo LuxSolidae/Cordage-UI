@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 export type Props = {
   jobTitle:  String,
+  profileImg : String,
   jobPlace:  String,
   jobDescription: String,
   seniorityLevel: String,
@@ -17,6 +18,7 @@ const CardExtended = (props: Props) => {
 
   const {
     jobTitle,
+    profileImg,
     jobPlace,
     jobDescription,
     seniorityLevel,
@@ -31,7 +33,7 @@ const CardExtended = (props: Props) => {
       <Card.Header className='card-extended'>
         <div className='card-ext-header-wrapper'>
         <div className='d-flex'>
-          <img className='card-extended-image' src='https://images.dog.ceo/breeds/clumber/n02101556_6883.jpg' alt='profile image' />
+          <img className='card-extended-image' src={ profileImg } alt='profile image' />
           <div>
             <p className='card-ext-jobTitle'>{ jobTitle }</p>
             <p className='card-ext-place'>{ jobPlace }</p>
