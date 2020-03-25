@@ -99,7 +99,7 @@ const Input = (props: Props) => {
           readOnly={readOnly}
           onChange={onChange}
           onBlur={onBlur}
-          icon={icon}
+          icon={type}
         />
       );
       break;
