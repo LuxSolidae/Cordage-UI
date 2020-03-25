@@ -4923,6 +4923,7 @@ h6 {
 }
 
 .modal-container {
+  max-width: 33.75rem;
   min-height: 24.375rem;
 }
 
@@ -4958,7 +4959,7 @@ h6 {
   font-size: 0.875rem;
   letter-spacing: -0.14px;
   line-height: 1.43em;
-  padding: 7rem 1.875rem 3.75rem 1.875rem
+  padding: 2rem 1.875rem 3.75rem 1.875rem
 }
 
 .modal-body.body-white {
