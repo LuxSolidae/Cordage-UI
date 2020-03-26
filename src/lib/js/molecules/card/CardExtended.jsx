@@ -3,27 +3,33 @@ import { Accordion, Card, Button, Container, Col } from 'react-bootstrap';
 import points from '@_src_/lib/img/icons/more-points.svg';
 
 export type Props = {
-  jobTitle:  String,
-  profileImg : String,
-  jobPlace:  String,
-  jobDescription: String,
-  seniorityLevel: String,
-  industry: String,
-  employmentType: String,
-  jobFunctions: String
+  /**Title of the card */
+  title?:  String,
+  /**Profile image of the card. */
+  img?: String,
+  /**Location as address. */
+  location?:  String,
+  description?: String,
+  seniorityLevel?: String,
+  industry?: String,
+  employmentType?: String,
+  jobFunctions?: String,
+
+  onApply?: Function,
 };
 
 export const CardExtended = (props: Props) => {
 
   const {
-    jobTitle,
-    profileImg,
-    jobPlace,
-    jobDescription,
+    title,
+    img,
+    location,
+    description,
     seniorityLevel,
     industry,
     employmentType,
-    jobFunctions
+    jobFunctions,
+    onApply
   } = props;
 
   return(
@@ -32,10 +38,10 @@ export const CardExtended = (props: Props) => {
       <Card.Header className='card-extended'>
         <div className='card-ext-header-wrapper'>
         <div className='d-flex'>
-          <img className='card-extended-image' src={ profileImg } alt='profile image' />
+          <img className='card-extended-image' src={ img } alt='profile image' />
           <div>
-            <p className='card-ext-jobTitle'>{ jobTitle }</p>
-            <p className='card-ext-place'>{ jobPlace }</p>
+            <p className='card-ext-jobTitle'>{ title }</p>
+            <p className='card-ext-place'>{ location }</p>
           </div>
         </div>
           <Accordion.Toggle as={Button} variant="link" eventKey="0">
@@ -44,7 +50,7 @@ export const CardExtended = (props: Props) => {
         </div>
         <div>
           <p className='card-extended-info'>
-            { jobDescription }
+            { description }
           </p>
         </div>
       </Card.Header>
@@ -68,7 +74,7 @@ export const CardExtended = (props: Props) => {
             <p className='card-extended-subtitles'>{ jobFunctions }</p>
           </Col>
           <Col >
-            <Button variant="primary" size='lg' style={{ width: '100%' }}>Apply</Button>
+            <Button variant="primary" size='lg' style={{ width: '100%' }} onClick={ onApply }>Apply</Button>
           </Col>
         </Container>
         </Card.Body>
@@ -77,6 +83,18 @@ export const CardExtended = (props: Props) => {
   </Accordion>
   )
 }
+
+CardExtended.defaultProps = {
+  title: '',
+  img: '',
+  location: '',
+  description: '',
+  seniorityLevel: '',
+  industry: '',
+  employmentType: '',
+  jobFunctions: '',
+  onApply: () => {},
+};
 
 
 export default CardExtended;

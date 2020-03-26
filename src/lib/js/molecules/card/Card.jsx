@@ -3,40 +3,50 @@ import { Card } from 'react-bootstrap';
 import classnames from 'classnames';
 
 export type Props = {
-  /**Tittle of card */
-  title: String,
-  /**String of image to fetch */
-  image: String,
-  /**Text inside card. */
-  children: React.Node,
-  /**Subcontent (link) */
-  linkText: String,
+  /**Tittle of the card */
+  title?: String,
+  // /**String of img to fetch (url) */
+  img?: String,
+  /**Content inside card. */
+  children?: React.Node,
+  /**Text of of the link */
+  linkText?: String,
+  /**URL inside the link to go. */
+  linkHref: String,
 };
 
 export const CardComponent = (props: Props) => {
 
   const {
     title,
-    image,
+    img,
     children,
     linkText,
+    linkHref,
   } = props;
 
   return(
   <Card className={'card-component'}>
-    <Card.Img className='card-image' variant="top" src={ image }/>
+    <Card.Img className='card-image' variant="top" src={ img }/>
       <Card.Body className='card small'>
       <Card.Title>{title}</Card.Title>
       <Card.Text className='card-content'>
         {children}
       </Card.Text>
       <div className='card-divider'></div>
-      {/*FIXME Needs to use Button from Cordage. */}
-      <a className='card-link' href='#'>{ linkText }</a>
+      <a className='card-link' href={linkHref}>{ linkText }</a>
     </Card.Body>
   </Card>
   )
 }
+
+CardComponent.defaultProps = {
+  title: '',
+  img: '',
+  children: '',
+  linkText: '',
+  linkHref: '',
+};
 
 
 export default CardComponent;

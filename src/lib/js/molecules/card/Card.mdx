@@ -19,7 +19,7 @@ import { Playground, Props } from 'docz';
 <Playground>
   <CardComponent
     title='Image Card'
-    image='https://images.dog.ceo/breeds/retriever-golden/n02099601_286.jpg'
+    img='https://images.dog.ceo/breeds/retriever-golden/n02099601_286.jpg'
     children='Connect all the cool stuff from other places to your app. We support em’ all.'
     linkText='Explore all plugins'
   ></CardComponent>
@@ -35,14 +35,15 @@ import { Playground, Props } from 'docz';
 
 <Playground>
   <CardExtended
-    jobTitle='Designer'
-    profileImg='https://images.dog.ceo/breeds/clumber/n02101556_6883.jpg'
-    jobPlace='Hays  |  City of London, United Kingdom'
-    jobDescription='Mid-weight/senior designer to create status-quo-challenging design work across a wide range of media for marketing efforts, including large scale, high profile branded conferences and events, product launch campaigns, presentations, web content, ads, videos, infographics, DM and marketing material.'
+    title='Designer'
+    img='https://images.dog.ceo/breeds/clumber/n02101556_6883.jpg'
+    location='Hays  |  City of London, United Kingdom'
+    description='Mid-weight/senior designer to create status-quo-challenging design work across a wide range of media for marketing efforts, including large scale, high profile branded conferences and events, product launch campaigns, presentations, web content, ads, videos, infographics, DM and marketing material.'
     seniorityLevel='Not Applicable'
     industry='Financial Services'
     employmentType='Temporary'
     jobFunctions='Marketing'
+    onApply={() => {alert('Button Apply clicked.')}}
   >
   </CardExtended>
 </Playground>
