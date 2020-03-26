@@ -5031,6 +5031,7 @@ h6 {
 }
 
 .modal-container {
+  max-width: 33.75rem;
   min-height: 24.375rem;
 }
 
@@ -5066,7 +5067,7 @@ h6 {
   font-size: 0.875rem;
   letter-spacing: -0.14px;
   line-height: 1.43em;
-  padding: 7rem 1.875rem 3.75rem 1.875rem
+  padding: 2rem 1.875rem 3.75rem 1.875rem
 }
 
 .modal-body.body-white {
@@ -5081,7 +5082,8 @@ h6 {
 
 .modal-message {
   font-size: 1.125rem;
-  letter-spacing: -0.18px
+  letter-spacing: -0.18px;
+  margin-top: 1.625rem
 }
 
 .modal-message.type-white {
@@ -5091,6 +5093,22 @@ h6 {
 .modal-message.type-dark {
     color: white;
   }
+
+.modal-confirm {
+  background-color: white;
+  color: black;
+  flex-direction: column;
+  display: flex;
+  min-height: 30.9375rem;
+}
+
+.modal-confirm-body {
+  background-color: white;
+}
+
+.modal-confirm-subheader {
+  font-size: 1.125rem;
+}
 
 .page.page-administrative > .page-header {
       padding: 1.625rem 1.875rem;
