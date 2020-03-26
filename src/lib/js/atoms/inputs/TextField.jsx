@@ -54,10 +54,9 @@ const TextField = (props) => {
     type,
     field,
     form: { touched, errors },
-    value,
     disabled,
     readOnly,
-    className,
+    className
   } = props;
 
   let icon;
@@ -86,13 +85,14 @@ const TextField = (props) => {
   }
 
   return (
-    <FormGroup controlId={id}>
+    <FormGroup id={id}>
       { label && <FormLabel>{label}</FormLabel> }
 
       <div className={classnames('input-wrapper', { with_icon: icon})}>
         <FormControl
           {...field}
           {...props}
+          className={className}
           disabled={disabled}
           readOnly={readOnly}
         />
