@@ -9,45 +9,62 @@ export type Props = {
   /** Subheader of the modal */
   subheader: String,
   /** Text inside the modal. */
-  content: string,
-  /** Text inside the button. */
+  children: string,
+  /** Text inside the cancel button. */
+  btnCancel?: string,
+  /** Text inside the confirmation button. */
   btnConfirm: string,
+  /** Should the modal be visible? */
+  show?: boolean,
+
+  /** onClose callback */
+  onClose?: Function,
+  /** onClose callback */
+  onCancel?: Function,
+  /** onConfirm callback */
+  onConfirm?: Function,
 };
 
-export const ConfirmationModal = ({ header, subheader, content, btnConfirm }: Props) => {
-
-  const [show, setShow] = React.useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
-        Click to open Confirmation Modal
-      </Button>
-
-      <Modal show={show} onHide={handleClose} animation centered>
-        <div className='modal-confirm'>
-          <Modal.Header closeButton>
-            <Modal.Title>{ header }</Modal.Title>
-          </Modal.Header>
-          <Modal.Body className='modal-confirm-body'>
-            <h6>{subheader}</h6>
-            { content }
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Cancel
+export const ConfirmationModal = ({
+  header, subheader, children, btnConfirm, btnCancel, show,
+  onClose, onCancel, onConfirm,
+}: Props) => (
+  <Modal
+    show={show}
+    onHide={onClose}
+    animation
+    centered
+  >
+    <div className='modal-confirm'>
+      <Modal.Header closeButton>
+        <Modal.Title>{ header }</Modal.Title>
+      </Modal.Header>
+      <Modal.Body className='modal-confirm-body'>
+        <h6>{subheader}</h6>
+        { children }
+      </Modal.Body>
+      <Modal.Footer>
+        {
+          btnCancel && (
+            <Button variant='secondary' onClick={onCancel}>
+              {btnCancel}
             </Button>
-            <Button variant="primary" onClick={handleClose}>
-              { btnConfirm }
-            </Button>
-          </Modal.Footer>
-        </div>
-      </Modal>
-    </>
-  );
+          )
+        }
+        <Button variant='primary' onClick={onConfirm}>
+          { btnConfirm }
+        </Button>
+      </Modal.Footer>
+    </div>
+  </Modal>
+);
+
+ConfirmationModal.defaultProps = {
+  btnCancel: undefined,
+  show: false,
+  onClose: () => {},
+  onCancel: () => {},
+  onConfirm: () => {},
 };
 
 export default ConfirmationModal;
