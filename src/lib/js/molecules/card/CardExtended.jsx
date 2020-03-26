@@ -6,7 +6,7 @@ export type Props = {
   title?:  String,
   img?: String,
   location?:  String,
-  description?: String,
+  children?: React.node,
   seniorityLevel?: String,
   industry?: String,
   employmentType?: String,
@@ -20,7 +20,7 @@ export const CardExtended = (props: Props) => {
     title,
     img,
     location,
-    description,
+    children,
     seniorityLevel,
     industry,
     employmentType,
@@ -46,7 +46,7 @@ export const CardExtended = (props: Props) => {
         </div>
         <div>
           <p className='card-extended-info'>
-            { description }
+            { children }
           </p>
         </div>
       </Card.Header>
@@ -84,7 +84,7 @@ CardExtended.defaultProps = {
   title: '',
   img: '',
   location: '',
-  description: '',
+  children: '',
   seniorityLevel: '',
   industry: '',
   employmentType: '',
