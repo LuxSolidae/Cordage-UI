@@ -1,17 +1,32 @@
 // @flow
 import * as React from 'react';
-import { FormControl } from 'react-bootstrap';
+import { FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 import { ErrorMessage } from 'formik';
 
-const NewInput = ({ field, form: { touched, errors }, disabled, ...props }) => (
-  <>
+const NewInput = ({
+  id,
+  label,
+  field,
+  form: { touched, errors },
+  value,
+  disabled,
+  readOnly,
+  ...props 
+}) => (
+  <FormGroup controlId={id}>
+    { label && <FormLabel>{label}</FormLabel> }
+
     <FormControl
       {...field}
       {...props}
       disabled={disabled}
-      clear={disabled}
+      readOnly={readOnly}
     />
-    <ErrorMessage name={field.name} />
-  </>
+
+    <div className='input-error'>
+      <ErrorMessage name={field.name} />
+    </div>
+  </FormGroup>
 );
+
 export default NewInput;

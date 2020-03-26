@@ -18,7 +18,8 @@ const Schema = Yup.object().shape({
   phone: Yup.string()
     .min(8, "Phone must have at least 8 numbers.")
     .max(12, "Phone can' be longer than 12 characters."),
-  password: Yup.string().min(5, "Password must be at least 5 characters."),
+  password: Yup.string()
+    .min(5, "Password must be at least 5 characters."),
   textarea: Yup.string()
     .min(10, "Textarea must have at least 10 characters.")
     .max(100, "Textarea can't be longer than 100 characters")
@@ -29,7 +30,7 @@ const DoczForm = () => {
   return (
     <Formik
       initialValues={{
-        text: "THIS SHOULD FUCKING RENDER",
+        text: "",
         email: "",
         textarea: "",
         phone: "",
@@ -48,7 +49,8 @@ const DoczForm = () => {
         handleChange,
         handleBlur,
         handleSubmit,
-        isSubmitting
+        isSubmitting,
+        isValidating
       }) => (
         <Form onSubmit={handleSubmit}>
           {/*
@@ -108,29 +110,29 @@ const DoczForm = () => {
             required
           />
           */}
-
+          
           <Field
+            id="text-field"
+            label="Text Input"
             name="text"
             type="text"
-            placeholder="Text"
+            placeholder="Enter some characters"
             component={NewInput}
           />
 
           <Field
             name="email"
             type="email"
-            placeholder="Email"
+            placeholder="Enter your email"
             component={NewInput}
           />
 
-          <Field
-            name="phone"
-            type="phone"
-            placeholder="Phone"
-            component={NewInput}
-          />
-
-          <button type="submit">Submit</button>
+          <button 
+            type="submit"
+            onClick={() => console.log(isValidating)}
+          >
+            Submit
+          </button>
         </Form>
       )}
     </Formik>
