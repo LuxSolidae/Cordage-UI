@@ -18,8 +18,7 @@ const Schema = Yup.object().shape({
   phone: Yup.string()
     .min(8, "Phone must have at least 8 numbers.")
     .max(12, "Phone can' be longer than 12 characters."),
-  password: Yup.string()
-    .min(5, "Password must be at least 5 characters."),
+  password: Yup.string().min(5, "Password must be at least 5 characters."),
   textarea: Yup.string()
     .min(10, "Textarea must have at least 10 characters.")
     .max(100, "Textarea can't be longer than 100 characters")
@@ -110,10 +109,10 @@ const DoczForm = () => {
             required
           />
           */}
-          
+
           <Field
             id="text-field"
-            label="Text Input"
+            label="Plain text"
             name="text"
             type="text"
             placeholder="Enter some characters"
@@ -121,16 +120,24 @@ const DoczForm = () => {
           />
 
           <Field
+            id="email-field"
+            label="Email"
             name="email"
             type="email"
             placeholder="Enter your email"
             component={TextField}
           />
 
-          <button 
-            type="submit"
-            onClick={() => console.log(isValidating)}
-          >
+          <Field
+            id="phone-field"
+            label="Phone"
+            name="phone"
+            type="phone"
+            placeholder="Enter your phone"
+            component={TextField}
+          />
+
+          <button type="submit" onClick={() => console.log(isValidating)}>
             Submit
           </button>
         </Form>
