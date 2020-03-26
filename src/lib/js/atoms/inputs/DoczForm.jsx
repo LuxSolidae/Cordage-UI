@@ -5,7 +5,7 @@ import { Form } from "react-bootstrap";
 import * as Yup from "yup";
 
 import Input from "./Input";
-import NewInput from "./NewInput";
+import TextField from "./TextField";
 
 const Schema = Yup.object().shape({
   text: Yup.string()
@@ -117,14 +117,14 @@ const DoczForm = () => {
             name="text"
             type="text"
             placeholder="Enter some characters"
-            component={NewInput}
+            component={TextField}
           />
 
           <Field
             name="email"
             type="email"
             placeholder="Enter your email"
-            component={NewInput}
+            component={TextField}
           />
 
           <button 

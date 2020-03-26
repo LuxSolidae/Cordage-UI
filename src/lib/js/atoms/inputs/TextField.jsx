@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 import { ErrorMessage } from 'formik';
 
-const NewInput = ({
+const TextField = ({
   id,
   label,
   field,
@@ -29,4 +29,4 @@ const NewInput = ({
   </FormGroup>
 );
 
-export default NewInput;
+export default TextField;
