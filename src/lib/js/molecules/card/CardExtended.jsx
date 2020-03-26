@@ -3,18 +3,14 @@ import { Accordion, Card, Button, Container, Col } from 'react-bootstrap';
 import points from '@_src_/lib/img/icons/more-points.svg';
 
 export type Props = {
-  /**Title of the card */
   title?:  String,
-  /**Profile image of the card. */
   img?: String,
-  /**Location as address. */
   location?:  String,
   description?: String,
   seniorityLevel?: String,
   industry?: String,
   employmentType?: String,
   jobFunctions?: String,
-
   onApply?: Function,
 };
 
