@@ -1,7 +1,6 @@
 import React from 'react';
 import { Accordion, Card, Button, Container, Col } from 'react-bootstrap';
 import points from '@_src_/lib/img/icons/more-points.svg';
-import classnames from 'classnames';
 
 export type Props = {
   jobTitle:  String,
@@ -14,7 +13,7 @@ export type Props = {
   jobFunctions: String
 };
 
-const CardExtended = (props: Props) => {
+export const CardExtended = (props: Props) => {
 
   const {
     jobTitle,

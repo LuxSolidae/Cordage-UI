@@ -8,31 +8,31 @@ export type Props = {
   /**String of image to fetch */
   image: String,
   /**Text inside card. */
-  content: String,
+  children: React.Node,
   /**Subcontent (link) */
-  subcontent: String,
+  linkText: String,
 };
 
-const CardComponent = (props: Props) => {
+export const CardComponent = (props: Props) => {
 
   const {
     title,
     image,
-    content,
-    subcontent,
+    children,
+    linkText,
   } = props;
 
   return(
-  <Card className={classnames('card-component')}>
+  <Card className={'card-component'}>
     <Card.Img className='card-image' variant="top" src={ image }/>
       <Card.Body className='card small'>
       <Card.Title>{title}</Card.Title>
       <Card.Text className='card-content'>
-        {content}
+        {children}
       </Card.Text>
       <div className='card-divider'></div>
       {/*FIXME Needs to use Button from Cordage. */}
-      <a className='card-link' href='#'>{ subcontent }</a>
+      <a className='card-link' href='#'>{ linkText }</a>
     </Card.Body>
   </Card>
   )
