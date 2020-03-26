@@ -3,7 +3,6 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 import { ErrorMessage } from 'formik';
-import { optimize } from 'webpack';
 
 
 export type Props = {
@@ -11,13 +10,13 @@ export type Props = {
   label?: string,
   type?: string,
   field?: object,
-  form?: object,
+  form?: string,
   value?: string, 
   disabled?: Boolean,
   readOnly?: Boolean,
 };
 
-/*
+{/*
 const TextField = ({
   id,
   label,
@@ -46,9 +45,9 @@ const TextField = ({
 );
 
 export default TextField;
-*/
+*/}
 
-const TextField = (props: Props) => {
+const TextField = (props) => {
   const {
     id,
     label,
@@ -97,6 +96,7 @@ const TextField = (props: Props) => {
           disabled={disabled}
           readOnly={readOnly}
         />
+        { icon && <i className={classnames('input-icon fas', icon)}></i>}
       </div>
 
       <ErrorMessage component="span" className="input-error" name={field.name} />
