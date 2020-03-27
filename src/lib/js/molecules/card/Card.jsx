@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card as BootstrapCard, Button } from 'react-bootstrap';
 import classnames from 'classnames';
+import { t as typy } from 'typy';
 
 export type Props = {
   /**Tittle of the card */
@@ -9,44 +10,58 @@ export type Props = {
   img?: String,
   /**Content inside card. */
   children?: React.Node,
-  /**Text of of the link */
-  linkText?: String,
-  /**URL inside the link to go. */
-  linkHref: String,
+
+  /** A link */
+  link?: {
+    text?: string,
+    onClick?: Function,
+  },
 };
 
-export const CardComponent = (props: Props) => {
-
-  const {
-    title,
-    img,
-    children,
-    linkText,
-    linkHref,
-  } = props;
-
-  return(
-  <Card className={'card-component'}>
-    <Card.Img className='card-image' variant="top" src={ img }/>
-      <Card.Body className='card small'>
-      <Card.Title>{title}</Card.Title>
-      <Card.Text className='card-content'>
+export const Card = ({
+  title,
+  img,
+  children,
+  link,
+}: Props) => (
+  <BootstrapCard className={'card-component'}>
+    {
+      img && (
+        <BootstrapCard.Img className='card-image' variant="top" src={ img }/>
+      )
+    }
+    <BootstrapCard.Body className='card small'>
+      <BootstrapCard.Title>{title}</BootstrapCard.Title>
+      <BootstrapCard.Text className='card-content'>
         {children}
-      </Card.Text>
-      <div className='card-divider'></div>
-      <a className='card-link' href={linkHref}>{ linkText }</a>
-    </Card.Body>
-  </Card>
-  )
-}
+      </BootstrapCard.Text>
+      {
+        link.text && link.onClick && (
+          <>
+            <div className='card-divider'></div>
+            <Button
+              className='card-link'
+              variant='link'
+              onClick={link.onClick}
+            >
+              {link.text}
+            </Button>
+          </>//
+        )
+      }
+    </BootstrapCard.Body>
+  </BootstrapCard>
+);
 
-CardComponent.defaultProps = {
+Card.defaultProps = {
   title: '',
-  img: '',
+  img: undefined,
   children: '',
-  linkText: '',
-  linkHref: '',
+  link: {
+    text: undefined,
+    onClick: () => {},
+  },
 };
 
 
-export default CardComponent;
+export default Card;
