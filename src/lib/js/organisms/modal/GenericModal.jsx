@@ -10,23 +10,15 @@ export type Props = {
   subheader: String,
   /** Text inside the modal. */
   children: string,
-  /** Text inside the cancel button. */
-  btnCancel?: string,
-  /** Text inside the confirmation button. */
-  btnConfirm: string,
   /** Should the modal be visible? */
   show?: boolean,
   /** onClose callback */
   onClose?: Function,
-  /** onClose callback */
-  onCancel?: Function,
-  /** onConfirm callback */
-  onConfirm?: Function,
 };
 
-export const ConfirmationModal = ({
-  header, subheader, children, btnConfirm, btnCancel, show,
-  onClose, onCancel, onConfirm,
+export const GenericModal = ({
+  header, subheader, children, show,
+  onClose,
 }: Props) => (
   <Modal
     show={show}
@@ -43,27 +35,15 @@ export const ConfirmationModal = ({
         { children }
       </Modal.Body>
       <Modal.Footer>
-        {
-          btnCancel && (
-            <Button variant='secondary' onClick={onCancel}>
-              {btnCancel}
-            </Button>
-          )
-        }
-        <Button variant='primary' onClick={onConfirm}>
-          { btnConfirm }
-        </Button>
+
       </Modal.Footer>
     </div>
   </Modal>
 );
 
-ConfirmationModal.defaultProps = {
+GenericModal.defaultProps = {
   btnCancel: undefined,
   show: false,
-  onClose: () => {},
-  onCancel: () => {},
-  onConfirm: () => {},
 };
 
-export default ConfirmationModal;
+export default GenericModal;

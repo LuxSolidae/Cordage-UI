@@ -10,6 +10,7 @@ import { Playground, Props } from 'docz';
 import { ThemeContext } from '@cordage_ui';
 import CustomModal from './CustomModal';
 import ConfirmationModal from './ConfirmationModal';
+import GenericModal from './GenericModal';
 import theme from '@cordage_ui/cordage.json';
 
 
@@ -103,7 +104,41 @@ import theme from '@cordage_ui/cordage.json';
         >
           The elimination of a user does not delete the activities the users have performed previously. There will be no implications in your organization’s Logs.
         </ConfirmationModal>
-      </>//
+      </>
+    );
+  }}
+</Playground>
+
+---
+
+### Generic Modal
+
+This is a basic, empty modal.
+
+<Props of={GenericModal} />
+
+<Playground>
+  {() => {
+    const [showGeneric, setShowGeneric] = React.useState(false);
+    return (
+      <>
+        <Button variant='primary' onClick={() => {
+          setShowGeneric(true);
+        }}>
+          Click to open Generic Modal
+        </Button>
+        <GenericModal
+          header='Generic Modal'
+          subheader='Generic Modal subheader.'
+          show={showGeneric}
+          onClose={() => {
+            console.log('Modal closed without action');
+            setShowGeneric(false);
+          }}
+        >
+          Stuff...
+        </GenericModal>
+      </>
     );
   }}
 </Playground>
