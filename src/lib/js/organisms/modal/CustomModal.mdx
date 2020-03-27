@@ -1,0 +1,109 @@
+---
+name: Modal
+route: /organisms/Modal
+menu: Organisms
+---
+
+import Button from 'react-bootstrap/Button';
+import { Playground, Props } from 'docz';
+
+import { ThemeContext } from '@cordage_ui';
+import CustomModal from './CustomModal';
+import ConfirmationModal from './ConfirmationModal';
+import theme from '@cordage_ui/cordage.json';
+
+
+# Modal
+
+---
+
+#### CustomModal
+
+### Props
+
+<Props of={ CustomModal } />
+
+<Playground>
+  {() => {
+    const [showSuccess, setShowSuccess] = React.useState(false);
+    const [showError, setShowError] = React.useState(false);
+    return (
+      <ThemeContext.Provider theme={theme}>
+        <Button variant='success' onClick={() => {
+          setShowSuccess(true)
+        }}>
+          Click to open success modal
+        </Button>
+        <CustomModal
+          header='Header of modal'
+          isSuccess
+          color='dark'
+          show={showSuccess}
+          onClose={() => {
+            console.log('Success modal closed');
+            setShowSuccess(false);
+          }}
+        >
+          We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them check their emails. In case they don’t receive a message ask them to check their spam folder. This action make take up to 5 minutes.
+        </CustomModal>
+        <Button variant='success' onClick={() => {
+          setShowError(true)
+        }}>
+          Click to open error modal
+        </Button>
+        <CustomModal
+          header='Header of modal'
+          isError
+          color='dark'
+          show={showError}
+          onClose={() => {
+            console.log('Error modal closed');
+            setShowError(false);
+          }}
+        >
+          We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them check their emails. In case they don’t receive a message ask them to check their spam folder. This action make take up to 5 minutes.
+        </CustomModal>
+      </ThemeContext.Provider>
+    );
+  }}
+</Playground>
+
+---
+
+### Confirmation Modal
+
+<Playground>
+  {() => {
+    const [showConfirmation, setShowConfirmation] = React.useState(false);
+    return (
+      <>
+        <Button variant='primary' onClick={() => {
+          setShowConfirmation(true);
+        }}>
+          Click to open Confirmation Modal
+        </Button>
+        <ConfirmationModal
+          header='Confirm action'
+          subheader='Are you sure you wish to proceed with this action?'
+          btnCancel='Cancel'
+          show={showConfirmation}
+          onCancel={() => {
+            console.log('Cancel button clicked');
+            setShowConfirmation(false);
+          }}
+          btnConfirm='Yes, confirm'
+          onConfirm={() => {
+            console.log('Confirm button clicked');
+            setShowConfirmation(false);
+          }}
+          onClose={() => {
+            console.log('Modal closed without action');
+            setShowConfirmation(false);
+          }}
+        >
+          The elimination of a user does not delete the activities the users have performed previously. There will be no implications in your organization’s Logs.
+        </ConfirmationModal>
+      </>//
+    );
+  }}
+</Playground>
