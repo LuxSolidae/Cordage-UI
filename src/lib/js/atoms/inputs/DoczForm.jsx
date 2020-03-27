@@ -5,6 +5,7 @@ import { Form } from "react-bootstrap";
 import * as Yup from "yup";
 
 import TextField from "./TextField";
+import Select from './Select';
 
 const Schema = Yup.object().shape({
   text: Yup.string()
@@ -17,12 +18,6 @@ const Schema = Yup.object().shape({
   phone: Yup.string()
     .min(8, "Phone must have at least 8 numbers.")
     .max(12, "Phone can' be longer than 12 characters."),
-  password: Yup.string()
-    .min(5, "Password must be at least 5 characters."),
-  textarea: Yup.string()
-    .min(10, "Textarea must have at least 10 characters.")
-    .max(100, "Textarea can't be longer than 100 characters")
-    .required("Textarea is required.")
 });
 
 const DoczForm = () => {
@@ -70,6 +65,13 @@ const DoczForm = () => {
             type="phone"
             placeholder="Enter your phone"
             component={TextField}
+          />
+
+          <Field
+            id='select-field'
+            label='Select an option'
+            name='select'
+            component={Select}
           />
 
           <button type="submit" onClick={() => console.log(isValidating)}>
