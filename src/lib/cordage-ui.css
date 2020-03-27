@@ -529,6 +529,97 @@ h6 {
           border-radius: 1.6px;
         }
 
+/* TODO Needs some refactoring */
+
+/* Background overlay when the modal is active. */
+
+.modal {
+  background-color: rgba(21, 21, 21, 0.7);
+}
+
+.modal-container {
+  max-width: 33.75rem;
+  min-height: 24.375rem;
+}
+
+.modal-content {
+  background-color: black;
+}
+
+.custom-modal {
+  background-color: black;
+}
+
+.modal-header {
+  font-size: 1.25rem;
+  letter-spacing: -0.2px;
+  padding-left: 1.875rem;
+  padding-top: 1.875rem
+}
+
+.modal-header.header-dark {
+    background-color: black;
+    border-bottom: 1px solid #2a2a2a;
+    color: white;
+  }
+
+.modal-header.header-white {
+    background-color: white;
+    border-bottom: 1px solid #e4e4e4;
+    color: black;
+  }
+
+.modal-body {
+  background-color: black;
+  font-size: 0.875rem;
+  letter-spacing: -0.14px;
+  line-height: 1.43em;
+  padding: 2rem 1.875rem 3.75rem 1.875rem
+}
+
+.modal-body.body-white {
+    background-color: white;
+    color: black;
+  }
+
+.modal-body.body-dark {
+    background-color: black;
+    color: #919191;
+  }
+
+.modal-message {
+  font-size: 1.125rem;
+  letter-spacing: -0.18px;
+  margin-top: 1.625rem
+}
+
+.modal-message.type-white {
+    color: black;
+  }
+
+.modal-message.type-dark {
+    color: white;
+  }
+
+.modal-confirm {
+  background-color: white;
+  color: black;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  display: -webkit-box;
+  display: flex;
+  min-height: 30.9375rem;
+}
+
+.modal-confirm-body {
+  background-color: white;
+}
+
+.modal-confirm-subheader {
+  font-size: 1.125rem;
+}
+
 .page.page-administrative > .page-header {
       padding: 1.625rem 1.875rem;
     }
