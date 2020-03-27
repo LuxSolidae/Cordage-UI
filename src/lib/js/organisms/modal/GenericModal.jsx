@@ -2,6 +2,7 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import * as React from 'react';
+import { t as typy } from 'typy';
 
 export type Props = {
   /** Header of the modal */
@@ -14,21 +15,20 @@ export type Props = {
   show?: boolean,
   /** onClose callback */
   onClose?: Function,
-  /** Should the modal show footer buttons? */
-  showButtons: Boolean,
-  /** onClose callback */
-  onCancel?: Function,
-  /** onConfirm callback */
-  onConfirm?: Function,
-  /** Text inside the cancel button. */
-  btnCancel?: string,
-  /** Text inside the confirmation button. */
-  btnConfirm: string,
+
+  primaryAction?: {
+    text: string,
+    onClick: Function,
+  },
+  secondaryAction?: {
+    text: string,
+    onClick: Function,
+  },
 };
 
 export const GenericModal = ({
   header, subheader, children, show,
-  onClose, showButtons, onCancel, onConfirm, btnCancel, btnConfirm,
+  onClose, primaryAction, secondaryAction,
 }: Props) => (
   <Modal
     show={show}
@@ -45,27 +45,36 @@ export const GenericModal = ({
         { children }
       </Modal.Body>
 
-      {showButtons === true &&
-        <Modal.Footer>
-        <Button variant='secondary' onClick={onCancel}>
-        {btnCancel}
-        </Button>
-
-        <Button variant='primary' onClick={onConfirm}>
-        { btnConfirm }
-        </Button>
-    </Modal.Footer>
-      }
-
-
+      <Modal.Footer>
+        {
+          secondaryAction && (
+            <Button
+              variant='secondary'
+              onClick={typy(secondaryAction, 'onClick').safeFunction}
+            >
+              {typy(secondaryAction, 'text').safeString}
+            </Button>
+          )
+        }
+        {
+          primaryAction && (
+            <Button
+              variant='primary'
+              onClick={typy(primaryAction, 'onClick').safeFunction}
+            >
+              {typy(primaryAction, 'text').safeString}
+            </Button>
+          )
+        }
+      </Modal.Footer>
     </div>
   </Modal>
 );
 
 GenericModal.defaultProps = {
-  btnCancel: undefined,
   show: false,
-  showButtons: false,
+  primaryAction: undefined,
+  secondaryAction: undefined,
 };
 
 export default GenericModal;

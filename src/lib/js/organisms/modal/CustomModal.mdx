@@ -41,7 +41,7 @@ import theme from '@cordage_ui/cordage.json';
           color='dark'
           show={showSuccess}
           onClose={() => {
-            console.log('Success modal closed');
+            alert('Success modal closed');
             setShowSuccess(false);
           }}
         >
@@ -58,7 +58,7 @@ import theme from '@cordage_ui/cordage.json';
           color='dark'
           show={showError}
           onClose={() => {
-            console.log('Error modal closed');
+            alert('Error modal closed');
             setShowError(false);
           }}
         >
@@ -89,16 +89,16 @@ import theme from '@cordage_ui/cordage.json';
           btnCancel='Cancel'
           show={showConfirmation}
           onCancel={() => {
-            console.log('Cancel button clicked');
+            alert('Cancel button clicked');
             setShowConfirmation(false);
           }}
           btnConfirm='Yes, confirm'
           onConfirm={() => {
-            console.log('Confirm button clicked');
+            alert('Confirm button clicked');
             setShowConfirmation(false);
           }}
           onClose={() => {
-            console.log('Modal closed without action');
+            alert('Modal closed without action');
             setShowConfirmation(false);
           }}
         >
@@ -131,10 +131,23 @@ This is a basic, empty modal. Buttons are optional, and if you need them, you ca
           header='Generic Modal'
           subheader='Generic Modal subheader.'
           show={showGeneric}
-          showButtons={false}
           onClose={() => {
-            console.log('Modal closed without action');
+            alert('Modal closed without action');
             setShowGeneric(false);
+          }}
+          primaryAction={{
+            text: 'Accept',
+            onClick: () => {
+              alert('Accept clicked');
+              setShowGeneric(false);
+            },
+          }}
+          secondaryAction={{
+            text: 'Decline',
+            onClick: () => {
+              alert('Decline clicked');
+              setShowGeneric(false);
+            },
           }}
         >
           Stuff...
