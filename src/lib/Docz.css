@@ -11,11 +11,14 @@
 
   --white: #fff;
   --white-40: #666;
+  --off-white: #f7f8f7;
   --black: #151515;
   --black-2: #272727;
   --greyish-brown: #3d3d3d;
+  --brown-grey: #919191;
   --salmon: #fd8f67;
   --very-light-pink: #e4e4e4;
+  --bright-blue: #005cff;
 }
 
 /* Media Queries */
@@ -4647,6 +4650,113 @@ h6 {
 .input-error {
   font-size: 0.75rem;
   color: red;
+}
+
+.card-component {
+  min-height: 22.5625rem;
+  width: 21.875rem;
+}
+
+.card-title {
+  color: var(--black);
+  font-family: var(--main-font);
+  font-size: 1.125rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+}
+
+.card-content {
+  color: #919191;
+  font-family: var(--main-font);
+  font-size: var(--base-font-size);
+  margin-bottom: 0;
+}
+
+.card-divider {
+  background-color: var(--very-light-pink);
+  height: 1px;
+  margin-bottom: 1.125rem;
+  margin-top: 1.125rem;
+}
+
+.card-link {
+  color: var(--bright-blue);
+  font-family: var(--main-font);
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: -0.27px;
+  line-height: 1em;
+  padding-left: 0;
+  text-align: left;
+
+  /* &:hover {
+    font-size: 0.75rem;
+  } */
+}
+
+.card-extended {
+  /* padding: 1.5625rem; */
+  background-color: white;
+  min-height: 6rem;
+}
+
+.card-extended-body {
+  background-color: var(--off-white);
+}
+
+.card-extended-info {
+  color: var(--brown-grey);
+  font-family: var(--main-font);
+  font-size: 0.75rem;
+  line-height: 1.33em;
+  margin-top: 1.125rem;
+}
+
+.card-extended-titles {
+  color: var(--salmon);
+  font-family: var(--main-font);
+  font-size: 0.75rem;
+  letter-spacing: -0.2px;
+  line-height: 1em;
+}
+
+.card-extended-subtitles {
+  color: var(--black-2);
+  font-family: var(--main-font);
+  font-size: 0.875rem;
+  letter-spacing: -0.14px;
+  line-height: 1.25em;
+}
+
+.card-ext-header {
+  height: 2.875rem;
+  margin-bottom: 1.125rem;
+}
+
+.card-extended-image {
+  height: 46px;
+  margin-right: 1rem;
+  width: 46px;
+}
+
+.card-ext-place {
+  color: var(--brown-grey);
+  font-size: 0.75rem;
+  line-height: 1.33em;
+}
+
+.card-ext-jobTitle {
+  color: var(--black-2);
+  font-family: var(--main-font);
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.43em;
+}
+
+.card-ext-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.625rem;
 }
 
 .sidebar-accordion {

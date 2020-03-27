@@ -1,0 +1,75 @@
+---
+name: Cards
+route: /molecules/Cards
+menu: Molecules
+---
+
+import Card from './Card'
+import CardExtended from './CardExtended'
+import { Playground, Props } from 'docz';
+import theme from '@cordage_ui/cordage.json';
+import { ThemeContext } from '@cordage_ui';
+
+# Card
+
+---
+
+## Card Component
+
+<Props of={ Card } />
+
+<Playground>
+  <Card
+    title='Image Card'
+    img='https://images.dog.ceo/breeds/retriever-golden/n02099601_286.jpg'
+    link={{
+      text: 'Explore all plugins',
+      onClick: () => {
+        alert('Do nothing really');
+      },
+    }} 
+  >
+    Connect all the cool stuff from other places to your app. We support em’ all.
+  </Card>
+</Playground>
+
+---
+
+## Card Collapsable
+
+
+<Props of={ CardExtended } />
+
+<Playground>
+  <CardExtended
+    title='Designer'
+    subtitle='Hays | City of London, United Kingdom'
+    img='https://images.dog.ceo/breeds/clumber/n02101556_6883.jpg'
+    fields={[
+      {
+        title: 'Seniority Level',
+        description: 'Not Applicable',
+      },
+      {
+        title: 'Industry',
+        description: 'Financial Services',
+      },
+      {
+        title: 'Employment Type',
+        description: 'Temporary',
+      },
+      {
+        title: 'Job Functions',
+        description: 'Marketing',
+      },
+    ]}
+    action={{
+      text: 'Apply',
+      onClick: () => {
+        alert('Button Apply clicked.')
+      },
+    }}
+  >
+    Mid-weight/senior designer to create status-quo-challenging design work across a wide range of media for marketing efforts, including large scale, high profile branded conferences and events, product launch campaigns, presentations, web content, ads, videos, infographics, DM and marketing material.
+  </CardExtended>
+</Playground>
