@@ -1,7 +1,6 @@
 // @flow
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import * as React from 'react';
+import { Modal as BootstrapModal, Button } from 'react-bootstrap';
 import { t as typy } from 'typy';
 
 export type Props = {
@@ -26,26 +25,26 @@ export type Props = {
   },
 };
 
-export const GenericModal = ({
+export const Modal = ({
   header, subheader, children, show,
   onClose, primaryAction, secondaryAction,
 }: Props) => (
-  <Modal
+  <BootstrapModal
     show={show}
     onHide={onClose}
     animation
     centered
   >
     <div className='modal-confirm'>
-      <Modal.Header closeButton>
-        <Modal.Title>{ header }</Modal.Title>
-      </Modal.Header>
-      <Modal.Body className='modal-confirm-body'>
+      <BootstrapModal.Header closeButton>
+        <BootstrapModal.Title>{ header }</BootstrapModal.Title>
+      </BootstrapModal.Header>
+      <BootstrapModal.Body className='modal-confirm-body'>
         <h6>{subheader}</h6>
         { children }
-      </Modal.Body>
+      </BootstrapModal.Body>
 
-      <Modal.Footer>
+      <BootstrapModal.Footer>
         {
           secondaryAction && (
             <Button
@@ -66,15 +65,15 @@ export const GenericModal = ({
             </Button>
           )
         }
-      </Modal.Footer>
+      </BootstrapModal.Footer>
     </div>
-  </Modal>
+  </BootstrapModal>
 );
 
-GenericModal.defaultProps = {
+Modal.defaultProps = {
   show: false,
   primaryAction: undefined,
   secondaryAction: undefined,
 };
 
-export default GenericModal;
+export default Modal;
