@@ -64,6 +64,8 @@ ConfirmationModal.defaultProps = {
   onClose: () => {},
   onCancel: () => {},
   onConfirm: () => {},
+  btnCancel: 'Cancelar',
+  btnConfirm: 'Confirmar',
 };
 
 export default ConfirmationModal;

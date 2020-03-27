@@ -14,11 +14,21 @@ export type Props = {
   show?: boolean,
   /** onClose callback */
   onClose?: Function,
+  /** Should the modal show footer buttons? */
+  showButtons: Boolean,
+  /** onClose callback */
+  onCancel?: Function,
+  /** onConfirm callback */
+  onConfirm?: Function,
+  /** Text inside the cancel button. */
+  btnCancel?: string,
+  /** Text inside the confirmation button. */
+  btnConfirm: string,
 };
 
 export const GenericModal = ({
   header, subheader, children, show,
-  onClose,
+  onClose, showButtons, onCancel, onConfirm, btnCancel, btnConfirm,
 }: Props) => (
   <Modal
     show={show}
@@ -34,9 +44,20 @@ export const GenericModal = ({
         <h6>{subheader}</h6>
         { children }
       </Modal.Body>
-      <Modal.Footer>
 
-      </Modal.Footer>
+      {showButtons === true &&
+        <Modal.Footer>
+        <Button variant='secondary' onClick={onCancel}>
+        {btnCancel}
+        </Button>
+
+        <Button variant='primary' onClick={onConfirm}>
+        { btnConfirm }
+        </Button>
+    </Modal.Footer>
+      }
+
+
     </div>
   </Modal>
 );
@@ -44,6 +65,7 @@ export const GenericModal = ({
 GenericModal.defaultProps = {
   btnCancel: undefined,
   show: false,
+  showButtons: false,
 };
 
 export default GenericModal;
