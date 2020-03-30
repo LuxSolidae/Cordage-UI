@@ -4,13 +4,23 @@ import classnames from 'classnames';
 import { FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 import { ErrorMessage } from 'formik';
 
+export type Option = {
+  key: number,
+  label: string | number,
+  valuer: string | number,
+}
+
 type Props = {
   className?: string,
   id: number,
   label?: string,
   field: any,
   form: any,
-  options: any[],
+  options: {
+    key: number,
+    label: string | number,
+    valuer: string | number,
+  }[],
 }
 
 const Select = ({
