@@ -4,18 +4,23 @@ import classnames from 'classnames';
 import { FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 import { ErrorMessage } from 'formik';
 
+type Props = {
+  className?: string,
+  id: number,
+  label?: string,
+  field: any,
+  form: any,
+  options: any[],
+}
 
-const Select = (props) => {
-  const {
-    className,
-    id,
-    label,
-    field,
-    form: { touched, errors },
-    options: [],
-  } = props;
-
-  return(
+const Select = ({
+  className,
+  id,
+  label,
+  field,
+  form: { touched, errors },
+  options: [],
+}: Props) => (
     <FormGroup id={id} className={className}>
       { label && <FormLabel>{label}</FormLabel> }
       
@@ -31,6 +36,5 @@ const Select = (props) => {
       />
     </FormGroup>
   );
-}
 
 export default Select;
