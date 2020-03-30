@@ -7,19 +7,19 @@ import { ErrorMessage } from 'formik';
 export type Option = {
   key: number,
   label: string | number,
-  valuer: string | number,
+  value: string | number,
 }
 
 type Props = {
   className?: string,
-  id: number,
+  id: string,
   label?: string,
   field: any,
   form: any,
-  options: {
+  options?: {
     key: number,
     label: string | number,
-    valuer: string | number,
+    value: string | number,
   }[],
 }
 
@@ -29,14 +29,17 @@ const Select = ({
   label,
   field,
   form: { touched, errors },
-  options: [],
+  options,
 }: Props) => (
     <FormGroup id={id} className={className}>
-      { label && <FormLabel>{label}</FormLabel> }
+      { label && <FormLabel>{ label }</FormLabel> }
       
-      <FormControl as='select'>
-        <option>1</option>
-        <option>2</option>
+      <FormControl as='select' options={options}>
+        { options.map((option) => {
+          <option value={option.value}>
+            {option.label}
+          </option>
+        })}
       </FormControl>
 
       <ErrorMessage
@@ -48,3 +51,8 @@ const Select = ({
   );
 
 export default Select;
+
+
+Select.defaultProps = {
+  options: [],
+}

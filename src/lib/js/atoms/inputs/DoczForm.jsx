@@ -20,6 +20,11 @@ const Schema = Yup.object().shape({
     .max(12, "Phone can' be longer than 12 characters."),
 });
 
+const options = [
+  { label: 'This is an option', value: 1 },
+];
+
+
 const DoczForm = () => {
   return (
     <Formik
@@ -71,10 +76,11 @@ const DoczForm = () => {
             id='select-field'
             label='Select an option'
             name='select'
+            options={options}
             component={Select}
           />
 
-          <button type="submit" onClick={() => console.log(isValidating)}>
+          <button type="submit">
             Submit
           </button>
         </Form>
