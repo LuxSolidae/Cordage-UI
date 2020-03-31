@@ -34,12 +34,12 @@ const Select = ({
     <FormGroup id={id} className={className}>
       { label && <FormLabel>{ label }</FormLabel> }
       
-      <FormControl as='select' options={options}>
-        { options.map((option) => {
-          <option value={option.value}>
-            {option.label}
-          </option>
-        })}
+      <FormControl as='select'>
+        {
+          options.map((option) => {
+          return <option key={option.value} value={option.value}>{option.label}</option>
+          })
+        }
       </FormControl>
 
       <ErrorMessage

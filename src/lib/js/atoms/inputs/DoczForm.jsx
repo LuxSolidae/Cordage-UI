@@ -22,6 +22,8 @@ const Schema = Yup.object().shape({
 
 const options = [
   { label: 'This is an option', value: 1 },
+  { label: 'This is an option', value: 1 },
+  { label: 'This is an option', value: 1 },
 ];
 
 
