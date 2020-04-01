@@ -1,5 +1,5 @@
-import {DetailView } from './DetailView';
+import {DetailWrapper } from './DetailWrapper';
 
-export const DetailView = {
-  DetailView,
+export const DetailWrapper = {
+  DetailWrapper,
 };

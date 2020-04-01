@@ -1,0 +1,49 @@
+---
+name: Detail Wrapper
+route: /templates/DetailWrapper
+menu: Templates
+---
+
+
+import { Playground, Props } from 'docz';
+import Button from 'react-bootstrap/Button';
+import { Router } from 'react-router';
+import { createBrowserHistory } from "history";
+
+
+
+import { ThemeContext } from '@cordage_ui';
+import DetailWrapper from './detailWrapper';
+import theme from '@cordage_ui/cordage.json';
+import logo from '@_src_/lib/img/logo.svg';
+import locations from '@_src_/lib/img/icons/locations.svg';
+
+# Detail View
+
+<Props of={DetailWrapper} />
+
+### Playground
+
+<Playground>
+  {() => {
+    const [showDetail, setShowDetail] = React.useState(false);
+    return (
+      <>
+        <Button variant='primary' onClick={() => {
+          setShowDetail(true);
+        }}>
+          Click to open Generic Modal
+        </Button>
+        <DetailWrapper
+          show={showDetail}
+          onClose={
+            () => {setShowDetail(false)}
+          }
+        >
+        weqr
+        </DetailWrapper>
+      </>
+    );
+  }}
+</Playground>
+
