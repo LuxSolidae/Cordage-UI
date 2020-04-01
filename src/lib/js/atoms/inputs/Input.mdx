@@ -8,16 +8,16 @@ import { Playground, Props } from 'docz';
 import ThemeContext from '@cordage_ui/providers/themes';
 import theme from '@cordage_ui/cordage.json';
 
-import { Formik } from 'formik';
-import { Form } from 'react-bootstrap';
-import DoczForm from './DoczForm';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 
 import TextField from './TextField';
 import Select from './Select';
-
+import { Schema, options } from './Helpers';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@_src_/lib/Docz.css';
+
 
 # Inputs
 
@@ -34,25 +34,57 @@ import '@_src_/lib/Docz.css';
 <Playground>
   <div className='metro custom-pg'>
     <ThemeContext.Provider theme={theme}>
-      <DoczForm />
-    </ThemeContext.Provider>
-  </div>
-</Playground>
-
----
-
-## Select
-
-### Props
-
-<Props of={Select} />
-
-### Playground
-
-<Playground>
-  <div className='metro custom-pg'>
-    <ThemeContext.Provider theme={theme}>
-      <DoczForm />
+      <Formik
+        initialValues={{
+          text: '',
+          email: '',
+          phone: '',
+          select: '',
+        }}
+        validationSchema={Schema}
+        onSubmit={(values) => {
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        {({
+          handleSubmit,
+        }) => (
+          <Form onSubmit={handleSubmit}>
+            <Field
+              id='text-field'
+              label='Plain text'
+              name='text'
+              type='text'
+              placeholder='Enter some characters'
+              component={TextField}
+            />
+            <Field
+              id='email-field'
+              label='Email'
+              name='email'
+              type='email'
+              placeholder='Enter your email'
+              component={TextField}
+            />
+            <Field
+              id='phone-email'
+              label='Phone'
+              name='phone'
+              type='phone'
+              placeholder='Enter your phone'
+              component={TextField}
+            />
+            <Field
+              id='select-field'
+              label='Select an option'
+              name='select'
+              options={options}
+              component={Select}
+            />
+            <button type='submit'>Submit</button>
+          </Form>
+        )}
+      </Formik>
     </ThemeContext.Provider>
   </div>
 </Playground>
