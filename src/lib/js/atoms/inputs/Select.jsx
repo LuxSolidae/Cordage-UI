@@ -30,7 +30,6 @@ const Select = ({
   label,
   name,
   value,
-  field,
   onChange,
   onBlur,
   options,
@@ -56,6 +55,12 @@ const Select = ({
           );
         })}
       </FormControl>
+
+      <ErrorMessage
+        component="span"
+        className="input-error"
+        name={name}
+      />
     </FormGroup>
   );
 };
