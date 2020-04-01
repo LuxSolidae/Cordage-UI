@@ -1,13 +1,42 @@
 import * as React from 'react';
-import { ThemeContext, Page, Sidebar, SidebarContext } from '@cordage_ui';
+import { Router } from 'react-router';
+import { createBrowserHistory } from "history";
+import locations from '@_src_/lib/img/icons/locations.svg';
+
+import { Page, Sidebar, SidebarContext } from '@cordage_ui';
+import type { Props as PageProps } from './Page';
+import type { Props as SidebarProps } from './Siebar';
 
 
-export const DetailView = () => {
+export type Props = {
+  /** Same props as Page... */
+  ...PageProps,
+  /** Same props as Siebar... */
+  ...SidebarProps,
+}
 
-  return(
-    <Page.Administrative
-        title='Collections'
-        description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis metus vitae elit lacinia dapibus at sed nibh. In hac habitasse platea dictumst. Etiam condimentum orci justo. Fusce nec augue leo.'
+export const DetailView = ({
+title, description, logo
+}: Props) => (
+
+    <div className="metro d-flex">
+      <SidebarContext.Provider>
+        <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
+          <Sidebar.Menu logo={{ src: {logo}, alt: 'Cordage' }} zone='Admin'>
+            <Sidebar.Select
+              defaultSelected={3}
+              options={[
+                { key: 1, text: 'Location 123', icon: locations },
+                { key: 2, text: 'Location 124', icon: locations },
+                { key: 3, text: 'Location 125', icon: locations },
+              ]}
+            />
+          </Sidebar.Menu>
+        </Router>
+      </SidebarContext.Provider>
+      <Page.Administrative
+        title={title}
+        description={description}
       >
         <Page.Content
           title='Example title'
@@ -15,8 +44,8 @@ export const DetailView = () => {
           <div>Example text</div>
         </Page.Content>
       </Page.Administrative>
-  );
-}
+  </div>
+);
 
 export default DetailView;
 

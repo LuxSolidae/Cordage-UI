@@ -1,6 +1,6 @@
 ---
 name: Detail View
-route: /templates/detailView
+route: /templates/DetailView
 menu: Templates
 ---
 
@@ -8,6 +8,8 @@ menu: Templates
 import { Playground, Props } from 'docz';
 import { Router } from 'react-router';
 import { createBrowserHistory } from "history";
+
+
 
 import { ThemeContext } from '@cordage_ui';
 import DetailView from './detailView';
@@ -18,6 +20,18 @@ import '@_src_/lib/Docz.css';
 
 # Detail View
 
-<DetailView>
+<Props of={DetailView} />
 
-</DetailView>
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <DetailView
+      logo={logo}
+      title='Name of group'
+      descripton='Groups in Knowledge are groupings of Items and define the schema or structure of the custom data stored in those Items. '
+      >
+      </DetailView>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
