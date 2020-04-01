@@ -16,36 +16,6 @@ export type Props = {
   readOnly?: Boolean,
 };
 
-{/*
-const TextField = ({
-  id,
-  label,
-  type,
-  field,
-  form: { touched, errors },
-  value,
-  disabled,
-  readOnly,
-  ...props 
-}) => (
-  <FormGroup controlId={id}>
-    { label && <FormLabel>{label}</FormLabel> }
-
-    <div className={classnames('input-wrapper', { with_icon: icon})}>
-      <FormControl
-        {...field}
-        {...props}
-        disabled={disabled}
-        readOnly={readOnly}
-      />
-    </div>
-
-    <ErrorMessage component="span" className="input-error" name={field.name} />
-  </FormGroup>
-);
-
-export default TextField;
-*/}
 
 const TextField = (props) => {
   const {
@@ -99,7 +69,11 @@ const TextField = (props) => {
         { icon && <i className={classnames('input-icon fas', icon)}></i>}
       </div>
 
-      <ErrorMessage component="span" className="input-error" name={field.name} />
+      <ErrorMessage
+        component="span"
+        className="input-error"
+        name={field.name}
+      />
     </FormGroup>
   );
 }
