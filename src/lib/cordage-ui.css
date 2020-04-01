@@ -11,11 +11,14 @@
 
   --white: #fff;
   --white-40: #666;
+  --off-white: #f7f8f7;
   --black: #151515;
   --black-2: #272727;
   --greyish-brown: #3d3d3d;
+  --brown-grey: #919191;
   --salmon: #fd8f67;
   --very-light-pink: #e4e4e4;
+  --bright-blue: #005cff;
 }
 
 /* Media Queries */
@@ -218,6 +221,132 @@ h6 {
 .input-error {
   font-size: 0.75rem;
   color: red;
+}
+
+.card-component {
+  min-height: 22.5625rem;
+  width: 21.875rem;
+}
+
+.card-title {
+  color: #151515;
+  color: var(--black);
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+  font-size: 1.125rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+}
+
+.card-content {
+  color: #919191;
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+  font-size: 14px;
+  font-size: var(--base-font-size);
+  margin-bottom: 0;
+}
+
+.card-divider {
+  background-color: #e4e4e4;
+  background-color: var(--very-light-pink);
+  height: 1px;
+  margin-bottom: 1.125rem;
+  margin-top: 1.125rem;
+}
+
+.card-link {
+  color: #005cff;
+  color: var(--bright-blue);
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: -0.27px;
+  line-height: 1;
+  padding-left: 0;
+  text-align: left;
+
+  /* &:hover {
+    font-size: 0.75rem;
+  } */
+}
+
+.card-extended {
+  /* padding: 1.5625rem; */
+  background-color: white;
+  min-height: 6rem;
+}
+
+.card-extended-body {
+  background-color: #f7f8f7;
+  background-color: var(--off-white);
+}
+
+.card-extended-info {
+  color: #919191;
+  color: var(--brown-grey);
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+  font-size: 0.75rem;
+  line-height: 1.33;
+  margin-top: 1.125rem;
+}
+
+.card-extended-titles {
+  color: #fd8f67;
+  color: var(--salmon);
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+  font-size: 0.75rem;
+  letter-spacing: -0.2px;
+  line-height: 1;
+}
+
+.card-extended-subtitles {
+  color: #272727;
+  color: var(--black-2);
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+  font-size: 0.875rem;
+  letter-spacing: -0.14px;
+  line-height: 1.25;
+}
+
+.card-ext-header {
+  height: 2.875rem;
+  margin-bottom: 1.125rem;
+}
+
+.card-extended-image {
+  height: 46px;
+  margin-right: 1rem;
+  width: 46px;
+}
+
+.card-ext-place {
+  color: #919191;
+  color: var(--brown-grey);
+  font-size: 0.75rem;
+  line-height: 1.33;
+}
+
+.card-ext-jobTitle {
+  color: #272727;
+  color: var(--black-2);
+  font-family: 'Metropolis', sans-serif;
+  font-family: var(--main-font);
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.43;
+}
+
+.card-ext-header-wrapper {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin-top: 1.625rem;
 }
 
 .sidebar-accordion {
@@ -529,6 +658,97 @@ h6 {
           border-radius: 1.6px;
         }
 
+/* TODO Needs some refactoring */
+
+/* Background overlay when the modal is active. */
+
+.modal {
+  background-color: rgba(21, 21, 21, 0.7);
+}
+
+.modal-container {
+  max-width: 33.75rem;
+  min-height: 24.375rem;
+}
+
+.modal-content {
+  background-color: black;
+}
+
+.custom-modal {
+  background-color: black;
+}
+
+.modal-header {
+  font-size: 1.25rem;
+  letter-spacing: -0.2px;
+  padding-left: 1.875rem;
+  padding-top: 1.875rem
+}
+
+.modal-header.header-dark {
+    background-color: black;
+    border-bottom: 1px solid #2a2a2a;
+    color: white;
+  }
+
+.modal-header.header-white {
+    background-color: white;
+    border-bottom: 1px solid #e4e4e4;
+    color: black;
+  }
+
+.modal-body {
+  background-color: black;
+  font-size: 0.875rem;
+  letter-spacing: -0.14px;
+  line-height: 1.43em;
+  padding: 2rem 1.875rem 3.75rem 1.875rem
+}
+
+.modal-body.body-white {
+    background-color: white;
+    color: black;
+  }
+
+.modal-body.body-dark {
+    background-color: black;
+    color: #919191;
+  }
+
+.modal-message {
+  font-size: 1.125rem;
+  letter-spacing: -0.18px;
+  margin-top: 1.625rem
+}
+
+.modal-message.type-white {
+    color: black;
+  }
+
+.modal-message.type-dark {
+    color: white;
+  }
+
+.modal-confirm {
+  background-color: white;
+  color: black;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  display: -webkit-box;
+  display: flex;
+  min-height: 30.9375rem;
+}
+
+.modal-confirm-body {
+  background-color: white;
+}
+
+.modal-confirm-subheader {
+  font-size: 1.125rem;
+}
+
 .page.page-administrative > .page-header {
       padding: 1.625rem 1.875rem;
     }
@@ -546,6 +766,7 @@ h6 {
       }
 
 .page.page-administrative > .page-header p {
+        color: #919191;
         color: var(--brown-grey);
         font-size: 0.875rem;
         font-stretch: normal;

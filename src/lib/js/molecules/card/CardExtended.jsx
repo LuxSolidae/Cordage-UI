@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, Card, Button, Container, Col } from 'react-bootstrap';
 import { t as typy } from 'typy';
-import points from '@_src_/lib/img/icons/more-points.svg';
+import points from '../../../img/icons/more-points.svg';
 
 import type { Props as CardProps } from './Card';
 
