@@ -28,36 +28,25 @@ const Select = ({
   className,
   id,
   label,
+  name,
+  value,
   field,
-  form: { setFieldValue, setFieldTouched },
+  onChange,
+  onBlur,
   options,
 }: Props) => {
-  // State
-  const [activeOption, setActiveOption] = React.useState();
-
-  React.useEffect(() => {
-    const val = typy(field, 'value').safeString;
-    if (val.length > 0) {
-      const idx = _.findIndex(options, function (option) { return option.value.toLowerCase() === val.toLowerCase(); });
-      if (idx >= 0) {
-        setActiveOption(options[idx]);
-      }
-    }
-  }, [field, options]);
-
-
   return (
     <FormGroup id={id} className={className}>
-      {label && <FormLabel>{label}</FormLabel>}
+
+      { label && <FormLabel>{label}</FormLabel> }
+      
       <FormControl
         as="select"
         options={options}
-        value={field.value}
-        onBlur={() => setFieldTouched(field.name, true)}
-        onChange={option => {
-          setFieldTouched(field.name, true);
-          setFieldValue(field.name, option.value);
-        }}
+        onBlur={onBlur}
+        onChange={onChange}
+        value={value}
+        name={name}
       >
         {options.map(option => {
           return (
@@ -67,12 +56,6 @@ const Select = ({
           );
         })}
       </FormControl>
-
-      <ErrorMessage
-        component="span"
-        className="input-error"
-        name={field.name}
-      />
     </FormGroup>
   );
 };

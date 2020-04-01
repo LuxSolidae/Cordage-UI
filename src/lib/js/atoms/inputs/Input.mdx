@@ -48,6 +48,8 @@ import '@_src_/lib/Docz.css';
       >
         {({
           values,
+          handleBlur,
+          handleChange,
           handleSubmit,
           isValidating
         }) => (
@@ -76,12 +78,13 @@ import '@_src_/lib/Docz.css';
               placeholder='Enter your phone'
               component={TextField}
             />
-            <Field
+            <Select
               id='select-field'
-              label='Select an option'
               name='select'
+              value={values.select}
               options={options}
-              component={Select}
+              onChange={handleChange}
+              onBlur={handleBlur}
             />
             <button type='submit' onClick={() => console.log(isValidating, values)}>Submit</button>
           </Form>
