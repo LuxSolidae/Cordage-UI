@@ -47,7 +47,9 @@ import '@_src_/lib/Docz.css';
         }}
       >
         {({
+          values,
           handleSubmit,
+          isValidating
         }) => (
           <Form onSubmit={handleSubmit}>
             <Field
@@ -81,7 +83,7 @@ import '@_src_/lib/Docz.css';
               options={options}
               component={Select}
             />
-            <button type='submit'>Submit</button>
+            <button type='submit' onClick={() => console.log(isValidating, values)}>Submit</button>
           </Form>
         )}
       </Formik>
