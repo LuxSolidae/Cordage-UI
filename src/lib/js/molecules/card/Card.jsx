@@ -12,9 +12,10 @@ export type Props = {
   children?: React.Node,
 
   /** A link */
-  link?: {
+  action?: {
     text?: string,
     onClick?: Function,
+    variant?: string,
   },
 };
 
@@ -22,7 +23,7 @@ export const Card = ({
   title,
   img,
   children,
-  link,
+  action,
 }: Props) => (
   <BootstrapCard className={'card-component'}>
     {
@@ -36,15 +37,15 @@ export const Card = ({
         {children}
       </BootstrapCard.Text>
       {
-        link.text && link.onClick && (
+        action && (
           <>
             <div className='card-divider'></div>
             <Button
-              className='card-link'
-              variant='link'
-              onClick={link.onClick}
+              className='card-action'
+              variant={typy(action, 'variant').safeString}
+              onClick={typy(action, 'onClick').safeFunction}
             >
-              {link.text}
+              {typy(action, 'text').safeString}
             </Button>
           </>//
         )
@@ -57,10 +58,7 @@ Card.defaultProps = {
   title: '',
   img: undefined,
   children: '',
-  link: {
-    text: undefined,
-    onClick: () => {},
-  },
+  action: undefined,
 };
 
 

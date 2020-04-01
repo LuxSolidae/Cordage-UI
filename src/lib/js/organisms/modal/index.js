@@ -1,7 +1,7 @@
-import { CustomModal } from './CustomModal';
-import { ConfirmationModal } from './ConfirmationModal';
+import { Modal } from './Modal';
+import { NotificationModal } from './NotificationModal';
 
 export {
-  CustomModal,
-  ConfirmationModal
+  Modal,
+  NotificationModal,
 };
