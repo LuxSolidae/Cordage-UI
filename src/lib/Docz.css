@@ -5159,6 +5159,21 @@ h6 {
   background-color: rgba(21, 21, 21, 0.7);
 }
 
+.detail-body {
+  align-items: stretch;
+  background-color: white;
+  height: 100%;
+  max-width: none;
+  width: 100%;
+}
+
+.modal-content {
+  background-color: white;
+  height: 100%;
+  border: 0;
+  padding: 0;
+}
+
 .metro {
   font-family: var(--main-font);
 }
