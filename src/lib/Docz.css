@@ -5155,6 +5155,10 @@ h6 {
     margin-bottom: 1.625rem;
   }
 
+.detail {
+  background-color: rgba(21, 21, 21, 0.7);
+}
+
 .metro {
   font-family: var(--main-font);
 }

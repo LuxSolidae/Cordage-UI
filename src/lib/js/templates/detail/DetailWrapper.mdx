@@ -5,14 +5,14 @@ menu: Templates
 ---
 
 
+import { useState } from 'react';
 import { Playground, Props } from 'docz';
 import Button from 'react-bootstrap/Button';
 import { Router } from 'react-router';
 import { createBrowserHistory } from "history";
+import { ThemeContext, Page, Sidebar, SidebarContext } from '@cordage_ui';
 
 
-
-import { ThemeContext } from '@cordage_ui';
 import DetailWrapper from './detailWrapper';
 import theme from '@cordage_ui/cordage.json';
 import logo from '@_src_/lib/img/logo.svg';
@@ -22,28 +22,48 @@ import locations from '@_src_/lib/img/icons/locations.svg';
 
 <Props of={DetailWrapper} />
 
-### Playground
+
 
 <Playground>
-  {() => {
-    const [showDetail, setShowDetail] = React.useState(false);
-    return (
+{
+  () => {
+    const [showDetail, setShowDetail] = useState(false);
+    return(
       <>
-        <Button variant='primary' onClick={() => {
-          setShowDetail(true);
-        }}>
-          Click to open Generic Modal
-        </Button>
-        <DetailWrapper
-          show={showDetail}
-          onClose={
-            () => {setShowDetail(false)}
-          }
+      <Button variant='success' onClick={ () => setShowDetail(true) }>Click to open </Button>
+      <DetailWrapper
+        show={showDetail}
+        onClose={() => setShowDetail(false)}
+      >
+            <SidebarContext.Provider>
+        <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
+          <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
+            <Sidebar.Select
+              defaultSelected={3}
+              options={[
+                { key: 1, text: 'Location 123', icon: locations },
+                { key: 2, text: 'Location 124', icon: locations },
+                { key: 3, text: 'Location 125', icon: locations },
+              ]}
+            />
+          </Sidebar.Menu>
+        </Router>
+      </SidebarContext.Provider>
+      <Page.Administrative
+        title='Collections'
+        description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis metus vitae elit lacinia dapibus at sed nibh. In hac habitasse platea dictumst. Etiam condimentum orci justo. Fusce nec augue leo.'
+      >
+        <Page.Content
+          title='Example title'
         >
-        weqr
-        </DetailWrapper>
+          <div>Example text</div>
+        </Page.Content>
+      </Page.Administrative>
+      </DetailWrapper>
       </>
     );
-  }}
+  }
+}
 </Playground>
+
 
