@@ -5158,6 +5158,8 @@ h6 {
     margin-bottom: 1.625rem;
   }
 
+/* TODO Refactor for better code organization */
+
 .detail {
   background-color: rgba(21, 21, 21, 0.7);
 }
