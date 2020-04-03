@@ -10,7 +10,7 @@ import { Playground, Props } from 'docz';
 import Button from 'react-bootstrap/Button';
 import { Router } from 'react-router';
 import { createBrowserHistory } from "history";
-import { ThemeContext, Page, Sidebar, SidebarContext } from '@cordage_ui';
+import { ThemeContext, Page, Sidebar, SidebarContext, Tabs } from '@cordage_ui';
 
 
 import DetailWrapper from './detailWrapper';
@@ -35,7 +35,7 @@ import locations from '@_src_/lib/img/icons/locations.svg';
         show={showDetail}
         onClose={() => setShowDetail(false)}
       >
-            <SidebarContext.Provider>
+      <SidebarContext.Provider>
         <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
           <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
             <Sidebar.Select
@@ -50,13 +50,24 @@ import locations from '@_src_/lib/img/icons/locations.svg';
         </Router>
       </SidebarContext.Provider>
       <Page.Administrative
-        title='Collections'
-        description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis metus vitae elit lacinia dapibus at sed nibh. In hac habitasse platea dictumst. Etiam condimentum orci justo. Fusce nec augue leo.'
+        title='Name of group'
+        description='Groups in Knowledge are groupings of Items and define the schema or structure of the custom data stored in those Items. '
       >
-        <Page.Content
-          title='Example title'
-        >
-          <div>Example text</div>
+        <Page.Content>
+        <Tabs.Wrap>
+          <Tabs.Tab eventKey="first" title="First">
+            First Component
+          </Tabs.Tab>
+          <Tabs.Tab eventKey="second" title={<i>Second</i>}>
+            Second Component
+          </Tabs.Tab>
+          <Tabs.Tab eventKey="third" title={<b>Third</b>}>
+            Third Component
+          </Tabs.Tab>
+          <Tabs.Tab disabled eventKey="fourth" title="Fourth">
+              Disabled Component
+            </Tabs.Tab>
+          </Tabs.Wrap>
         </Page.Content>
       </Page.Administrative>
       </DetailWrapper>

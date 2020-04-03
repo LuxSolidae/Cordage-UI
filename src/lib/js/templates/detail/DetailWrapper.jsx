@@ -9,15 +9,17 @@ export type Props = {
 
 export const DetailWrapper = ({ children, onClose, show }: Props) => (
   <BootstrapModal
-    dialogClassName='detail-body'
+    dialogClassName='detail-container'
     show={show}
     onHide={onClose}
     animation
-    bsPrefix='detail-content'
+    // bsPrefix='detail'
     centered
     >
-
-      <BootstrapModal.Body className='detail-body'>
+      <BootstrapModal.Body
+        bsPrefix='detail-body'
+        className
+        >
         <div className='d-flex'>
           { children }
         </div>

@@ -5038,6 +5038,7 @@ h6 {
 
 .modal-content {
   background-color: black;
+  height: 100%;
 }
 
 .custom-modal {
@@ -5167,9 +5168,13 @@ h6 {
   width: 100%;
 }
 
-.modal-content {
+.detail-container {
+  overflow: hidden;
+  max-width: none;
+  width: 100%;
   background-color: white;
   height: 100%;
+  margin: 0;
   border: 0;
   padding: 0;
 }
