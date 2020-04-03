@@ -17,8 +17,8 @@ export const Schema = Yup.object().shape({
 });
 
 export const options = [
-  { label: 'Option 1', value: 100 },
-  { label: 'Option 2', value: 200 },
-  { label: 'Option 3', value: 300 },
+  { label: 'Option 1', value: 'Option 1' },
+  { label: 'Option 2', value: 'Option 2' },
+  { label: 'Option 3', value: 'Option 3' },
 ];
 

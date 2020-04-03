@@ -23,11 +23,14 @@ export type Props = {
     text: string,
     onClick: Function,
   },
+
+  customFooter?: React.Node,
 };
 
 export const Modal = ({
   header, subheader, children, show,
   onClose, primaryAction, secondaryAction,
+  customFooter
 }: Props) => (
   <BootstrapModal
     show={show}
@@ -45,6 +48,36 @@ export const Modal = ({
       </BootstrapModal.Body>
 
       <BootstrapModal.Footer>
+        {
+          customFooter
+
+          ? 
+
+          (customFooter)
+
+          :
+
+          (
+            secondaryAction && (
+              <Button
+                variant='secondary'
+                onClick={typy(secondaryAction, 'onClick').safeFunction}
+              >
+                {typy(secondaryAction, 'text').safeString}
+              </Button>
+            ),
+            primaryAction && (
+              <Button
+                variant='primary'
+                onClick={typy(primaryAction, 'onClick').safeFunction}
+              >
+                {typy(primaryAction, 'text').safeString}
+              </Button>
+            )
+          )
+        }
+
+        {/* 
         {
           secondaryAction && (
             <Button
@@ -65,6 +98,7 @@ export const Modal = ({
             </Button>
           )
         }
+        */}
       </BootstrapModal.Footer>
     </div>
   </BootstrapModal>
