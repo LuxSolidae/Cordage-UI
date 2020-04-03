@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Modal as BootstrapModal} from 'react-bootstrap';
 import close from '@_src_/lib/img/icons/close-icon.svg';
 
-
 export type Props = {
   children: React.Node,
   onClose: Function,
@@ -22,13 +21,16 @@ export const DetailWrapper = ({ children, onClose, show }: Props) => (
         >
         <div className='d-flex'>
           { children }
-          </div>
-          </BootstrapModal.Body>
-          <div className='btn-close-container'>
-            <button className='btn-close' onClick={onClose}><img src={close}></img></button>
-          </div>
+        </div>
+        </BootstrapModal.Body>
+        <div className='btn-close-container'>
+          <button className='btn-close' onClick={onClose}><img src={close}></img></button>
+        </div>
   </BootstrapModal>
 );
 
-export default DetailWrapper;
+DetailWrapper.defaultProps = {
+  show: false
+}
 
+export default DetailWrapper;
