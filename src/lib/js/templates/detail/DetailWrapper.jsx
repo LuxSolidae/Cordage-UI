@@ -22,9 +22,11 @@ export const DetailWrapper = ({ children, onClose, show }: Props) => (
         >
         <div className='d-flex'>
           { children }
-          <button className='btn-close' onClick={onClose}><img src={close}></img></button>
-        </div>
-      </BootstrapModal.Body>
+          </div>
+          </BootstrapModal.Body>
+          <div className='btn-close-container'>
+            <button className='btn-close' onClick={onClose}><img src={close}></img></button>
+          </div>
   </BootstrapModal>
 );
 
