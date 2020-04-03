@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Modal as BootstrapModal} from 'react-bootstrap';
+import close from '@_src_/lib/img/icons/close-icon.svg';
+
 
 export type Props = {
   children: React.Node,
@@ -20,7 +22,7 @@ export const DetailWrapper = ({ children, onClose, show }: Props) => (
         >
         <div className='d-flex'>
           { children }
-          <button className='btn-close' onClick={onClose}>X</button>
+          <button className='btn-close' onClick={onClose}><img src={close}></img></button>
         </div>
       </BootstrapModal.Body>
   </BootstrapModal>

@@ -5180,11 +5180,16 @@ h6 {
 }
 
 .btn-close {
-  /* align-items: self-end; */
   position: relative;
-  /* z-index: 100; */
-  height: 10%;
+  height: 30px;
+  border: 1px solid #e4e4e4;
+  width: 30px;
+  display: flex;
+  align-items: center;
   margin-top: 1.5rem;
+  border-radius: 100%;
+  background-color: white;
+  justify-content: center
 }
 
 .metro {
