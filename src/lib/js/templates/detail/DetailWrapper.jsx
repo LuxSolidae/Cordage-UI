@@ -13,18 +13,16 @@ export const DetailWrapper = ({ children, onClose, show }: Props) => (
     show={show}
     onHide={onClose}
     animation
-    // bsPrefix='detail'
     centered
     >
       <BootstrapModal.Body
         bsPrefix='detail-body'
-        className
         >
         <div className='d-flex'>
           { children }
+          <button className='btn-close' onClick={onClose}>X</button>
         </div>
       </BootstrapModal.Body>
-
   </BootstrapModal>
 );
 
