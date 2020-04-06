@@ -1,7 +1,7 @@
 // @flow
-import * as React from 'react';
-import { Modal as BootstrapModal, Button } from 'react-bootstrap';
-import { t as typy } from 'typy';
+import * as React from "react";
+import { Modal as BootstrapModal, Button } from "react-bootstrap";
+import { t as typy } from "typy";
 
 export type Props = {
   /** Header of the modal */
@@ -24,85 +24,72 @@ export type Props = {
     onClick: Function,
   },
 
-  customFooter?: React.Node,
+  customFooter?: {
+    component: React.Node,
+    onClick?: Function
+  }
 };
 
-export const Modal = ({
-  header, subheader, children, show,
-  onClose, primaryAction, secondaryAction,
-  customFooter
-}: Props) => (
-  <BootstrapModal
-    show={show}
-    onHide={onClose}
-    animation
-    centered
-  >
-    <div className='modal-confirm'>
-      <BootstrapModal.Header closeButton>
-        <BootstrapModal.Title>{ header }</BootstrapModal.Title>
-      </BootstrapModal.Header>
-      <BootstrapModal.Body className='modal-confirm-body'>
-        <h6>{subheader}</h6>
-        { children }
-      </BootstrapModal.Body>
+export const Modal = (props: Props) => {
+  let footerChildren = undefined;
+  const {
+    header,
+    subheader,
+    children,
+    show,
+    onClose,
+    primaryAction,
+    secondaryAction,
+    customFooter,
+  } = props;
 
-      <BootstrapModal.Footer>
-        {
-          customFooter
-
-          ? 
-
-          (customFooter)
-
-          :
-
-          (
-            secondaryAction && (
-              <Button
-                variant='secondary'
-                onClick={typy(secondaryAction, 'onClick').safeFunction}
-              >
-                {typy(secondaryAction, 'text').safeString}
-              </Button>
-            ),
-            primaryAction && (
-              <Button
-                variant='primary'
-                onClick={typy(primaryAction, 'onClick').safeFunction}
-              >
-                {typy(primaryAction, 'text').safeString}
-              </Button>
-            )
-          )
-        }
-
-        {/* 
-        {
+  if (!customFooter) {
+    footerChildren = (
+      <>
+        { 
           secondaryAction && (
             <Button
-              variant='secondary'
-              onClick={typy(secondaryAction, 'onClick').safeFunction}
+              variant="secondary"
+              onClick={typy(secondaryAction, "onClick").safeFunction}
             >
-              {typy(secondaryAction, 'text').safeString}
+              {typy(secondaryAction, "text").safeString}
             </Button>
           )
         }
         {
           primaryAction && (
             <Button
-              variant='primary'
-              onClick={typy(primaryAction, 'onClick').safeFunction}
+              variant="primary"
+              onClick={typy(primaryAction, "onClick").safeFunction}
             >
-              {typy(primaryAction, 'text').safeString}
+              {typy(primaryAction, "text").safeString}
             </Button>
           )
         }
-        */}
-      </BootstrapModal.Footer>
-    </div>
-  </BootstrapModal>
-);
+      </>
+    );
+  } else {
+    footerChildren = customFooter;
+  }
+
+  return (
+    <BootstrapModal show={show} onHide={onClose} animation centered>
+      <div className="modal-confirm">
+        <BootstrapModal.Header closeButton>
+          <BootstrapModal.Title>{header}</BootstrapModal.Title>
+        </BootstrapModal.Header>
+        <BootstrapModal.Body className="modal-confirm-body">
+          <h6>{subheader}</h6>
+          { children }
+        </BootstrapModal.Body>
+
+        <BootstrapModal.Footer>
+          { footerChildren }
+        </BootstrapModal.Footer>
+      </div>
+    </BootstrapModal>
+  );
+};
 
 Modal.defaultProps = {
   show: false,

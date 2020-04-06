@@ -59,6 +59,21 @@ This is a basic, empty modal. Buttons are optional, and if you need them, you ca
               setShowGeneric(false);
             },
           }}
+          customFooter={
+            <>
+              <Button 
+                variant='primary'
+                onClick={() => { setShowGeneric(false) } }
+              >
+                Close
+              </Button>
+              <Button
+                variant='secondary'
+              >
+                Second button
+              </Button>
+            </>
+          }
         >
           Stuff...
         </Modal>
