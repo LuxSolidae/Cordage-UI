@@ -11,7 +11,7 @@ type Props = {
 export const Administrative = ({ children, title, description }: Props) => (
   <div className='page page-administrative'>
     <div className='page-header'>
-      <Grid.Container>
+      <Grid.Container className='pg-container'>
         <Grid.Row>
           <Grid.Col>
             <h1>{title}</h1>
