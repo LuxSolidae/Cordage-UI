@@ -1,0 +1,79 @@
+---
+name: Detail Wrapper
+route: /templates/DetailWrapper
+menu: Templates
+---
+
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import Button from 'react-bootstrap/Button';
+import { Router } from 'react-router';
+import { createBrowserHistory } from "history";
+import { ThemeContext, Page, Sidebar, SidebarContext, Tabs } from '@cordage_ui';
+
+
+import DetailWrapper from './detailWrapper';
+import theme from '@cordage_ui/cordage.json';
+import logo from '@_src_/lib/img/logo.svg';
+import locations from '@_src_/lib/img/icons/locations.svg';
+
+# Detail View
+
+---
+This is simply a whole viewport modal wrapper for any stuff you would like to insert in, based on a modified Bootstrap modal.
+
+<Props of={DetailWrapper} />
+
+<Playground>
+{
+  () => {
+    const [showDetail, setShowDetail] = useState(false);
+    return(
+      <>
+      <Button variant='success' onClick={ () => setShowDetail(true) }>Click to open </Button>
+      <DetailWrapper
+        show={showDetail}
+        onClose={() => setShowDetail(false)}
+      >
+        <SidebarContext.Provider>
+          <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
+            <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
+              <Sidebar.Select
+                defaultSelected={3}
+                options={[
+                  { key: 1, text: 'Location 123', icon: locations },
+                  { key: 2, text: 'Location 124', icon: locations },
+                  { key: 3, text: 'Location 125', icon: locations },
+                ]}
+              />
+            </Sidebar.Menu>
+          </Router>
+        </SidebarContext.Provider>
+        <Page.Administrative
+          title='Name of group'
+          description='Groups in Knowledge are groupings of Items and define the schema or structure of the custom data stored in those Items. '
+        >
+          <Page.Content>
+          <Tabs.Wrap>
+            <Tabs.Tab eventKey="first" title="First">
+              First Component
+            </Tabs.Tab>
+            <Tabs.Tab eventKey="second" title={<i>Second</i>}>
+              Second Component
+            </Tabs.Tab>
+            <Tabs.Tab eventKey="third" title={<b>Third</b>}>
+              Third Component
+            </Tabs.Tab>
+            <Tabs.Tab disabled eventKey="fourth" title="Fourth">
+                Disabled Component
+              </Tabs.Tab>
+            </Tabs.Wrap>
+          </Page.Content>
+        </Page.Administrative>
+      </DetailWrapper>
+      </>
+    );
+  }
+}
+</Playground>
