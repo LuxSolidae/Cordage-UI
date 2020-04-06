@@ -5112,6 +5112,10 @@ h6 {
   font-size: 1.125rem;
 }
 
+.page {
+  width: 100%
+}
+
 /* width: 100%; */
 
 .page.page-administrative > .page-header {
@@ -5138,6 +5142,11 @@ h6 {
         letter-spacing: -0.14px;
         line-height: 1.43;
       }
+
+.page .pg-container {
+    margin: 0;
+    width: 100%;
+  }
 
 .page-content {
   background-color: #fafdfa;
