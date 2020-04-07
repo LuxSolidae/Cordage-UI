@@ -13,6 +13,7 @@ import * as Yup from 'yup';
 
 import TextField from './TextField';
 import Select from './Select';
+import Button from './../button/Button';
 import { Schema, options } from './Helpers';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -51,7 +52,7 @@ import '@_src_/lib/Docz.css';
           handleBlur,
           handleChange,
           handleSubmit,
-          isValidating
+          submitForm,
         }) => (
           <Form onSubmit={handleSubmit}>
             <Field
@@ -81,12 +82,13 @@ import '@_src_/lib/Docz.css';
             <Select
               id='select-field'
               name='select'
+              label='Select an option'
               value={values.select}
               options={options}
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            <button type='submit' onClick={() => console.log(isValidating, values)}>Submit</button>
+            <Button variant="primary" type="submit">Submit</Button>
           </Form>
         )}
       </Formik>
