@@ -1,10 +1,11 @@
 // @flow
-import { Modal as BootstrapModal, Image } from 'react-bootstrap';
-import ilusSuccess from '@_src_/lib/img/illustrations/modal-success.png';
-import ilusError from '@_src_/lib/img/illustrations/modal-error.png';
-import classnames from 'classnames';
 import * as React from 'react';
+import classnames from 'classnames';
+import { Modal as BootstrapModal, Image } from 'react-bootstrap';
 import { boolean } from 'yup';
+
+import ilusSuccess from '../../../img/illustrations/modal-success.png';
+import ilusError from '../../../img/illustrations/modal-error.png';
 
 export type Props = {
   /** Header of the modal */

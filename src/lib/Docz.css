@@ -4685,7 +4685,7 @@ h6 {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: -0.27px;
-  line-height: 1em;
+  line-height: 1;
   padding-left: 0;
   text-align: left;
 
@@ -4708,7 +4708,7 @@ h6 {
   color: var(--brown-grey);
   font-family: var(--main-font);
   font-size: 0.75rem;
-  line-height: 1.33em;
+  line-height: 1.33;
   margin-top: 1.125rem;
 }
 
@@ -4717,7 +4717,7 @@ h6 {
   font-family: var(--main-font);
   font-size: 0.75rem;
   letter-spacing: -0.2px;
-  line-height: 1em;
+  line-height: 1;
 }
 
 .card-extended-subtitles {
@@ -4725,7 +4725,7 @@ h6 {
   font-family: var(--main-font);
   font-size: 0.875rem;
   letter-spacing: -0.14px;
-  line-height: 1.25em;
+  line-height: 1.25;
 }
 
 .card-ext-header {
@@ -4742,7 +4742,7 @@ h6 {
 .card-ext-place {
   color: var(--brown-grey);
   font-size: 0.75rem;
-  line-height: 1.33em;
+  line-height: 1.33;
 }
 
 .card-ext-jobTitle {
@@ -4750,7 +4750,7 @@ h6 {
   font-family: var(--main-font);
   font-size: 0.875rem;
   font-weight: bold;
-  line-height: 1.43em;
+  line-height: 1.43;
 }
 
 .card-ext-header-wrapper {
@@ -5038,6 +5038,7 @@ h6 {
 
 .modal-content {
   background-color: black;
+  height: 100%;
 }
 
 .custom-modal {
@@ -5111,6 +5112,12 @@ h6 {
   font-size: 1.125rem;
 }
 
+.page {
+  width: 100%
+}
+
+/* width: 100%; */
+
 .page.page-administrative > .page-header {
       padding: 1.625rem 1.875rem;
     }
@@ -5136,6 +5143,11 @@ h6 {
         line-height: 1.43;
       }
 
+.page .pg-container {
+    margin: 0;
+    width: 100%;
+  }
+
 .page-content {
   background-color: #fafdfa;
   border-top: solid 1px var(--very-light-pink);
@@ -5154,6 +5166,49 @@ h6 {
     line-height: normal;
     margin-bottom: 1.625rem;
   }
+
+/* TODO Refactor for better code organization */
+
+.detail {
+  background-color: rgba(21, 21, 21, 0.7);
+}
+
+.detail-body {
+  align-items: stretch;
+  background-color: white;
+  height: 100%;
+  max-width: none;
+  width: 100%;
+}
+
+.detail-container {
+  overflow: hidden;
+  max-width: none;
+  width: 100%;
+  background-color: white;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.btn-close {
+  align-items: center;
+  background-color: white;
+  border: 1px solid #e4e4e4;
+  border-radius: 100%;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  margin-right: 1.875rem;
+  margin-top: 1.875rem;
+  width: 30px;
+}
+
+.btn-close-container {
+  align-self: flex-end;
+  position: absolute;
+}
 
 .metro {
   font-family: var(--main-font);
