@@ -8,7 +8,7 @@ export type Props = {
   show?: Boolean,
 };
 
-const DetailWrapper = ({ children, onClose, show }: Props) => (
+export const DetailWrapper = ({ children, onClose, show }: Props) => (
   <BootstrapModal
     dialogClassName="detail-container"
     show={show}

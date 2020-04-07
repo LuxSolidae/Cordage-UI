@@ -1,4 +1,4 @@
-import { DetailWrapper } from "./DetailWrapper";
+import DetailWrapper from "./DetailWrapper";
 
 export {
   DetailWrapper,
