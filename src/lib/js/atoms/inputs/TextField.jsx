@@ -17,7 +17,7 @@ export type Props = {
 };
 
 
-const TextField = (props: Props) => {
+export const TextField = (props: Props) => {
   const {
     id,
     label,
@@ -58,7 +58,13 @@ const TextField = (props: Props) => {
     <FormGroup id={id}>
       { label && <FormLabel>{label}</FormLabel> }
 
-      <div className={classnames('input-wrapper', { with_icon: icon})}>
+      <div 
+        className={classnames(
+          'input-wrapper',
+          { with_icon: icon},
+          { field_error: !errors.name })
+        }
+      >
         <FormControl
           className={className}
           disabled={disabled}
