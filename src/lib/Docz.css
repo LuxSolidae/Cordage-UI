@@ -4626,12 +4626,6 @@ h6 {
     max-width: 100%;
   }
 
-.form-control {
-  height: calc(2.125em + .75rem + 2px);
-  border-color: var(--very-light-pink);
-  color: var(--black-2);
-}
-
 .input-wrapper {
   position: relative;
 }
@@ -4640,9 +4634,22 @@ h6 {
     padding-right: 3rem;
   }
 
+.form-control {
+  height: calc(2.125em + .75rem + 2px);
+  border-radius: 0;
+  border-color: var(--very-light-pink);
+  font-size: 0.875rem;
+  color: var(--black-2);
+  letter-spacing: -0.1px
+}
+
+.form-control:focus {
+    color: var(--black-2);
+  }
+
 .input-icon {
   position: absolute;
-  color: var(--brown-grey);
+  color: var(--very-light-pink);
   top: 50%;
   right: 1rem;
   font-size: 1.25rem;

@@ -17,7 +17,7 @@ export type Props = {
 };
 
 
-const TextField = (props: Props) => {
+export const TextField = (props: Props) => {
   const {
     id,
     label,
