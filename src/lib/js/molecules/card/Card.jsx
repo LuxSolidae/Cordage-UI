@@ -10,6 +10,8 @@ export type Props = {
   img?: String,
   /**Content inside card. */
   children?: React.Node,
+  /**Specifies the width: Small (fixed) or 100% width of parent element. */
+  large: boolean,
 
   /** A link */
   action?: {
@@ -24,8 +26,9 @@ export const Card = ({
   img,
   children,
   action,
+  large
 }: Props) => (
-  <BootstrapCard className={'card-component'}>
+  <BootstrapCard className={classnames('card-component', {'large': large})}>
     {
       img && (
         <BootstrapCard.Img className='card-image' variant="top" src={ img }/>
@@ -58,6 +61,7 @@ Card.defaultProps = {
   title: '',
   img: undefined,
   children: '',
+  large: false,
   action: undefined,
 };
 

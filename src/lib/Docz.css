@@ -4657,6 +4657,12 @@ h6 {
   width: 21.875rem;
 }
 
+.large {
+  height: auto;
+  min-height: auto;
+  width: 100%;
+}
+
 .card-title {
   color: var(--black);
   font-family: var(--main-font);
