@@ -4627,7 +4627,9 @@ h6 {
   }
 
 .form-control {
-  height: calc(2.125em + .75rem + 2px)
+  height: calc(2.125em + .75rem + 2px);
+  border-color: var(--very-light-pink);
+  color: var(--black-2);
 }
 
 .input-wrapper {
@@ -4640,7 +4642,7 @@ h6 {
 
 .input-icon {
   position: absolute;
-  color: #D3D3D3;
+  color: var(--brown-grey);
   top: 50%;
   right: 1rem;
   font-size: 1.25rem;
@@ -4650,6 +4652,16 @@ h6 {
 .input-error {
   font-size: 0.75rem;
   color: red;
+}
+
+.form-label {
+  margin-bottom: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--brown-grey);
 }
 
 .card-component {
@@ -4685,7 +4697,7 @@ h6 {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: -0.27px;
-  line-height: 1em;
+  line-height: 1;
   padding-left: 0;
   text-align: left;
 
@@ -4708,7 +4720,7 @@ h6 {
   color: var(--brown-grey);
   font-family: var(--main-font);
   font-size: 0.75rem;
-  line-height: 1.33em;
+  line-height: 1.33;
   margin-top: 1.125rem;
 }
 
@@ -4717,7 +4729,7 @@ h6 {
   font-family: var(--main-font);
   font-size: 0.75rem;
   letter-spacing: -0.2px;
-  line-height: 1em;
+  line-height: 1;
 }
 
 .card-extended-subtitles {
@@ -4725,7 +4737,7 @@ h6 {
   font-family: var(--main-font);
   font-size: 0.875rem;
   letter-spacing: -0.14px;
-  line-height: 1.25em;
+  line-height: 1.25;
 }
 
 .card-ext-header {
@@ -4742,7 +4754,7 @@ h6 {
 .card-ext-place {
   color: var(--brown-grey);
   font-size: 0.75rem;
-  line-height: 1.33em;
+  line-height: 1.33;
 }
 
 .card-ext-jobTitle {
@@ -4750,7 +4762,7 @@ h6 {
   font-family: var(--main-font);
   font-size: 0.875rem;
   font-weight: bold;
-  line-height: 1.43em;
+  line-height: 1.43;
 }
 
 .card-ext-header-wrapper {

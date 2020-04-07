@@ -1,11 +1,11 @@
 // @flow
-import Modal from 'react-bootstrap/Modal';
-import Image from 'react-bootstrap/Image';
-import ilusSuccess from '@_src_/lib/img/illustrations/modal-success.png';
-import ilusError from '@_src_/lib/img/illustrations/modal-error.png';
-import classnames from 'classnames';
 import * as React from 'react';
+import classnames from 'classnames';
+import { Modal as BootstrapModal, Image } from 'react-bootstrap';
 import { boolean } from 'yup';
+
+import ilusSuccess from '../../../img/illustrations/modal-success.png';
+import ilusError from '../../../img/illustrations/modal-error.png';
 
 export type Props = {
   /** Header of the modal */
@@ -27,10 +27,10 @@ export type Props = {
 
 };
 
-export const CustomModal = ({
+export const NotificationModal = ({
   header, children, isError, isSuccess, color, onClose, show,
 }: Props) => (
-  <Modal
+  <BootstrapModal
     className='modal'
     dialogClassName='modal-container'
     keyboard
@@ -38,10 +38,10 @@ export const CustomModal = ({
     show={show}
     onHide={onClose}
   >
-    <Modal.Header className={classnames('modal-header', `header-${color}`)} closeButton>
-      <Modal.Title>{header}</Modal.Title>
-    </Modal.Header>
-    <Modal.Body className={classnames('modal-body', `body-${color}`)}>
+    <BootstrapModal.Header className={classnames('modal-header', `header-${color}`)} closeButton>
+      <BootstrapModal.Title>{header}</BootstrapModal.Title>
+    </BootstrapModal.Header>
+    <BootstrapModal.Body className={classnames('modal-body', `body-${color}`)}>
       <div>
         <Image
           src={isError ? ilusError : isSuccess ? ilusSuccess : null}
@@ -53,15 +53,15 @@ export const CustomModal = ({
         { isSuccess ? 'Success' : null }
       </h6>
       {children}
-    </Modal.Body>
-  </Modal>
+    </BootstrapModal.Body>
+  </BootstrapModal>
 );
 
-CustomModal.defaultProps = {
+NotificationModal.defaultProps = {
   onClose: () => {},
   isError: false,
   isSuccess: true,
   show: false,
 };
 
-export default CustomModal;
+export default NotificationModal;

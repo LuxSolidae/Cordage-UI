@@ -1,0 +1,138 @@
+---
+name: Modal
+route: /organisms/Modal
+menu: Organisms
+---
+
+import Button from 'react-bootstrap/Button';
+import { Playground, Props } from 'docz';
+
+import { ThemeContext } from '@cordage_ui';
+import Modal from './Modal';
+import NotificationModal from './NotificationModal';
+import theme from '@cordage_ui/cordage.json';
+
+
+# Modal
+
+---
+
+## Modal
+
+This is a basic, empty modal. Buttons are optional, and if you need them, you can add a function too, just like a Notification Modal.
+
+### Props
+
+<Props of={Modal} />
+
+### Playground
+
+<Playground>
+  {() => {
+    const [showGeneric, setShowGeneric] = React.useState(false);
+    return (
+      <>
+        <Button variant='primary' onClick={() => {
+          setShowGeneric(true);
+        }}>
+          Click to open Generic Modal
+        </Button>
+        <Modal
+          header='Generic Modal'
+          subheader='Generic Modal subheader.'
+          show={showGeneric}
+          onClose={() => {
+            alert('Modal closed without action');
+            setShowGeneric(false);
+          }}
+          primaryAction={{
+            text: 'Accept',
+            onClick: () => {
+              alert('Accept clicked');
+              setShowGeneric(false);
+            },
+          }}
+          secondaryAction={{
+            text: 'Decline',
+            onClick: () => {
+              alert('Decline clicked');
+              setShowGeneric(false);
+            },
+          }}
+          customFooter={
+            <>
+              <Button 
+                variant='primary'
+                onClick={() => { setShowGeneric(false) } }
+              >
+                Close
+              </Button>
+              <Button
+                variant='secondary'
+              >
+                Second button
+              </Button>
+            </>
+          }
+        >
+          Stuff...
+        </Modal>
+      </>//
+    );
+  }}
+</Playground>
+
+---
+
+## NotificationModal
+
+### Props
+
+<Props of={ NotificationModal } />
+
+### Playground
+
+<Playground>
+  {() => {
+    const [showSuccess, setShowSuccess] = React.useState(false);
+    const [showError, setShowError] = React.useState(false);
+    return (
+      <ThemeContext.Provider theme={theme}>
+        <Button variant='success' onClick={() => {
+          setShowSuccess(true)
+        }}>
+          Click to open success modal
+        </Button>
+        <NotificationModal
+          header='Header of modal'
+          isSuccess
+          color='dark'
+          show={showSuccess}
+          onClose={() => {
+            alert('Success modal closed');
+            setShowSuccess(false);
+          }}
+        >
+          We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them check their emails. In case they don’t receive a message ask them to check their spam folder. This action make take up to 5 minutes.
+        </NotificationModal>
+        <Button variant='success' onClick={() => {
+          setShowError(true)
+        }}>
+          Click to open error modal
+        </Button>
+        <NotificationModal
+          header='Header of modal'
+          isError
+          color='dark'
+          show={showError}
+          onClose={() => {
+            alert('Error modal closed');
+            setShowError(false);
+          }}
+        >
+          We have sent an invitation with an expiration date of 3 Days. Please inform your users and have them check their emails. In case they don’t receive a message ask them to check their spam folder. This action make take up to 5 minutes.
+        </NotificationModal>
+      </ThemeContext.Provider>
+    );
+  }}
+</Playground>

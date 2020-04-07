@@ -22,8 +22,9 @@ import { ThemeContext } from '@cordage_ui';
   <Card
     title='Image Card'
     img='https://images.dog.ceo/breeds/retriever-golden/n02099601_286.jpg'
-    link={{
+    action={{
       text: 'Explore all plugins',
+      variant: 'link',
       onClick: () => {
         alert('Do nothing really');
       },
@@ -35,7 +36,9 @@ import { ThemeContext } from '@cordage_ui';
 
 ---
 
-## Card Collapsable
+## Card Extended
+
+Use same props as *Card* and add the following additional props
 
 
 <Props of={ CardExtended } />
@@ -65,6 +68,7 @@ import { ThemeContext } from '@cordage_ui';
     ]}
     action={{
       text: 'Apply',
+      variant: 'primary',
       onClick: () => {
         alert('Button Apply clicked.')
       },

@@ -1,23 +1,19 @@
 import React from 'react';
 import { Accordion, Card, Button, Container, Col } from 'react-bootstrap';
 import { t as typy } from 'typy';
-import points from '@_src_/lib/img/icons/more-points.svg';
+import points from '../../../img/icons/more-points.svg';
+
+import type { Props as CardProps } from './Card';
 
 export type Props = {
-  img?: String,
-  title?:  String,
+  /** Same props as Card... */
+  ...CardProps,
+  
   subtitle?:  String,
-  children?: React.node,
-
   fields?: {
     title: string,
     description: string,
   }[],
-
-  action?: {
-    text?: string,
-    onClick?: Function,
-  },
 };
 
 export const CardExtended = ({
@@ -66,9 +62,16 @@ export const CardExtended = ({
             }
 
             {
-              action.text && action.onClick && (
+              action && (
                 <Col>
-                  <Button variant="primary" size='lg' style={{ width: '100%' }} onClick={action.onClick}>{action.text}</Button>
+                  <Button
+                    variant={typy(action, 'variant').safeString}
+                    size='lg'
+                    style={{ width: '100%' }}
+                    onClick={typy(action, 'onClick').safeFunction}
+                  >
+                    {typy(action, 'text').safeString}
+                  </Button>
                 </Col>
               )
             }
@@ -86,10 +89,7 @@ CardExtended.defaultProps = {
   children: '',
   
   fields: [],
-  action: {
-    text: undefined,
-    onClick: () => {},
-  },
+  action: undefined,
 };
 
 

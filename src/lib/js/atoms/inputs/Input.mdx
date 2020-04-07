@@ -6,13 +6,19 @@ menu: Atoms
 
 import { Playground, Props } from 'docz';
 import ThemeContext from '@cordage_ui/providers/themes';
-import { Formik } from 'formik';
-import { Form } from 'react-bootstrap';
 import theme from '@cordage_ui/cordage.json';
+
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+
 import TextField from './TextField';
-import DoczForm from './DoczForm';
+import Select from './Select';
+import Button from './../button/Button';
+import { Schema, options } from './Helpers';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@_src_/lib/Docz.css';
+
 
 # Inputs
 
@@ -29,7 +35,63 @@ import '@_src_/lib/Docz.css';
 <Playground>
   <div className='metro custom-pg'>
     <ThemeContext.Provider theme={theme}>
-      <DoczForm />
+      <Formik
+        initialValues={{
+          text: '',
+          email: '',
+          phone: '',
+          select: '',
+        }}
+        validationSchema={Schema}
+        onSubmit={(values) => {
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        {({
+          values,
+          handleBlur,
+          handleChange,
+          handleSubmit,
+          submitForm,
+        }) => (
+          <Form onSubmit={handleSubmit}>
+            <Field
+              id='text-field'
+              label='Plain text'
+              name='text'
+              type='text'
+              placeholder='Enter some characters'
+              component={TextField}
+            />
+            <Field
+              id='email-field'
+              label='Email'
+              name='email'
+              type='email'
+              placeholder='Enter your email'
+              component={TextField}
+            />
+            <Field
+              id='phone-email'
+              label='Phone'
+              name='phone'
+              type='phone'
+              placeholder='Enter your phone'
+              component={TextField}
+            />
+            <Select
+              id='select-field'
+              name='select'
+              label='Select an option'
+              value={values.select}
+              options={options}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            <Button variant="primary" type="submit">Submit</Button>
+          </Form>
+        )}
+      </Formik>
     </ThemeContext.Provider>
   </div>
 </Playground>
