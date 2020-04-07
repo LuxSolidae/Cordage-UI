@@ -19,6 +19,7 @@
   --salmon: #fd8f67;
   --very-light-pink: #e4e4e4;
   --bright-blue: #005cff;
+  --orange-red: #e9190f;
 }
 
 /* Media Queries */
@@ -4634,6 +4635,15 @@ h6 {
     padding-right: 3rem;
   }
 
+.field_error .form-control {
+    border-color: var(--orange-red);
+  }
+
+.field_error .input-icon {
+    color: var(--orange-red);
+    opacity: 0.75;
+  }
+
 .form-control {
   height: calc(2.125em + .75rem + 2px);
   border-radius: 0;
@@ -4658,7 +4668,7 @@ h6 {
 
 .input-error {
   font-size: 0.75rem;
-  color: red;
+  color: var(--orange-red);
 }
 
 .form-label {
