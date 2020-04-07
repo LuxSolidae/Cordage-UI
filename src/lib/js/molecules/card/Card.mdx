@@ -16,19 +16,22 @@ import { ThemeContext } from '@cordage_ui';
 
 ## Card Component
 
+Simple card that could be fixed or `large:{true}` (which means it will occupy its whole parent element and its height will be relative to its content).
+
 <Props of={ Card } />
 
 <Playground>
   <Card
     title='Image Card'
     img='https://images.dog.ceo/breeds/retriever-golden/n02099601_286.jpg'
+    large={false}
     action={{
       text: 'Explore all plugins',
       variant: 'link',
       onClick: () => {
         alert('Do nothing really');
       },
-    }} 
+    }}
   >
     Connect all the cool stuff from other places to your app. We support em’ all.
   </Card>
@@ -38,7 +41,7 @@ import { ThemeContext } from '@cordage_ui';
 
 ## Card Extended
 
-Use same props as *Card* and add the following additional props
+Use same props as *Card* and add the following additional props AND has a collapsable accordeon.
 
 
 <Props of={ CardExtended } />
