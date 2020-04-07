@@ -28,7 +28,7 @@ export const Card = ({
   action,
   large
 }: Props) => (
-  <BootstrapCard className={classnames('card-component', {'large': large})}>
+  <BootstrapCard className={ large ? 'card-component-large' : 'card-component-fixed' }>
     {
       img && (
         <BootstrapCard.Img className='card-image' variant="top" src={ img }/>
