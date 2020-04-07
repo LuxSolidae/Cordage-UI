@@ -17,7 +17,7 @@ export type Props = {
 };
 
 
-const TextField = (props) => {
+const TextField = (props: Props) => {
   const {
     id,
     label,
@@ -60,11 +60,11 @@ const TextField = (props) => {
 
       <div className={classnames('input-wrapper', { with_icon: icon})}>
         <FormControl
-          {...field}
-          {...props}
           className={className}
           disabled={disabled}
           readOnly={readOnly}
+          {...field}
+          {...props}
         />
         { icon && <i className={classnames('input-icon fas', icon)}></i>}
       </div>

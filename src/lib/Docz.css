@@ -4627,7 +4627,9 @@ h6 {
   }
 
 .form-control {
-  height: calc(2.125em + .75rem + 2px)
+  height: calc(2.125em + .75rem + 2px);
+  border-color: var(--very-light-pink);
+  color: var(--black-2);
 }
 
 .input-wrapper {
@@ -4640,7 +4642,7 @@ h6 {
 
 .input-icon {
   position: absolute;
-  color: #D3D3D3;
+  color: var(--brown-grey);
   top: 50%;
   right: 1rem;
   font-size: 1.25rem;
