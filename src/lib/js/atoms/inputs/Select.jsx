@@ -24,7 +24,7 @@ type Props = {
   }[]
 };
 
-const Select = ({
+export const Select = ({
   className,
   id,
   label,
@@ -65,8 +65,8 @@ const Select = ({
   );
 };
 
-export default Select;
-
 Select.defaultProps = {
   options: []
 };
+
+export default Select;
