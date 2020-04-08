@@ -19,6 +19,7 @@
   --salmon: #fd8f67;
   --very-light-pink: #e4e4e4;
   --bright-blue: #005cff;
+  --orange-red: #e9190f;
 }
 
 /* Media Queries */
@@ -4667,10 +4668,6 @@ h6 {
     max-width: 100%;
   }
 
-.form-control {
-  height: calc(2.125em + .75rem + 2px)
-}
-
 .input-wrapper {
   position: relative;
 }
@@ -4679,9 +4676,37 @@ h6 {
     padding-right: 3rem;
   }
 
+.field_error .form-control {
+    border-color: #e9190f;
+    border-color: var(--orange-red);
+  }
+
+.field_error .input-icon {
+    color: #e9190f;
+    color: var(--orange-red);
+    opacity: 0.75;
+  }
+
+.form-control {
+  height: calc(2.125em + .75rem + 2px);
+  border-radius: 0;
+  border-color: #e4e4e4;
+  border-color: var(--very-light-pink);
+  font-size: 0.875rem;
+  color: #272727;
+  color: var(--black-2);
+  letter-spacing: -0.1px
+}
+
+.form-control:focus {
+    color: #272727;
+    color: var(--black-2);
+  }
+
 .input-icon {
   position: absolute;
-  color: #D3D3D3;
+  color: #e4e4e4;
+  color: var(--very-light-pink);
   top: 50%;
   right: 1rem;
   font-size: 1.25rem;
@@ -4691,7 +4716,19 @@ h6 {
 
 .input-error {
   font-size: 0.75rem;
-  color: red;
+  color: #e9190f;
+  color: var(--orange-red);
+}
+
+.form-label {
+  margin-bottom: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #919191;
+  color: var(--brown-grey);
 }
 
 .card-component {
@@ -5144,6 +5181,7 @@ h6 {
 
 .modal-content {
   background-color: black;
+  height: 100%;
 }
 
 .custom-modal {
@@ -5220,6 +5258,12 @@ h6 {
   font-size: 1.125rem;
 }
 
+.page {
+  width: 100%
+}
+
+/* width: 100%; */
+
 .page.page-administrative > .page-header {
       padding: 1.625rem 1.875rem;
     }
@@ -5247,6 +5291,11 @@ h6 {
         line-height: 1.43;
       }
 
+.page .pg-container {
+    margin: 0;
+    width: 100%;
+  }
+
 .page-content {
   background-color: #fafdfa;
   border-top: solid 1px #e4e4e4;
@@ -5266,3 +5315,50 @@ h6 {
     line-height: normal;
     margin-bottom: 1.625rem;
   }
+
+/* TODO Refactor for better code organization */
+
+.detail {
+  background-color: rgba(21, 21, 21, 0.7);
+}
+
+.detail-body {
+  -webkit-box-align: stretch;
+          align-items: stretch;
+  background-color: white;
+  height: 100%;
+  max-width: none;
+  width: 100%;
+}
+
+.detail-container {
+  overflow: hidden;
+  max-width: none;
+  width: 100%;
+  background-color: white;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.btn-close {
+  -webkit-box-align: center;
+          align-items: center;
+  background-color: white;
+  border: 1px solid #e4e4e4;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: flex;
+  height: 30px;
+  -webkit-box-pack: center;
+          justify-content: center;
+  margin-right: 1.875rem;
+  margin-top: 1.875rem;
+  width: 30px;
+}
+
+.btn-close-container {
+  align-self: flex-end;
+  position: absolute;
+}
