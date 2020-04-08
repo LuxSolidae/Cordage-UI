@@ -4636,7 +4636,7 @@ h6 {
   }
 
 .field_error .form-control {
-    border-color: var(--orange-red);
+    border-color: var(--orange-red) !important;
   }
 
 .field_error .input-icon {
@@ -4655,6 +4655,8 @@ h6 {
 
 .form-control:focus {
     color: var(--black-2);
+    border-color: #d0d0d0;
+    box-shadow: 0 0 0 0.125rem rgba(208, 208, 208, .25);
   }
 
 .input-icon {
@@ -4669,6 +4671,16 @@ h6 {
 .input-error {
   font-size: 0.75rem;
   color: var(--orange-red);
+}
+
+.form-label {
+  margin-bottom: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--brown-grey);
 }
 
 .card-component-fixed {
