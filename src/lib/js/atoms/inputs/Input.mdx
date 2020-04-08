@@ -10,6 +10,7 @@ import theme from '@cordage_ui/cordage.json';
 
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import { default as MultiSelect } from 'react-select';
 
 import TextField from './TextField';
 import Select from './Select';
@@ -88,6 +89,7 @@ import '@_src_/lib/Docz.css';
               onChange={handleChange}
               onBlur={handleBlur}
             />
+            <MultiSelect options={options}/>
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
         )}
