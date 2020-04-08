@@ -62,7 +62,7 @@ export const TextField = (props: Props) => {
         className={classnames(
           'input-wrapper',
           { with_icon: icon},
-          { field_error: !errors.name })
+          { field_error: touched[field.name] && errors[field.name] })
         }
       >
         <FormControl
