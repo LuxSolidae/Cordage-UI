@@ -5,18 +5,32 @@ import { FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 import Select from 'react-select';
 import { ErrorMessage } from 'formik';
 
-export const MultiSelect = (props) => {
+
+type Props = {
+  options?: {
+    key: string | number, 
+    label: string | number, 
+    value: string | number, 
+    decorator?: string,
+  }[]
+}
+
+
+export const MultiSelect = (props: Props) => {
   const {
-    id,
     label,
+    options,
   } = props;
 
 
   return (
-    <FormGroup id={id}>
+    <FormGroup>
       { label && <FormLabel>{ label }</FormLabel>}
 
-      <h1>This is a MultiSelect</h1>
+      <Select
+        options={options}
+        classNamePrefix='multi-select'
+      />
     </FormGroup>
   );
 }
