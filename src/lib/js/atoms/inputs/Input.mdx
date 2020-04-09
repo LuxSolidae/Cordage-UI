@@ -13,6 +13,7 @@ import * as Yup from 'yup';
 
 import TextField from './TextField';
 import Select from './Select';
+import Checkbox from './Checkbox';
 import Button from './../button/Button';
 import { Schema, options } from './Helpers';
 
@@ -89,7 +90,8 @@ import '@_src_/lib/Docz.css';
               onBlur={handleBlur}
             />
             <Button variant="primary" type="submit">Submit</Button>
-          </Form>
+            <Checkbox type="checkbox" label="Check me out"> </Checkbox>
+            </Form>
         )}
       </Formik>
     </ThemeContext.Provider>
