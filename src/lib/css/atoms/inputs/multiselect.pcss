@@ -1,9 +1,9 @@
 .multi-select__control {
-  border-radius: 0 !important;
-  font-size: 0.875rem;
-  color: var(--black-2);
-  letter-spacing: -0.1px;
   border-color: var(--very-light-pink) !important;
+  border-radius: 0 !important;
+  color: var(--black-2);
+  font-size: 0.875rem;
+  letter-spacing: -0.1px;
 
   &:hover {
     border-color: var(--very-light-pink);
@@ -13,6 +13,21 @@
 .multi-select__control--is-focused,
 .multi-select__control--menu-is-open {
   border-color: var(--very-light-pink) !important;
-  box-shadow: 0 0 0 0.125rem rgba(208, 208, 208, .25) !important;
+  box-shadow: 0 0 0 0.125rem rgba(208, 208, 208, 0.25) !important;
   outline: 0;
+}
+
+.multi-select__menu {
+  border-bottom: 1px solid var(--very-light-pink);
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.multi-select__option {
+  background-color: var(--white) !important;
+  border: 1px solid var(--very-light-pink);
+  border-bottom: none;
+  color: var(--brown-grey) !important;
+  font-size: 0.875rem !important;
+  letter-spacing: -0.1px;
 }

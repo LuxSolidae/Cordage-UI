@@ -29,6 +29,8 @@ export const MultiSelect = (props: Props) => {
 
       <Select
         options={options}
+        menuIsOpen={true}
+        isMulti
         classNamePrefix='multi-select'
       />
     </FormGroup>
