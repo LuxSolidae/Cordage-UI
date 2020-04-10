@@ -4683,6 +4683,14 @@ h6 {
   color: var(--brown-grey);
 }
 
+.form-check {
+  width: 1rem;
+  background: #333;
+
+  border-radius: 50px;
+  position: relative;
+}
+
 .card-component-fixed {
   min-height: 22.5625rem;
   width: 21.875rem;
