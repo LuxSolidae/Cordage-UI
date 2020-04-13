@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { FormGroup, FormLabel } from 'react-bootstrap';
-import Select from 'react-select';
+import Select, { components } from 'react-select';
 
 
 const CustomOption = ({ value, label, auxText, img }) => (
@@ -13,17 +13,19 @@ const CustomOption = ({ value, label, auxText, img }) => (
   </div>
 );
 
-const CustomLabel = (props) => {
-  <components.SingleValue {...props}>
-    { props.data.label }
-  </components.SingleValue>
+const MultiValueLabel = (props) => {
+  return (
+    <components.MultiValueLabel {...props}>
+      { props.data.label }
+    </components.MultiValueLabel>
+  );
 }
-
 
 export const MultiSelect = (props: Props) => {
   const {
     label,
     options,
+    defaultValue
   } = props;
 
 
@@ -32,10 +34,11 @@ export const MultiSelect = (props: Props) => {
       { label && <FormLabel>{ label }</FormLabel>}
 
       <Select
-        options={options}
-        menuIsOpen={true}
-        formatOptionLabel={CustomOption}
         classNamePrefix='multi-select'
+        options={options}
+        formatOptionLabel={CustomOption}
+        components={{MultiValueLabel}}
+        defaultValue={defaultValue}
         isMulti
       />
     </FormGroup>

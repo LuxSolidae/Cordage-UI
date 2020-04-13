@@ -4737,6 +4737,32 @@ h6 {
     color: #b8b8b8;
   }
 
+.multi-select__value-container {
+  padding: 6px 8px !important;
+}
+
+.multi-select__multi-value {
+  align-items: center;
+  padding: 0.425rem 0.25rem 0.425rem 0.75rem;
+  border-radius: 9.5px !important;
+  background-color: var(--off-white) !important;
+}
+
+.multi-select__multi-value__label {
+    padding: 0 !important;
+    font-size: 100% !important;
+    line-height: 1;
+    color: inherit !important;
+  }
+
+.multi-select__multi-value__remove {
+    line-height: 1
+  }
+
+.multi-select__multi-value__remove:hover {
+      background-color: initial !important;
+    }
+
 .card-component-fixed {
   min-height: 22.5625rem;
   width: 21.875rem;
