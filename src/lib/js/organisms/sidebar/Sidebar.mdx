@@ -10,8 +10,12 @@ import { createBrowserHistory } from "history";
 
 import { ThemeContext, Sidebar, SidebarContext } from '@cordage_ui';
 import theme from '@cordage_ui/cordage.json';
-import logo from '@_src_/img/logo.svg';
-// import '@_src_/Docz.css';
+import logo from '@_src_/lib/img/logo.svg';
+import documentControl from '@_src_/lib/img/icons/document-control.svg';
+import capas from '@_src_/lib/img/icons/capa-quality-events.svg';
+import users from '@_src_/lib/img/icons/users.svg';
+import locations from '@_src_/lib/img/icons/locations.svg';
+import '@_src_/lib/Docz.css';
 
 # Sidebar
 
@@ -37,6 +41,38 @@ import logo from '@_src_/img/logo.svg';
   </div>
 </Playground>
 
+---
+
+## Select
+
+### Props
+
+<Props of={Sidebar.Select} />
+
+### Playground
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <SidebarContext.Provider>
+        <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
+          <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
+            <Sidebar.Select
+              defaultSelected={3}
+              options={[
+                { key: 1, text: 'Location 123', icon: locations },
+                { key: 2, text: 'Location 124', icon: locations },
+                { key: 3, text: 'Location 125', icon: locations },
+              ]}
+            />              
+          </Sidebar.Menu>
+        </Router>
+      </SidebarContext.Provider>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+---
 
 ## Link
 
@@ -52,9 +88,9 @@ import logo from '@_src_/img/logo.svg';
       <SidebarContext.Provider>
         <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
           <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
-            <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
-            <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
-            <Sidebar.Link to='#link3'>Link 3</Sidebar.Link>
+            <Sidebar.Link to='#link1' icon={users}>Link 1</Sidebar.Link>
+            <Sidebar.Link to='#link2' icon={users}>Link 2</Sidebar.Link>
+            <Sidebar.Link to='#link3'>Link 3 - no icon</Sidebar.Link>
           </Sidebar.Menu>
         </Router>
       </SidebarContext.Provider>
@@ -62,6 +98,7 @@ import logo from '@_src_/img/logo.svg';
   </div>
 </Playground>
 
+---
 
 ## Section
 
@@ -99,6 +136,7 @@ import logo from '@_src_/img/logo.svg';
   </div>
 </Playground>
 
+---
 
 ## Accordion
 
@@ -114,12 +152,18 @@ import logo from '@_src_/img/logo.svg';
       <SidebarContext.Provider>
         <Router history={typeof window !== 'undefined' ? createBrowserHistory() : null}>
           <Sidebar.Menu logo={{ src: logo, alt: 'Cordage' }} zone='Admin'>
-            <Sidebar.Accordion text='Section 1'>
+            <Sidebar.Accordion
+              text='Section 1'
+              icon={documentControl}
+            >
               <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
               <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
               <Sidebar.Link to='#link3'>Link 3</Sidebar.Link>
             </Sidebar.Accordion>
-            <Sidebar.Accordion>
+            <Sidebar.Accordion
+              text='Section 2'
+              icon={capas}
+            >
               <Sidebar.Section text='Section 2'>
                 <Sidebar.Link to='#link1'>Link 1</Sidebar.Link>
                 <Sidebar.Link to='#link2'>Link 2</Sidebar.Link>
