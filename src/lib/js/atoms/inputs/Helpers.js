@@ -1,4 +1,6 @@
 import * as Yup from 'yup';
+import capas from "../../../img/products/CAPAS.svg";
+
 
 export const Schema = Yup.object().shape({
   text: Yup.string()
@@ -17,8 +19,30 @@ export const Schema = Yup.object().shape({
 });
 
 export const options = [
-  { label: 'Option 1', value: 'Option 1' },
-  { label: 'Option 2', value: 'Option 2' },
-  { label: 'Option 3', value: 'Option 3' },
+  { value: 'Option 1', label: 'Option 1' },
+  { value: 'Option 2', label: 'Option 2' },
+  { value: 'Option 3', label: 'Option 3' },
 ];
 
+
+export const multiOptions = [
+  { 
+    value: '1',
+    label: 'Lorem Ipsum',
+    auxText: 'example@cordage.ui',
+    img: capas
+  },
+  { 
+    value: '2',
+    label: 'Dolor Sit',
+    auxText: 'example@cordage.ui',
+    img: capas
+  },
+
+  { 
+    value: '3',
+    label: 'Amet Consectetur',
+    auxText: 'example@cordage.ui',
+    img: capas
+  },
+];

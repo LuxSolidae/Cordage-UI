@@ -4717,6 +4717,26 @@ h6 {
   letter-spacing: -0.1px;
 }
 
+.custom-option {
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.1px;
+}
+
+.custom-option__img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+  }
+
+.custom-option__label {
+    margin-right: 0.5rem;
+  }
+
+.custom-option__aux-text {
+    color: #b8b8b8;
+  }
+
 .card-component-fixed {
   min-height: 22.5625rem;
   width: 21.875rem;

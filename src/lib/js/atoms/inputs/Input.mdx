@@ -15,7 +15,7 @@ import TextField from './TextField';
 import Select from './Select';
 import MultiSelect from './MultiSelect';
 import Button from './../button/Button';
-import { Schema, options } from './Helpers';
+import { Schema, options, multiOptions } from './Helpers';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@_src_/lib/Docz.css';
@@ -92,7 +92,7 @@ import '@_src_/lib/Docz.css';
             <MultiSelect
               id='multiselect'
               label='Select multiple options'
-              options={options}
+              options={multiOptions}
             />
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
