@@ -4683,12 +4683,15 @@ h6 {
   color: var(--brown-grey);
 }
 
+/*Custom checkbox*/
+
 .custom-control-input:checked~.custom-control-label:before {
   color: #fff;
   border-color: #e6e6e6;
   background-color: #005cff;
   width: 1rem;
   border-radius: 0;
+  margin-right: 12px;
 }
 
 .custom-checkbox .custom-control-label:before {
@@ -4706,8 +4709,12 @@ h6 {
 }
 
 .custom-control-label {
+  /* margin-top: 1rem; */
+  margin-bottom: 1rem;
   position: relative;
   margin-bottom: 0;
+  line-height: 1.43rem;
+  letter-spacing: -0.14px;
   vertical-align: top;
   color: var(--black);
   font-size: 14px;

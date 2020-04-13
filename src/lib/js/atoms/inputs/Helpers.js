@@ -13,7 +13,10 @@ export const Schema = Yup.object().shape({
     .max(12, "Phone can' be longer than 12 characters."),
   select: Yup.string()
     .ensure()
-    .required("Select is required.")
+    .required("Select is required."),
+  checkbox: Yup.string()
+    .ensure()
+    .required("You must accept it.")
 });
 
 export const options = [
