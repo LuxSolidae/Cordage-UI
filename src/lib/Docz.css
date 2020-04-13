@@ -5142,7 +5142,7 @@ h6 {
   background-color: black;
   font-size: 0.875rem;
   letter-spacing: -0.14px;
-  line-height: 1.43em;
+  line-height: 1.43;
   padding: 2rem 1.875rem 3.75rem 1.875rem
 }
 
@@ -5173,8 +5173,8 @@ h6 {
 .modal-confirm {
   background-color: white;
   color: black;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   min-height: 30.9375rem;
 }
 

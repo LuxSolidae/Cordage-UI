@@ -4677,8 +4677,8 @@ h6 {
   }
 
 .field_error .form-control {
-    border-color: #e9190f;
-    border-color: var(--orange-red);
+    border-color: #e9190f !important;
+    border-color: var(--orange-red) !important;
   }
 
 .field_error .input-icon {
@@ -4701,6 +4701,8 @@ h6 {
 .form-control:focus {
     color: #272727;
     color: var(--black-2);
+    border-color: #d0d0d0;
+    box-shadow: 0 0 0 0.125rem rgba(208, 208, 208, .25);
   }
 
 .input-icon {
@@ -4731,9 +4733,15 @@ h6 {
   color: var(--brown-grey);
 }
 
-.card-component {
+.card-component-fixed {
   min-height: 22.5625rem;
   width: 21.875rem;
+}
+
+.card-component-large {
+  height: auto;
+  min-height: auto;
+  width: 100%;
 }
 
 .card-title {
@@ -5211,7 +5219,7 @@ h6 {
   background-color: black;
   font-size: 0.875rem;
   letter-spacing: -0.14px;
-  line-height: 1.43em;
+  line-height: 1.43;
   padding: 2rem 1.875rem 3.75rem 1.875rem
 }
 
@@ -5242,11 +5250,11 @@ h6 {
 .modal-confirm {
   background-color: white;
   color: black;
+  display: -webkit-box;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
-  display: -webkit-box;
-  display: flex;
   min-height: 30.9375rem;
 }
 
