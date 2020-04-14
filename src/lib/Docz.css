@@ -5185,6 +5185,10 @@ h6 {
     width: 100%;
   }
 
+.page-admin-header-extra {
+  float: right;
+}
+
 .page-content {
   background-color: #fafdfa;
   border-top: solid 1px var(--very-light-pink);
