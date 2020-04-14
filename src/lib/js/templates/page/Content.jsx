@@ -4,12 +4,13 @@ import {Container, Row, Col} from 'react-bootstrap';
 type Props = {
   children: React.Node,
   title?: string,
-  extras?: React.Node,
+  /**May add any component next to the header. Should be inside a fragment. */
+  headerComponents?: React.Node,
   className?: string,
 }
 
 
-export const Content = ({ children, className, title, extras }: Props) => (
+export const Content = ({ children, className, title, headerComponents }: Props) => (
   <div className={`page-content ${className}`}>
           <div className='page-content-header'>
             {
@@ -18,8 +19,8 @@ export const Content = ({ children, className, title, extras }: Props) => (
               )
             }
             {
-              extras && (
-                <div className='page-header-right'> {extras} </div>
+              headerComponents && (
+                <div className='page-header-right'> {headerComponents} </div>
               )
             }
           </div>
