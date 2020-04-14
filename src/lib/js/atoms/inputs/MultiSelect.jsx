@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { FormGroup, FormLabel } from 'react-bootstrap';
 import Select, { components } from 'react-select';
+import close from "../../../img/icons/close-white.svg";
 
 
 const CustomOption = ({ value, label, auxText, img }) => (
@@ -21,6 +22,15 @@ const MultiValueLabel = (props) => {
   );
 }
 
+
+const MultiValueRemove = (props) => {
+  return (
+    <components.MultiValueRemove {...props}>
+      <img src={close} alt='Close'></img>
+    </components.MultiValueRemove>
+  );
+}
+
 export const MultiSelect = (props: Props) => {
   const {
     label,
@@ -37,7 +47,7 @@ export const MultiSelect = (props: Props) => {
         classNamePrefix='multi-select'
         options={options}
         formatOptionLabel={CustomOption}
-        components={{MultiValueLabel}}
+        components={{MultiValueLabel, MultiValueRemove}}
         defaultValue={defaultValue}
         isMulti
       />
