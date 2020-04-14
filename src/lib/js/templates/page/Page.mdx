@@ -8,7 +8,7 @@ import { Playground, Props } from 'docz';
 import { Router } from 'react-router';
 import { createBrowserHistory } from "history";
 
-import { ThemeContext, Page, Sidebar, SidebarContext } from '@cordage_ui';
+import { ThemeContext, Page, Sidebar, SidebarContext, Button } from '@cordage_ui';
 import theme from '@cordage_ui/cordage.json';
 import logo from '@_src_/lib/img/logo.svg';
 import locations from '@_src_/lib/img/icons/locations.svg';
@@ -48,6 +48,12 @@ import '@_src_/lib/Docz.css';
         description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis metus vitae elit lacinia dapibus at sed nibh. In hac habitasse platea dictumst. Etiam condimentum orci justo. Fusce nec augue leo.'
       >
         <Page.Content
+        extras={
+          <>
+            <Button>First</Button>
+            <Button>Second</Button>
+          </>
+        }
           title='Example title'
         >
           <div>Example text</div>

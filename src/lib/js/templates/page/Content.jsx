@@ -1,18 +1,28 @@
 import * as React from 'react';
+import {Container, Row, Col} from 'react-bootstrap';
 
 type Props = {
   children: React.Node,
   title?: string,
+  extras?: React.Node,
   className?: string,
 }
 
-export const Content = ({ children, className, title }: Props) => (
+
+export const Content = ({ children, className, title, extras }: Props) => (
   <div className={`page-content ${className}`}>
-    {
-      title && (
-        <h2 className='content-title'>{title}</h2>
-      )
-    }
+          <div className='page-content-header'>
+            {
+              title && (
+                <h2 className='content-title'>{title}</h2>
+              )
+            }
+            {
+              extras && (
+                <div className='page-header-right'> {extras} </div>
+              )
+            }
+          </div>
     {children}
   </div>
 );

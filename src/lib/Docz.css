@@ -5204,6 +5204,11 @@ h6 {
     margin-bottom: 1.625rem;
   }
 
+.page-content .page-content-header{
+    display: flex;
+    justify-content: space-between;
+  }
+
 /* TODO Refactor for better code organization */
 
 .detail {
