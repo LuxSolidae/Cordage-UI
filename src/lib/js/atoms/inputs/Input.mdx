@@ -42,6 +42,7 @@ import '@_src_/lib/Docz.css';
           email: '',
           phone: '',
           select: '',
+          multi: [],
         }}
         validationSchema={Schema}
         onSubmit={(values) => {
@@ -92,6 +93,7 @@ import '@_src_/lib/Docz.css';
             
             <MultiSelect
               id='multiselect'
+              name='multi'
               label='Select multiple options'
               options={multiOptions}
             />

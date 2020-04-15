@@ -5,24 +5,6 @@ import Select, { components } from 'react-select';
 import close from "../../../img/icons/close-white.svg";
 
 
-const CustomOption = ({ value, label, auxText, img }) => (
-  <div className='custom-option'>
-    { img && <img className='custom-option__img' src={img} alt={label}/> }
-
-    <span className='custom-option__label'>{ label }</span>
-    { auxText && <span className='custom-option__aux-text'>{ auxText }</span> }
-  </div>
-);
-
-const MultiValueLabel = (props) => {
-  return (
-    <components.MultiValueLabel {...props}>
-      { props.data.label }
-    </components.MultiValueLabel>
-  );
-}
-
-
 const MultiValueRemove = (props) => {
   return (
     <components.MultiValueRemove {...props}>
@@ -52,6 +34,23 @@ export const MultiSelect = (props: Props) => {
         isMulti
       />
     </FormGroup>
+  );
+}
+
+const CustomOption = ({ value, label, auxText, img }) => (
+  <div className='custom-option'>
+    { img && <img className='custom-option__img' src={img} alt={label}/> }
+
+    <span className='custom-option__label'>{ label }</span>
+    { auxText && <span className='custom-option__aux-text'>{ auxText }</span> }
+  </div>
+);
+
+const MultiValueLabel = (props) => {
+  return (
+    <components.MultiValueLabel {...props}>
+      { props.data.label }
+    </components.MultiValueLabel>
   );
 }
 
