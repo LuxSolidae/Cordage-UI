@@ -5185,6 +5185,10 @@ h6 {
     width: 100%;
   }
 
+.page-admin-header-extra {
+  float: right;
+}
+
 .page-content {
   background-color: #fafdfa;
   border-top: solid 1px var(--very-light-pink);
@@ -5202,6 +5206,11 @@ h6 {
     letter-spacing: -0.26px;
     line-height: normal;
     margin-bottom: 1.625rem;
+  }
+
+.page-content .page-content-header{
+    display: flex;
+    justify-content: space-between;
   }
 
 /* TODO Refactor for better code organization */
