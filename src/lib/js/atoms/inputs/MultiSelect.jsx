@@ -5,7 +5,7 @@ import Select, { components } from "react-select";
 import close from "../../../img/icons/close-white.svg";
 
 export const MultiSelect = (props) => {
-  const { label, options, defaultValue } = props;
+  const { defaultValue, label, options } = props;
 
   return (
     <FormGroup>
