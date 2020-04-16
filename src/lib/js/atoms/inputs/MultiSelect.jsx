@@ -17,14 +17,15 @@ export const MultiSelect = (props) => {
   };
 
   const {
-    defaultValue,
-    label,
-    options,
     id,
     name,
-    value,
+    options,
     touched,
     error,
+    value,
+    label,
+    className,
+    defaultValue,
   } = props;
 
   return (
@@ -34,15 +35,16 @@ export const MultiSelect = (props) => {
       <Select
         id={id}
         name={name}
-        value={value}
+        options={options}
         touched={touched}
         error={error}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        classNamePrefix="multi-select"
-        options={options}
-        components={{ Option: Option, MultiValueLabel, MultiValueRemove }}
+        value={value}
+        className={className}
         defaultValue={defaultValue}
+        onBlur={handleBlur}
+        onChange={handleChange}
+        classNamePrefix="multi-select"
+        components={{ Option: Option, MultiValueLabel, MultiValueRemove }}
         isMulti
       />
 

@@ -4706,6 +4706,7 @@ h6 {
   border-bottom: 1px solid var(--very-light-pink);
   border-radius: 0 !important;
   box-shadow: none !important;
+  margin-top: 0 !important;
 }
 
 .multi-select__option {
@@ -4739,6 +4740,10 @@ h6 {
 
 .multi-select__value-container {
   padding: 6px 8px !important;
+}
+
+.multi-select__option--is-focused {
+  background-color: var(--off-white) !important;
 }
 
 .multi-select__multi-value {

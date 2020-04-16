@@ -1,67 +1,40 @@
 // @flow
 import * as React from "react";
-import { t as typy } from "typy";
-import _ from "lodash";
-import { FormGroup, FormLabel, FormControl } from "react-bootstrap";
+import Select from "react-select";
+import { FormGroup, FormLabel } from "react-bootstrap";
 import { ErrorMessage } from "formik";
 
-export type Option = {
-  key: number,
-  label: string | number,
-  value: string | number,
-};
 
-type Props = {
-  className?: string,
-  id: string,
-  label?: string,
-  field: any,
-  form: any,
-  options?: {
-    key: number,
-    label: string | number,
-    value: string | number,
-  }[],
-};
+export const NewSelect = ({
+  field,
+  form: { setFieldValue },
+  ...props
+}) => {
+  const { 
+    id, 
+    label,
+    className,
+    options 
+  } = props;
 
-export const Select = ({
-  className,
-  id,
-  label,
-  name,
-  value,
-  onChange,
-  onBlur,
-  options,
-}: Props) => {
   return (
-    <FormGroup id={id} className={className}>
-      {label && <FormLabel>{label}</FormLabel>}
+    <FormGroup>
+      {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
 
-      <FormControl
-        as="select"
+      <Select
+        {...field}
+        {...props}
+        id={id}
         options={options}
-        onBlur={onBlur}
-        onChange={onChange}
-        value={value}
-        name={name}
-      >
-        {options.map((option) => {
-          return (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          );
-        })}
-      </FormControl>
+        className={className}
+        value={options ? options.find((option) => option.value === field.value) : ""}
+        onChange={(option) => setFieldValue(field.name, option.value)}
+        classNamePrefix="multi-select"
+      />
 
-      <ErrorMessage component="span" className="input-error" name={name} />
+      <ErrorMessage component="span" className="input-error" name={field.name} />
     </FormGroup>
   );
 };
 
-Select.defaultProps = {
-  options: [],
-};
-
-export default Select;
+export default NewSelect;

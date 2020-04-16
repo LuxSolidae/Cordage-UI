@@ -12,7 +12,8 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 import TextField from './TextField';
-import Select from './Select';
+import CustomSelect from './Select';
+import NewSelect from './Select';
 import MultiSelect from './MultiSelect';
 import Button from './../button/Button';
 import { Schema, options, multiOptions } from './Helpers';
@@ -47,6 +48,7 @@ import '@_src_/lib/Docz.css';
         validationSchema={Schema}
         onSubmit={(values) => {
           alert(JSON.stringify(values, null, 2));
+          console.log("values", values);
         }}
       >
         {({
@@ -85,14 +87,13 @@ import '@_src_/lib/Docz.css';
               placeholder='Enter your phone'
               component={TextField}
             />
-            <Select
-              id='select-field'
+            <Field
+              id='select'
+              name='select'
               name='select'
               label='Select an option'
-              value={values.select}
               options={options}
-              onChange={handleChange}
-              onBlur={handleBlur}
+              component={NewSelect}
             />
             <MultiSelect
               id='multiselect'

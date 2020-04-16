@@ -14,7 +14,7 @@ export const Schema = Yup.object().shape({
     .max(12, "Phone can' be longer than 12 characters."),
   select: Yup.string()
     .ensure()
-    .required("Select is required."),
+    .required("This field is required."),
   multi: Yup.array()
     .min(2, "Pick at least 2 options")
     .of(
@@ -27,27 +27,27 @@ export const Schema = Yup.object().shape({
 });
 
 export const options = [
-  { value: "Option 1", label: "Option 1" },
-  { value: "Option 2", label: "Option 2" },
-  { value: "Option 3", label: "Option 3" },
+  { value: "select-1", label: "Option 1" },
+  { value: "select-2", label: "Option 2" },
+  { value: "select-3", label: "Option 3" },
 ];
 
 export const multiOptions = [
   {
-    value: "1",
+    value: "multi-1",
     label: "Lorem Ipsum",
     auxText: "example@cordage.ui",
     img: capas,
   },
   {
-    value: "2",
+    value: "multi-2",
     label: "Dolor Sit",
     auxText: "example@cordage.ui",
     img: capas,
   },
 
   {
-    value: "3",
+    value: "multi-3",
     label: "Amet Consectetur",
     auxText: "example@cordage.ui",
     img: capas,

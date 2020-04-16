@@ -55,8 +55,8 @@ export const TextField = (props: Props) => {
   }
 
   return (
-    <FormGroup id={id}>
-      { label && <FormLabel>{label}</FormLabel> }
+    <FormGroup>
+      { label && <FormLabel htmlFor={id}>{label}</FormLabel> }
 
       <div 
         className={classnames(
@@ -66,6 +66,7 @@ export const TextField = (props: Props) => {
         }
       >
         <FormControl
+          id={id}
           className={className}
           disabled={disabled}
           readOnly={readOnly}
