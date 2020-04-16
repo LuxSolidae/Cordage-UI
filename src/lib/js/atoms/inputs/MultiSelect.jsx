@@ -2,23 +2,51 @@
 import * as React from "react";
 import { FormGroup, FormLabel } from "react-bootstrap";
 import Select, { components } from "react-select";
+import { ErrorMessage } from "formik";
 import close from "../../../img/icons/close-white.svg";
 
 export const MultiSelect = (props) => {
-  const { defaultValue, label, options } = props;
+  const handleChange = (value) => {
+    const { onChange, name } = props;
+    onChange(name, value);
+  };
+
+  const handleBlur = () => {
+    const { onBlur, name } = props;
+    onBlur(name, true);
+  };
+
+  const {
+    defaultValue,
+    label,
+    options,
+    id,
+    name,
+    value,
+    touched,
+    error,
+  } = props;
 
   return (
     <FormGroup>
-      {label && <FormLabel>{label}</FormLabel>}
+      {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
 
       <Select
+        id={id}
+        name={name}
+        value={value}
+        touched={touched}
+        error={error}
+        onChange={handleChange}
+        onBlur={handleBlur}
         classNamePrefix="multi-select"
         options={options}
         components={{ Option: Option, MultiValueLabel, MultiValueRemove }}
         defaultValue={defaultValue}
         isMulti
-        menuIsOpen={true}
       />
+
+      <ErrorMessage component="span" className="input-error" name={name} />
     </FormGroup>
   );
 };

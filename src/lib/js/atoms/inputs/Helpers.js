@@ -16,12 +16,13 @@ export const Schema = Yup.object().shape({
     .ensure()
     .required("Select is required."),
   multi: Yup.array()
-    .max(1, "Pick at least 1 option")
+    .min(2, "Pick at least 2 options")
     .of(
       Yup.object().shape({
-        label: Yup.string().required(),
-        value: Yup.string().required(),
+        label: Yup.string(),
+        value: Yup.string()
       })
+      .nullable()
     ),
 });
 

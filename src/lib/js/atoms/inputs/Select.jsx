@@ -1,14 +1,14 @@
 // @flow
 import * as React from "react";
-import { t as typy } from 'typy';
-import _ from 'lodash';
+import { t as typy } from "typy";
+import _ from "lodash";
 import { FormGroup, FormLabel, FormControl } from "react-bootstrap";
 import { ErrorMessage } from "formik";
 
 export type Option = {
   key: number,
   label: string | number,
-  value: string | number
+  value: string | number,
 };
 
 type Props = {
@@ -20,8 +20,8 @@ type Props = {
   options?: {
     key: number,
     label: string | number,
-    value: string | number
-  }[]
+    value: string | number,
+  }[],
 };
 
 export const Select = ({
@@ -36,9 +36,8 @@ export const Select = ({
 }: Props) => {
   return (
     <FormGroup id={id} className={className}>
+      {label && <FormLabel>{label}</FormLabel>}
 
-      { label && <FormLabel>{label}</FormLabel> }
-      
       <FormControl
         as="select"
         options={options}
@@ -47,7 +46,7 @@ export const Select = ({
         value={value}
         name={name}
       >
-        {options.map(option => {
+        {options.map((option) => {
           return (
             <option key={option.value} value={option.value}>
               {option.label}
@@ -56,17 +55,13 @@ export const Select = ({
         })}
       </FormControl>
 
-      <ErrorMessage
-        component="span"
-        className="input-error"
-        name={name}
-      />
+      <ErrorMessage component="span" className="input-error" name={name} />
     </FormGroup>
   );
 };
 
 Select.defaultProps = {
-  options: []
+  options: [],
 };
 
 export default Select;

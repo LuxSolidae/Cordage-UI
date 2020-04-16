@@ -50,11 +50,15 @@ import '@_src_/lib/Docz.css';
         }}
       >
         {({
+          errors,
           values,
+          touched,
           handleBlur,
           handleChange,
           handleSubmit,
           submitForm,
+          setFieldValue,
+          setFieldTouched,
         }) => (
           <Form onSubmit={handleSubmit}>
             <Field
@@ -90,21 +94,17 @@ import '@_src_/lib/Docz.css';
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            <Field
-              id='multiselect'
-              name='multi'
-              label='Select multiple options'
-              options={multiOptions}
-              component={MultiSelect}
-            />
-            {/*
             <MultiSelect
               id='multiselect'
               name='multi'
               label='Select multiple options'
               options={multiOptions}
+              value={values.multi}
+              onChange={setFieldValue}
+              onBlur={setFieldTouched}
+              touched={touched.multi}
+              error={errors.multi}
             />
-            */}
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
         )}
