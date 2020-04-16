@@ -13,6 +13,7 @@ export type Props = {
   id: string,
   label?: string,
   className?: string,
+  defaultValue?: any,
   options?: {
     key: string | number,
     label: string,
@@ -29,7 +30,8 @@ export const Select = ({
     id, 
     label,
     className,
-    options 
+    options,
+    defaultValue
   } = props;
 
   return (
@@ -55,6 +57,7 @@ export const Select = ({
 Select.defaultProps = {
   label: '',
   className: '',
+  defaultValue: undefined,
   options: []
 };
 
