@@ -1,15 +1,30 @@
 // @flow
 import * as React from "react";
-import Select from "react-select";
+import { default as RSelect} from "react-select";
 import { FormGroup, FormLabel } from "react-bootstrap";
 import { ErrorMessage } from "formik";
 
+export type Option = {
+  label: string,
+  value: string | number
+}
 
-export const NewSelect = ({
+export type Props = {
+  id: string,
+  label?: string,
+  className?: string,
+  options?: {
+    key: string | number,
+    label: string,
+    value: string | number
+  }[]
+}
+
+export const Select = ({
   field,
   form: { setFieldValue },
   ...props
-}) => {
+}: Props) => {
   const { 
     id, 
     label,
@@ -21,7 +36,7 @@ export const NewSelect = ({
     <FormGroup>
       {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
 
-      <Select
+      <RSelect
         {...field}
         {...props}
         id={id}
@@ -37,4 +52,10 @@ export const NewSelect = ({
   );
 };
 
-export default NewSelect;
+Select.defaultProps = {
+  label: '',
+  className: '',
+  options: []
+};
+
+export default Select;

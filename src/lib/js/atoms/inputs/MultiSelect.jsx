@@ -5,7 +5,33 @@ import Select, { components } from "react-select";
 import { ErrorMessage } from "formik";
 import close from "../../../img/icons/close-white.svg";
 
-export const MultiSelect = (props) => {
+export type Option = {
+  key: string | number,
+  label: string,
+  value: string | number,
+  auxTex?: string | number,
+  img?: string
+}
+
+export type Props = {
+  id: string,
+  name: string,
+  touched: boolean,
+  error: any,
+  value: any,
+  label?: string,
+  className?: string,
+  defaultValue?: string | number,
+  options?: {
+    key: string | number,
+    label: string,
+    value: string | number,
+    auxTex?: string | number,
+    img?: string
+  }[]
+}
+
+export const MultiSelect = (props: Props) => {
   const handleChange = (value) => {
     const { onChange, name } = props;
     onChange(name, value);
@@ -44,7 +70,7 @@ export const MultiSelect = (props) => {
         onBlur={handleBlur}
         onChange={handleChange}
         classNamePrefix="multi-select"
-        components={{ Option: Option, MultiValueLabel, MultiValueRemove }}
+        components={{ Option: CustomOption, MultiValueLabel, MultiValueRemove }}
         isMulti
       />
 
@@ -53,7 +79,7 @@ export const MultiSelect = (props) => {
   );
 };
 
-const Option = (props) => {
+const CustomOption = (props) => {
   return (
     <components.Option {...props} className="custom-option">
       {props.data.img && (
@@ -86,5 +112,12 @@ const MultiValueLabel = (props) => {
     </components.MultiValueLabel>
   );
 };
+
+MultiSelect.defaultProps = {
+  label: undefined,
+  className: '',
+  defaultValue: undefined,
+  options: []
+}
 
 export default MultiSelect;
