@@ -13,7 +13,7 @@ export type Props = {
 }
 
 const Tab = ({ children, ...props }: Props) => (
-  <TabComponent className='tab-one' {...props}>
+  <TabComponent {...props}>
     {children}
   </TabComponent>
 );

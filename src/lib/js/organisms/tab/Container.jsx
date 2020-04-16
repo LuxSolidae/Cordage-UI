@@ -17,7 +17,7 @@ export type Props = {
   mountOnEnter?: boolean,
   /** Callback fired when a Tab is selected. Controls `activeKey` */
   onSelect?: (key: string, event?: SyntheticEvent<>) => void,
-  /** Sets a default animation strategy for all children `<TabPane>`s. Use `false` to disable, 
+  /** Sets a default animation strategy for all children `<TabPane>`s. Use `false` to disable,
    * `true` to enable the default `<Fade>` animation or a `react-transition-group v2 <Transition/>` component. */
   transition?: Transition | false,
   /** Unmount tabs (remove it from the DOM) when they are no longer visible */
