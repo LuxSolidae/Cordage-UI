@@ -1,11 +1,13 @@
 // @flow
 import * as React from 'react';
 import TabContent from 'react-bootstrap/TabContent';
+import Pane from './Pane';
 
 export type Props = {
   /** You can use a custom element type for this component. */
   as?: elementType,
-  children?: React.Node,
+  /** Children can only be `Tab.Pane` elements. */
+  children?: React.ChildrenArray<React.Element<typeof Pane>>,
 }
 
 const Content = ({ children, ...props }: Props) => (
