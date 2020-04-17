@@ -11,10 +11,11 @@ import theme from '@cordage_ui/cordage.json';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
-import Select from './Select';
-import TextField from './TextField';
-import MultiSelect from './MultiSelect';
 import Button from './../button/Button';
+import MultiSelect from './MultiSelect';
+import Select from './Select';
+import Switch from './Switch';
+import TextField from './TextField';
 import { Schema, options, multiOptions } from './Helpers';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,6 +40,11 @@ import '@_src_/lib/Docz.css';
 ### Props
 
 <Props of={MultiSelect} />
+
+## Switch
+### Props
+
+<Props of={Switch} />
 
 ### Playground
 
@@ -111,6 +117,7 @@ import '@_src_/lib/Docz.css';
               touched={touched.multi}
               error={errors.multi}
             />
+            <Switch />
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
         )}
