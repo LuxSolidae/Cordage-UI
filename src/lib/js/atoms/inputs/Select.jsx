@@ -1,71 +1,63 @@
 // @flow
 import * as React from "react";
-import { t as typy } from 'typy';
-import _ from 'lodash';
-import { FormGroup, FormLabel, FormControl } from "react-bootstrap";
+import { default as RSelect} from "react-select";
+import { FormGroup, FormLabel } from "react-bootstrap";
 import { ErrorMessage } from "formik";
 
 export type Option = {
-  key: number,
-  label: string | number,
+  label: string,
   value: string | number
-};
+}
 
-type Props = {
-  className?: string,
+export type Props = {
   id: string,
   label?: string,
-  field: any,
-  form: any,
+  className?: string,
+  defaultValue?: any,
   options?: {
-    key: number,
-    label: string | number,
+    key: string | number,
+    label: string,
     value: string | number
   }[]
-};
+}
 
 export const Select = ({
-  className,
-  id,
-  label,
-  name,
-  value,
-  onChange,
-  onBlur,
-  options,
+  field,
+  form: { setFieldValue },
+  ...props
 }: Props) => {
+  const { 
+    id, 
+    label,
+    className,
+    options,
+    defaultValue
+  } = props;
+
   return (
-    <FormGroup id={id} className={className}>
+    <FormGroup>
+      {label && <FormLabel htmlFor={id}>{label}</FormLabel>}
 
-      { label && <FormLabel>{label}</FormLabel> }
-      
-      <FormControl
-        as="select"
+      <RSelect
+        {...field}
+        {...props}
+        id={id}
         options={options}
-        onBlur={onBlur}
-        onChange={onChange}
-        value={value}
-        name={name}
-      >
-        {options.map(option => {
-          return (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          );
-        })}
-      </FormControl>
-
-      <ErrorMessage
-        component="span"
-        className="input-error"
-        name={name}
+        className={className}
+        value={options ? options.find((option) => option.value === field.value) : ""}
+        onChange={(option) => setFieldValue(field.name, option.value)}
+        classNamePrefix="multi-select"
       />
+
+      <ErrorMessage component="span" className="input-error" name={field.name} />
     </FormGroup>
   );
 };
 
 Select.defaultProps = {
+  label: '',
+  className: '',
+  defaultValue: undefined,
   options: []
 };
 

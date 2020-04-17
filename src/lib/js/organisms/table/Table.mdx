@@ -1,0 +1,312 @@
+---
+name: Table
+route: /organisms/Table
+menu: Organisms
+---
+
+import { Playground, Props } from 'docz';
+import { Router } from 'react-router';
+import { t as typy } from 'typy';
+
+import { Table, ThemeContext } from '@cordage_ui';
+import theme from '@cordage_ui/cordage.json';
+
+
+# Table
+
+---
+
+## Column
+
+### Props
+
+<Props of={Table.Column} />
+
+
+## Container
+
+### Props
+
+<Props of={Table.Container} />
+
+### Playground
+
+#### Normal Table
+
+Shamefully you will need to set `width` and `height` (although `maxHeight` is preferred).
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Table.Container
+        data={[
+          { id: 1, name: 'Daniel', lastname: 'Ortíz', },
+          { id: 2, name: 'Daniel', lastname: 'Franco', },
+          { id: 3, name: 'Alan', lastname: 'Maldonado', },
+          { id: 4, name: 'Óscar', lastname: 'Montiel', },
+          { id: 5, name: 'Gisela', lastname: 'Solis', },
+        ]}
+        height={350}
+        width={500}
+      >
+        <Table.Column 
+          key='first'
+          dataKey='name'
+          title='Name'
+          width={250}
+        />
+        <Table.Column
+          key='second'
+          dataKey='lastname'
+          title='Last name'
+          width={250}
+        />
+      </Table.Container>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+
+#### Custom columns
+
+By default, columns will get the data from each row by using the `dataKey` prop and insert it directly, but if you want to use the information in a different way, you should render it with the `cellRenderer` prop inside the `Table.Column` component. Look at the avatar column in the next example.
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Table.Container
+        data={[
+          { id: 1, name: 'Daniel', lastname: 'Ortíz', avatar: 'https://api.adorable.io/avatars/285/daniel.ortiz@nuu.co.png', },
+          { id: 2, name: 'Daniel', lastname: 'Franco', avatar: 'https://api.adorable.io/avatars/285/daniel.franco@nuu.co.png' },
+          { id: 3, name: 'Alan', lastname: 'Maldonado', avatar: 'https://api.adorable.io/avatars/285/alan@nuu.co.png' },
+          { id: 4, name: 'Óscar', lastname: 'Montiel', avatar: 'https://api.adorable.io/avatars/285/oscar@nuu.co.png' },
+          { id: 5, name: 'Gisela', lastname: 'Solis', avatar: 'https://api.adorable.io/avatars/285/gisela@nuu.co.png' },
+        ]}
+        height={350}
+        width={500}
+      >
+        <Table.Column 
+          key='zero'
+          dataKey='avatar'
+          title='Avatar'
+          width={80}
+          cellRenderer={({ cellData, columns, column, columnIndex, rowData, rowIndex, container, isScrolling }) => (
+            <img 
+              src={typy(rowData, 'avatar').safeString}
+              alt={typy(rowData, 'name').safeString}
+              width={'50px'}
+            />
+          )}
+        />
+        <Table.Column 
+          key='first'
+          dataKey='name'
+          title='Name'
+          width={250}
+        />
+        <Table.Column
+          key='second'
+          dataKey='lastname'
+          title='Last name'
+          width={250}
+        />
+      </Table.Container>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+#### Frozen Columns
+
+You can freeze multiple colums, meaning that the side scrolling won't affect them. You can freeze them to a side (`left` or `right`) and the table will handle the rest. By default setting `frozen={true}` will be overriden by `left`.
+
+Two things are necessary, no matter what:
+
+1.  Add the `fixed` prop to the `Table.Container`, so your column sizes are respected and the side-scrolling is activated
+2.  Add `frozen={side}` prop to the `Table.Column`s that require it
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Table.Container
+        data={[
+          { id: 1, name: 'Daniel', lastname: 'Ortíz', department: 'Software Development', position: 'Full-stack development', company: 'NUU Group MX', email: 'daniel.ortiz@nuu.co', avatar: 'https://api.adorable.io/avatars/285/daniel.ortiz@nuu.co.png'},
+          { id: 2, name: 'Daniel', lastname: 'Franco', department: 'Software Development', position: 'Full-stack development', company: 'NUU Group MX', email: 'daniel.franco@nuu.co', avatar: 'https://api.adorable.io/avatars/285/daniel.franco@nuu.co.png'},
+          { id: 3, name: 'Alan', lastname: 'Maldonado', department: 'Software Development', position: 'Full-stack development', company: 'NUU Group MX', email: 'alan@nuu.co', avatar: 'https://api.adorable.io/avatars/285/alan@nuu.co.png'},
+          { id: 4, name: 'Óscar', lastname: 'Montiel', department: 'Software Development', position: 'Front-end development', company: 'NUU Group MX', email: 'oscar@nuu.co', avatar: 'https://api.adorable.io/avatars/285/oscar@nuu.co.png'},
+          { id: 5, name: 'Gisela', lastname: 'Solis', department: 'Software Development', position: 'Front-end development', company: 'NUU Group MX', email: 'gisela@nuu.co', avatar: 'https://api.adorable.io/avatars/285/gisela@nuu.co.png'},
+        ]}
+        fixed
+        maxHeight={400}
+        width={700}
+      >
+        <Table.Column 
+          key='zero'
+          dataKey='avatar'
+          title='Avatar'
+          frozen='left'
+          width={80}
+          cellRenderer={({ cellData, columns, column, columnIndex, rowData, rowIndex, container, isScrolling }) => (
+            <img 
+              src={typy(rowData, 'avatar').safeString}
+              alt={typy(rowData, 'name').safeString}
+              width={'50px'}
+            />
+          )}
+        />
+        <Table.Column 
+          key='first'
+          dataKey='name'
+          title='Name'
+          frozen='left'
+          width={100}
+        />
+        <Table.Column
+          key='second'
+          dataKey='lastname'
+          title='Last name'
+          width={150}
+        />
+        <Table.Column
+          key='third'
+          dataKey='department'
+          title='Department'
+          width={210}
+        />
+        <Table.Column
+          key='forth'
+          dataKey='position'
+          title='Position'
+          width={210}
+        />
+        <Table.Column
+          key='fifth'
+          dataKey='company'
+          title='Company'
+          width={210}
+        />
+        <Table.Column
+          key='sixth'
+          dataKey='email'
+          title='Email'
+          frozen='right'
+          width={180}
+        />
+      </Table.Container>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+#### Frozen Rows
+
+Any information required to be frozen must be set inside `frozenData`. They will be set at the beginning of the table. BTW the headers are always frozen on top, so don't worry about them.
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Table.Container
+        frozenData={[
+          { id: 1, name: 'Daniel', lastname: 'Ortíz', department: 'Software Development' },
+        ]}
+        data={[
+          { id: 2, name: 'Daniel', lastname: 'Franco', department: 'Software Development' },
+          { id: 3, name: 'Alan', lastname: 'Maldonado', department: 'Software Development' },
+          { id: 4, name: 'Óscar', lastname: 'Montiel', department: 'Software Development' },
+          { id: 5, name: 'Gisela', lastname: 'Solis', department: 'Software Development' },
+        ]}
+        maxHeight={200}
+        width={600}
+      >
+        <Table.Column 
+          key='first'
+          dataKey='name'
+          title='Name'
+          frozen='left'
+          width={100}
+        />
+        <Table.Column
+          key='second'
+          dataKey='lastname'
+          title='Last name'
+          width={150}
+        />
+        <Table.Column
+          key='third'
+          dataKey='department'
+          title='Department'
+          width={250}
+        />
+      </Table.Container>
+    </ThemeContext.Provider>
+  </div>
+</Playground>
+
+
+#### Autoresize Columns
+
+You can make your columns resize with your viewport. This example is based in the previous one.
+**THIS IS STILL IN DEVELOPMENT, SO DON'T WASTE YOUR TIME IN IT**
+
+<Playground>
+  <div className='metro'>
+    <ThemeContext.Provider theme={theme}>
+      <Table.AutoResizer
+        height={350}
+        width={600}
+      >
+        {({ width, height }) => (
+          <Table.Container
+            data={[
+              { id: 1, name: 'Daniel', lastname: 'Ortíz', department: 'Software Development', position: 'Full-stack development', company: 'NUU Group MX', email: 'daniel.ortiz@nuu.co' },
+              { id: 2, name: 'Daniel', lastname: 'Franco', department: 'Software Development', position: 'Full-stack development', company: 'NUU Group MX', email: 'daniel.franco@nuu.co' },
+              { id: 3, name: 'Alan', lastname: 'Maldonado', department: 'Software Development', position: 'Full-stack development', company: 'NUU Group MX', email: 'alan@nuu.co' },
+              { id: 4, name: 'Óscar', lastname: 'Montiel', department: 'Software Development', position: 'Front-end development', company: 'NUU Group MX', email: 'oscar@nuu.co' },
+              { id: 5, name: 'Gisela', lastname: 'Solis', department: 'Software Development', position: 'Front-end development', company: 'NUU Group MX', email: 'gisela@nuu.co' },
+            ]}
+            fixed
+            maxHeight={height}
+            width={width}
+          >
+            <Table.Column 
+              key='first'
+              dataKey='name'
+              title='Name'
+              frozen='left'
+              width={100}
+            />
+            <Table.Column
+              key='second'
+              dataKey='lastname'
+              title='Last name'
+              width={150}
+            />
+            <Table.Column
+              key='third'
+              dataKey='department'
+              title='Department'
+              width={210}
+            />
+            <Table.Column
+              key='forth'
+              dataKey='position'
+              title='Position'
+              width={210}
+            />
+            <Table.Column
+              key='fifth'
+              dataKey='company'
+              title='Company'
+              width={210}
+            />
+            <Table.Column
+              key='sixth'
+              dataKey='email'
+              title='Email'
+              frozen='right'
+              width={180}
+            />
+          </Table.Container>
+        )}
+      </Table.AutoResizer>
+    </ThemeContext.Provider>
+  </div>
+</Playground>

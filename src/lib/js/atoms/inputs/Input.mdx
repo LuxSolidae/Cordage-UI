@@ -11,10 +11,11 @@ import theme from '@cordage_ui/cordage.json';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
-import TextField from './TextField';
 import Select from './Select';
+import TextField from './TextField';
+import MultiSelect from './MultiSelect';
 import Button from './../button/Button';
-import { Schema, options } from './Helpers';
+import { Schema, options, multiOptions } from './Helpers';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@_src_/lib/Docz.css';
@@ -25,10 +26,19 @@ import '@_src_/lib/Docz.css';
 ---
 
 ## Text Field
-
 ### Props
 
 <Props of={TextField} />
+
+## Select
+### Props
+
+<Props of={Select} />
+
+## MultiSelect
+### Props
+
+<Props of={MultiSelect} />
 
 ### Playground
 
@@ -41,18 +51,21 @@ import '@_src_/lib/Docz.css';
           email: '',
           phone: '',
           select: '',
+          multi: [],
         }}
         validationSchema={Schema}
         onSubmit={(values) => {
           alert(JSON.stringify(values, null, 2));
+          console.log("values", values);
         }}
       >
         {({
+          errors,
           values,
-          handleBlur,
-          handleChange,
+          touched,
           handleSubmit,
-          submitForm,
+          setFieldValue,
+          setFieldTouched,
         }) => (
           <Form onSubmit={handleSubmit}>
             <Field
@@ -79,14 +92,24 @@ import '@_src_/lib/Docz.css';
               placeholder='Enter your phone'
               component={TextField}
             />
-            <Select
-              id='select-field'
+            <Field
+              id='select'
+              name='select'
               name='select'
               label='Select an option'
-              value={values.select}
               options={options}
-              onChange={handleChange}
-              onBlur={handleBlur}
+              component={Select}
+            />
+            <MultiSelect
+              id='multiselect'
+              name='multi'
+              label='Select multiple options'
+              options={multiOptions}
+              value={values.multi}
+              onChange={setFieldValue}
+              onBlur={setFieldTouched}
+              touched={touched.multi}
+              error={errors.multi}
             />
             <Button variant="primary" type="submit">Submit</Button>
           </Form>

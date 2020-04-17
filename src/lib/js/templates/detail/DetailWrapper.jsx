@@ -21,7 +21,7 @@ export const DetailWrapper = ({ children, onClose, show }: Props) => (
     </BootstrapModal.Body>
     <div className="btn-close-container">
       <button className="btn-close" onClick={onClose}>
-        <img src={close}></img>
+        <img src={close} alt='Close'></img>
       </button>
     </div>
   </BootstrapModal>

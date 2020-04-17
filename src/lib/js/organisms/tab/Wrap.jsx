@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import TabsComponent from 'react-bootstrap/Tabs';
+import Tab from './Tab';
 
 export type Props = {
   /** Mark the Tab with a matching `eventKey` as active. Controlled by: `onSelect`, Initial prop: `defaultActivekey` */
@@ -16,7 +17,8 @@ export type Props = {
   /** Sets a default animation strategy for all children `<TabPane>`s. Use `false` to disable, 
    * `true` to enable the default `<Fade>` animation or a `react-transition-group v2 <Transition/>` component. */
   transition?: Transition | false,
-  children?: React.Node,
+  /** Children can only be `Tabs.Tab` elements */
+  children?: React.ChildrenArray<React.Element<typeof Tab>>,
 }
 
 const Tabs = ({ children, ...props }: Props) => (
