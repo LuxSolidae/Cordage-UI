@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { FormGroup, FormLabel, FormControl } from 'react-bootstrap';
 import { ErrorMessage } from 'formik';
 
-
 export type Props = {
   id: string,
   label?: string,
@@ -15,7 +14,6 @@ export type Props = {
   disabled?: Boolean,
   readOnly?: Boolean,
 };
-
 
 export const TextField = (props: Props) => {
   const {
@@ -55,8 +53,8 @@ export const TextField = (props: Props) => {
   }
 
   return (
-    <FormGroup id={id}>
-      { label && <FormLabel>{label}</FormLabel> }
+    <FormGroup>
+      { label && <FormLabel htmlFor={id}>{label}</FormLabel> }
 
       <div 
         className={classnames(
@@ -66,6 +64,7 @@ export const TextField = (props: Props) => {
         }
       >
         <FormControl
+          id={id}
           className={className}
           disabled={disabled}
           readOnly={readOnly}
