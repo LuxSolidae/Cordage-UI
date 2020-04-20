@@ -95,6 +95,7 @@ modifyBundlerConfig = (bundlerConfig) => {
           ],
           require.resolve('@babel/plugin-proposal-export-default-from'),
           require.resolve('@babel/plugin-syntax-dynamic-import'),
+          require.resolve('webpack-bundle-analyzer').BundleAnalyzerPlugin,
         ],
       },
     },

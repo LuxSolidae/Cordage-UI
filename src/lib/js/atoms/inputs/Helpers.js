@@ -1,4 +1,5 @@
-import * as Yup from 'yup';
+import * as Yup from "yup";
+import capas from "../../../img/products/CAPAS.svg";
 
 export const Schema = Yup.object().shape({
   text: Yup.string()
@@ -13,6 +14,16 @@ export const Schema = Yup.object().shape({
     .max(12, "Phone can' be longer than 12 characters."),
   select: Yup.string()
     .ensure()
+    .required("This field is required."),
+  multi: Yup.array()
+    .min(2, "Pick at least 2 options")
+    .of(
+      Yup.object().shape({
+        label: Yup.string(),
+        value: Yup.string()
+      })
+      .nullable()
+    ),
     .required("Select is required."),
   checkbox: Yup.string()
     .ensure()
@@ -20,8 +31,29 @@ export const Schema = Yup.object().shape({
 });
 
 export const options = [
-  { label: 'Option 1', value: 'Option 1' },
-  { label: 'Option 2', value: 'Option 2' },
-  { label: 'Option 3', value: 'Option 3' },
+  { value: "select-1", label: "Option 1" },
+  { value: "select-2", label: "Option 2" },
+  { value: "select-3", label: "Option 3" },
 ];
 
+export const multiOptions = [
+  {
+    value: "multi-1",
+    label: "Lorem Ipsum",
+    auxText: "example@cordage.ui",
+    img: capas,
+  },
+  {
+    value: "multi-2",
+    label: "Dolor Sit",
+    auxText: "example@cordage.ui",
+    img: capas,
+  },
+
+  {
+    value: "multi-3",
+    label: "Amet Consectetur",
+    auxText: "example@cordage.ui",
+    img: capas,
+  },
+];
