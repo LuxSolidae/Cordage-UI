@@ -112,7 +112,11 @@ import '@_src_/lib/Docz.css';
               touched={touched.multi}
               error={errors.multi}
             />
-            <Checkbox id='1' name='accept' className='custom-checkbox' />
+            <Checkbox
+              defaultChecked
+              label={'Check me now'}
+              disabled={false}
+            />
             <Button variant="primary" type="submit">Submit</Button>
             </Form>
         )}

@@ -15,8 +15,6 @@ export const Schema = Yup.object().shape({
   select: Yup.string()
     .ensure()
     .required("This field is required."),
-  acceptTerms: Yup.bool()
-    .oneOf([true], 'Accept Terms & Conditions is required')
 });
 
 export const options = [

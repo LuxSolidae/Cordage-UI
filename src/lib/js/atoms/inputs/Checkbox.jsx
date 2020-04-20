@@ -1,15 +1,33 @@
-import React from "react";
-import { Field } from "formik";
+// @flow
+import * as React from "react";
+import {default as RCheckbox} from 'rc-checkbox';
 
-export const Checkbox = ({ errors, status, touched }) => {
-  return (
-    <div className="form-group form-check">
-      <Field type="checkbox" name="acceptTerms" id="acceptTerms" className={'form-check-input ' + (errors.acceptTerms && touched.acceptTerms ? ' is-invalid' : '')} />
-      <label htmlFor="acceptTerms" className="form-check-label">Accept Terms & Conditions</label>
-      <ErrorMessage name="acceptTerms" component="div" className="invalid-feedback" />
+export type Props = {
+  checked?: boolean,
+  label: String,
+  disabled: boolean
+};
+
+const onChange = () => {
+  {onChange}
+}
+
+export const Checkbox = ({
+    checked, label, disabled
+  }: Props) => (
+    <div>
+      <label>
+        <RCheckbox
+          className='custom-checkbox'
+          disabled={disabled}
+        />
+          {label}
+      </label>
     </div>
   );
+
+Checkbox.defaultProps = {
+  checked: false
 }
 
 export default Checkbox;
-
