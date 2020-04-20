@@ -42,7 +42,6 @@ import '@_src_/lib/Docz.css';
         }}
         validationSchema={Schema}
         onSubmit={(values) => {
-          alert(JSON.stringify(values, null, 2));
           console.log("values", values);
         }}
       >
@@ -101,13 +100,10 @@ import '@_src_/lib/Docz.css';
             />
             <Field
               name='switch'
+              checked={values.switch}
               component={Switch}
             />
-            <Switch
-              name='switch_2'
-              checked={!values.switch}
-            />
-            <ErrorMessage name='switch' />
+            
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
         )}

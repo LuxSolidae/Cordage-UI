@@ -26,7 +26,7 @@ export const Schema = Yup.object().shape({
         .nullable()
     ),
   switch: Yup.boolean()
-    .oneOf([true], 'Must click this or else'),
+    .oneOf([true], 'This field is required.'),
 });
 
 export const options = [
