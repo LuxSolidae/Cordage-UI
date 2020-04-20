@@ -18,12 +18,15 @@ export const Schema = Yup.object().shape({
   multi: Yup.array()
     .min(2, "Pick at least 2 options")
     .of(
-      Yup.object().shape({
-        label: Yup.string(),
-        value: Yup.string()
-      })
-      .nullable()
+      Yup.object()
+        .shape({
+          label: Yup.string(),
+          value: Yup.string(),
+        })
+        .nullable()
     ),
+  switch: Yup.boolean()
+    .oneOf([true], 'Must click this or else'),
 });
 
 export const options = [

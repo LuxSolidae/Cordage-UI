@@ -8,7 +8,7 @@ import { Playground, Props } from 'docz';
 import ThemeContext from '@cordage_ui/providers/themes';
 import theme from '@cordage_ui/cordage.json';
 
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 import Button from './../button/Button';
@@ -26,26 +26,6 @@ import '@_src_/lib/Docz.css';
 
 ---
 
-## Text Field
-### Props
-
-<Props of={TextField} />
-
-## Select
-### Props
-
-<Props of={Select} />
-
-## MultiSelect
-### Props
-
-<Props of={MultiSelect} />
-
-## Switch
-### Props
-
-<Props of={Switch} />
-
 ### Playground
 
 <Playground>
@@ -58,6 +38,7 @@ import '@_src_/lib/Docz.css';
           phone: '',
           select: '',
           multi: [],
+          switch: false,
         }}
         validationSchema={Schema}
         onSubmit={(values) => {
@@ -70,6 +51,7 @@ import '@_src_/lib/Docz.css';
           values,
           touched,
           handleSubmit,
+          handleChange,
           setFieldValue,
           setFieldTouched,
         }) => (
@@ -117,7 +99,15 @@ import '@_src_/lib/Docz.css';
               touched={touched.multi}
               error={errors.multi}
             />
-            <Switch />
+            <Field
+              name='switch'
+              component={Switch}
+            />
+            <Switch
+              name='switch_2'
+              checked={!values.switch}
+            />
+            <ErrorMessage name='switch' />
             <Button variant="primary" type="submit">Submit</Button>
           </Form>
         )}
@@ -125,3 +115,19 @@ import '@_src_/lib/Docz.css';
     </ThemeContext.Provider>
   </div>
 </Playground>
+
+## Text Field
+### Props
+<Props of={TextField} />
+
+## Select
+### Props
+<Props of={Select} />
+
+## MultiSelect
+### Props
+<Props of={MultiSelect} />
+
+## Switch
+### Props
+<Props of={Switch} />
