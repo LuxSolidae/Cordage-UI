@@ -1,29 +1,15 @@
-import * as React from "react";
-import { t as typy } from 'typy';
-import { ErrorMessage } from "formik";
+import React from "react";
+import { Field } from "formik";
 
-export type Props = {
-  isChecked: Boolean,
-  changeHandler: Function,
-  label: String
+export const Checkbox = ({ errors, status, touched }) => {
+  return (
+    <div className="form-group form-check">
+      <Field type="checkbox" name="acceptTerms" id="acceptTerms" className={'form-check-input ' + (errors.acceptTerms && touched.acceptTerms ? ' is-invalid' : '')} />
+      <label htmlFor="acceptTerms" className="form-check-label">Accept Terms & Conditions</label>
+      <ErrorMessage name="acceptTerms" component="div" className="invalid-feedback" />
+    </div>
+  );
 }
 
-export const Checkbox = ({
-  isChecked,
-  changeHandler,
-  label
-}: Props) => {
-  return (
-    <Form>
-      <Form.Check
-        custom
-        type='checkbox'
-        id='custom-checkbox'
-        label={label}
-        checked={isChecked}
-      />
-    </Form>
-  );
-};
-
 export default Checkbox;
+

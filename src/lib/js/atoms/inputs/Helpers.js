@@ -15,19 +15,8 @@ export const Schema = Yup.object().shape({
   select: Yup.string()
     .ensure()
     .required("This field is required."),
-  multi: Yup.array()
-    .min(2, "Pick at least 2 options")
-    .of(
-      Yup.object().shape({
-        label: Yup.string(),
-        value: Yup.string()
-      })
-      .nullable()
-    ),
-    .required("Select is required."),
-  checkbox: Yup.string()
-    .ensure()
-    .required("You must accept it.")
+  acceptTerms: Yup.bool()
+    .oneOf([true], 'Accept Terms & Conditions is required')
 });
 
 export const options = [
